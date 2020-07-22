@@ -32,12 +32,6 @@
                     <div class="d-sm-flex align-items-center justify-content-between mb-2">
                         <h1 class="h2 mr-4 mb-0 text-gray-800">Ubah Pengajuan PKL</h1>
                     </div>
-                    <?php if ($this->session->flashdata('success')) : ?>
-                        <div class="alert alert-success" role="alert">
-                            <?php echo $this->session->flashdata('success'); ?>
-                        </div>
-                    <?php endif; ?>
-
                     <div class="card mb-3">
                         <div class="card-header">
                             <a href="<?= base_url('admin/pengajuanpkl/') ?>"><i class="fas fa-arrow-left"></i> Kembali</a>
@@ -49,9 +43,49 @@
                                 <input type="hidden" name="id_pengajuanpkl" value="<?php echo $pengajuanpkl->id_pengajuanpkl ?>" />
 
                                 <div class="form-group">
+                                    <label for="nama_siswa">Nama Siswa</label>
+                                    <input class="form-control <?php echo form_error('nama_siswa') ? 'is-invalid' : '' ?>" name="nama_siswa" readonly value="<?php echo $pengajuanpkl->nama_siswa ?>" />
+                                    <div class="invalid-feedback">
+                                        <?php echo form_error('nama_siswa') ?>
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="kelas">Kelas</label>
+                                    <input class="form-control <?php echo form_error('kelas') ? 'is-invalid' : '' ?>" name="kelas" readonly value="<?php echo $pengajuanpkl->kelas ?>" />
+                                    <div class="invalid-feedback">
+                                        <?php echo form_error('kelas') ?>
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="nama_dudi">DUDI yang dipilih</label>
+                                    <input class="form-control <?php echo form_error('nama_dudi') ? 'is-invalid' : '' ?>" name="nama_dudi" readonly value="<?php echo $pengajuanpkl->nama_dudi ?>" />
+                                    <div class="invalid-feedback">
+                                        <?php echo form_error('nama_dudi') ?>
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="tanggal_masuk">Tanggal Masuk</label>
+                                    <input class="form-control <?php echo form_error('tanggal_masuk') ? 'is-invalid' : '' ?>" type="date" id="datepicker" name="tanggal_masuk" value="<?php echo $pengajuanpkl->tanggal_masuk ?>" />
+                                    <div class="invalid-feedback">
+                                        <?php echo form_error('tanggal_masuk') ?>
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="tanggal_keluar">Tanggal Keluar</label>
+                                    <input class="form-control <?php echo form_error('tanggal_keluar') ? 'is-invalid' : '' ?>" type="date" id="datepicker" name="tanggal_keluar" value="<?php echo $pengajuanpkl->tanggal_keluar ?>" />
+                                    <div class="invalid-feedback">
+                                        <?php echo form_error('tanggal_keluar') ?>
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
                                     <label for="id_guru">Guru Pembimbing</label>
                                     <select class="form-control <?php echo form_error('id_guru') ? 'is-invalid' : '' ?>" name="id_guru">
-                                        <option value="">Pilih Guru</option>
+                                        <option value="<?php echo $pengajuanpkl->id_guru; ?>">Pilih Guru : <?php echo $pengajuanpkl->nama_guru; ?> </option>
                                         <?php foreach ($data_guru as $row) { ?>
                                             <option value="<?php echo $row->id_guru; ?>"><?php echo $row->nama_guru; ?></option>
                                         <?php } ?>
@@ -64,7 +98,7 @@
                                 <div class="form-group">
                                     <label for="status_validasi">Status Validasi</label>
                                     <select class="form-control <?php echo form_error('status_validasi') ? 'is-invalid' : '' ?>" name="status_validasi">
-                                        <option value="">---Status Validasi--</option>
+                                        <option value="<?php echo $pengajuanpkl->status_validasi; ?>">---Status Validasi-- : <?php echo $pengajuanpkl->status_validasi; ?></option>
                                         <option value="Proses Pengajuan">Proses Pengajuan</option>
                                         <option value="Diterima">Diterima</option>
                                         <option value="Ditolak">Ditolak</option>
@@ -104,14 +138,16 @@
             <?php $this->load->view("_partials/modal.php") ?>
 
             <!-- Bootstrap core JavaScript-->
-            <script src="<?= base_url('assets/'); ?>vendor/jquery/jquery.min.js"></script>
-            <script src="<?= base_url('assets/'); ?>vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+            <?php $this->load->view("_partials/js.php") ?>
 
-            <!-- Core plugin JavaScript-->
-            <script src="<?= base_url('assets/'); ?>vendor/jquery-easing/jquery.easing.min.js"></script>
-
-            <!-- Custom scripts for all pages-->
-            <script src="<?= base_url('assets/'); ?>js/sb-admin-2.min.js"></script>
+            <script>
+                $(function() {
+                    $("#datepicker").datepicker({
+                        changeMonth: true,
+                        changeYear: true
+                    });
+                });
+            </script>
 
 </body>
 

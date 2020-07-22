@@ -32,12 +32,6 @@
                     <div class="d-sm-flex align-items-center justify-content-between mb-2">
                         <h1 class="h2 mr-4 mb-0 text-gray-800">Tambah Data Guru</h1>
                     </div>
-                    <?php if ($this->session->flashdata('success')) : ?>
-                        <div class="alert alert-success" role="alert">
-                            <?php echo $this->session->flashdata('success'); ?>
-                        </div>
-                    <?php endif; ?>
-
                     <div class="card mb-3">
                         <div class="card-header">
                             <a href="<?= base_url('admin/dataguru/') ?>"><i class="fas fa-arrow-left"></i> Kembali</a>
@@ -111,14 +105,7 @@
             <?php $this->load->view("_partials/modal.php") ?>
 
             <!-- Bootstrap core JavaScript-->
-            <script src="<?= base_url('assets/'); ?>vendor/jquery/jquery.min.js"></script>
-            <script src="<?= base_url('assets/'); ?>vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-
-            <!-- Core plugin JavaScript-->
-            <script src="<?= base_url('assets/'); ?>vendor/jquery-easing/jquery.easing.min.js"></script>
-
-            <!-- Custom scripts for all pages-->
-            <script src="<?= base_url('assets/'); ?>js/sb-admin-2.min.js"></script>
+            <?php $this->load->view("_partials/js.php") ?>
 
 </body>
 

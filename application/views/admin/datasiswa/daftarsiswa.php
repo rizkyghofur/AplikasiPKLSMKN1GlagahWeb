@@ -32,12 +32,6 @@
                     <div class="d-sm-flex align-items-center justify-content-between mb-2">
                         <h1 class="h2 mr-4 mb-0 text-gray-800">Tambah Data siswa</h1>
                     </div>
-                    <?php if ($this->session->flashdata('success')) : ?>
-                        <div class="alert alert-success" role="alert">
-                            <?php echo $this->session->flashdata('success'); ?>
-                        </div>
-                    <?php endif; ?>
-
                     <div class="card mb-3">
                         <div class="card-header">
                             <a href="<?= base_url('admin/datasiswa/') ?>"><i class="fas fa-arrow-left"></i> Kembali</a>
@@ -63,9 +57,9 @@
 
                                 <div class="form-group">
                                     <label for="nama">Nama Siswa</label>
-                                    <input class="form-control <?php echo form_error('nama') ? 'is-invalid' : '' ?>" type="text" name="nama" min="0"></input>
+                                    <input class="form-control <?php echo form_error('nama_siswa') ? 'is-invalid' : '' ?>" type="text" name="nama_siswa" min="0"></input>
                                     <div class="invalid-feedback">
-                                        <?php echo form_error('nama') ?>
+                                        <?php echo form_error('nama_siswa') ?>
                                     </div>
                                 </div>
 
@@ -103,7 +97,7 @@
 
                                 <div class="form-group">
                                     <label for="tgl_lahir">Tanggal Lahir</label>
-                                    <input class="form-control <?php echo form_error('tgl_lahir') ? 'is-invalid' : '' ?>" type="date" id="datepicker" name="tgl_lahir" min="0" />
+                                    <input class="form-control <?php echo form_error('tgl_lahir') ? 'is-invalid' : '' ?>" type="date" id="datepicker" name="tgl_lahir" />
                                     <div class="invalid-feedback">
                                         <?php echo form_error('tgl_lahir') ?>
                                     </div>
@@ -135,7 +129,7 @@
 
                                 <div class="form-group">
                                     <label for="hp_siswa">No HP. Siswa</label>
-                                    <input class="form-control <?php echo form_error('hp_siswa') ? 'is-invalid' : '' ?>" type="number" name="hp_siswa" min="0"></input>
+                                    <input class="form-control <?php echo form_error('hp_siswa') ? 'is-invalid' : '' ?>" type="number" name="hp_siswa" maxlength="15" min="0"></input>
                                     <div class="invalid-feedback">
                                         <?php echo form_error('hp_siswa') ?>
                                     </div>
@@ -167,7 +161,7 @@
 
                                 <div class="form-group">
                                     <label for="no_hp_orang_tua">No HP. Orang Tua</label>
-                                    <input class="form-control <?php echo form_error('no_hp_orang_tua') ? 'is-invalid' : '' ?>" type="number" name="no_hp_orang_tua" min="0" placeholder="" />
+                                    <input class="form-control <?php echo form_error('no_hp_orang_tua') ? 'is-invalid' : '' ?>" type="number" name="no_hp_orang_tua" min="0" maxlength="15" placeholder="" />
                                     <div class="invalid-feedback">
                                         <?php echo form_error('no_hp_orang_tua') ?>
                                     </div>
@@ -203,19 +197,13 @@
             <?php $this->load->view("_partials/modal.php") ?>
 
             <!-- Bootstrap core JavaScript-->
-            <script src="<?= base_url('assets/'); ?>vendor/jquery/jquery.min.js"></script>
-            <script src="<?= base_url('assets/'); ?>vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+            <?php $this->load->view("_partials/js.php") ?>
 
-            <!-- Core plugin JavaScript-->
-            <script src="<?= base_url('assets/'); ?>vendor/jquery-easing/jquery.easing.min.js"></script>
-
-            <!-- Custom scripts for all pages-->
-            <script src="<?= base_url('assets/'); ?>js/sb-admin-2.min.js"></script>
             <script>
                 $(function() {
                     $("#datepicker").datepicker({
-                        changeMonth: true, // menampilkan dropdown untuk ganti bulan
-                        changeYear: true // menampilkan dropdown untuk ganti Tahun
+                        changeMonth: true,
+                        changeYear: true
                     });
                 });
             </script>

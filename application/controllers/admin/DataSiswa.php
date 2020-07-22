@@ -30,6 +30,7 @@ class DataSiswa extends CI_Controller
         if ($validation->run()) {
             $datasiswa->save();
             $this->session->set_flashdata('success', 'Berhasil disimpan');
+            redirect('admin/datasiswa');
         }
         $this->load->view("admin/datasiswa/daftarsiswa");
     }
@@ -44,6 +45,7 @@ class DataSiswa extends CI_Controller
         if ($validation->run()) {
             $datasiswa->update();
             $this->session->set_flashdata('success', 'Berhasil disimpan');
+            redirect('admin/datasiswa');
         }
 
         $data["datasiswa"] = $datasiswa->getById($id);

@@ -30,6 +30,7 @@ class DataDUDI extends CI_Controller
         if ($validation->run()) {
             $datadudi->save();
             $this->session->set_flashdata('success', 'Berhasil disimpan');
+            redirect('admin/datadudi');
         }
         $this->load->view("admin/datadudi/daftardudi");
     }
@@ -44,6 +45,7 @@ class DataDUDI extends CI_Controller
         if ($validation->run()) {
             $datadudi->update();
             $this->session->set_flashdata('success', 'Berhasil disimpan');
+            redirect('admin/datadudi');
         }
 
         $data["datadudi"] = $datadudi->getById($id);

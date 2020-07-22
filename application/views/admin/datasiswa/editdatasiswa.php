@@ -32,12 +32,6 @@
                     <div class="d-sm-flex align-items-center justify-content-between mb-2">
                         <h1 class="h2 mr-4 mb-0 text-gray-800">Tambah Data siswa</h1>
                     </div>
-                    <?php if ($this->session->flashdata('success')) : ?>
-                        <div class="alert alert-success" role="alert">
-                            <?php echo $this->session->flashdata('success'); ?>
-                        </div>
-                    <?php endif; ?>
-
                     <div class="card mb-3">
                         <div class="card-header">
                             <a href="<?= base_url('admin/datasiswa/') ?>"><i class="fas fa-arrow-left"></i> Kembali</a>
@@ -46,11 +40,11 @@
 
                             <form action="" method="post">
 
-                                <input type="hidden" name="id" value="<?php echo $datasiswa->id ?>" />
+                                <input type="hidden" name="id_siswa" value="<?php echo $datasiswa->id_siswa ?>" />
 
                                 <div class="form-group">
                                     <label for="nis">NIS</label>
-                                    <input class="form-control <?php echo form_error('name') ? 'is-invalid' : '' ?>" name="nis" value="<?php echo $datasiswa->nis ?>" />
+                                    <input class="form-control <?php echo form_error('nis') ? 'is-invalid' : '' ?>" name="nis" value="<?php echo $datasiswa->nis ?>" />
                                     <div class="invalid-feedback">
                                         <?php echo form_error('nis') ?>
                                     </div>
@@ -66,7 +60,7 @@
 
                                 <div class="form-group">
                                     <label for="nama">Nama Siswa</label>
-                                    <input class="form-control <?php echo form_error('nama') ? 'is-invalid' : '' ?>" type="text" name="nama" min="0" value="<?php echo $datasiswa->nama ?>"></input>
+                                    <input class="form-control <?php echo form_error('nama_siswa') ? 'is-invalid' : '' ?>" type="text" name="nama_siswa" min="0" value="<?php echo $datasiswa->nama_siswa ?>"></input>
                                     <div class="invalid-feedback">
                                         <?php echo form_error('nama') ?>
                                     </div>
@@ -134,7 +128,7 @@
 
                                 <div class="form-group">
                                     <label for="hp_siswa">No HP Siswa</label>
-                                    <input class="form-control <?php echo form_error('hp_siswa') ? 'is-invalid' : '' ?>" type="number" name="hp_siswa" min="0" value="<?php echo $datasiswa->hp_siswa ?>" />
+                                    <input class="form-control <?php echo form_error('hp_siswa') ? 'is-invalid' : '' ?>" type="number" name="hp_siswa" min="0" maxlength="15" value="<?php echo $datasiswa->hp_siswa ?>" />
                                     <div class="invalid-feedback">
                                         <?php echo form_error('hp_siswa') ?>
                                     </div>
@@ -166,7 +160,7 @@
 
                                 <div class="form-group">
                                     <label for="no_hp_orang_tua">No HP Orang Tua</label>
-                                    <input class="form-control <?php echo form_error('no_hp_orang_tua') ? 'is-invalid' : '' ?>" type="number" name="no_hp_orang_tua" min="0" value="<?php echo $datasiswa->no_hp_orang_tua ?>" />
+                                    <input class="form-control <?php echo form_error('no_hp_orang_tua') ? 'is-invalid' : '' ?>" type="number" name="no_hp_orang_tua" min="0" maxlength="15" value="<?php echo $datasiswa->no_hp_orang_tua ?>" />
                                     <div class="invalid-feedback">
                                         <?php echo form_error('no_hp_orang_tua') ?>
                                     </div>
@@ -202,14 +196,16 @@
             <?php $this->load->view("_partials/modal.php") ?>
 
             <!-- Bootstrap core JavaScript-->
-            <script src="<?= base_url('assets/'); ?>vendor/jquery/jquery.min.js"></script>
-            <script src="<?= base_url('assets/'); ?>vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+            <?php $this->load->view("_partials/js.php") ?>
 
-            <!-- Core plugin JavaScript-->
-            <script src="<?= base_url('assets/'); ?>vendor/jquery-easing/jquery.easing.min.js"></script>
-
-            <!-- Custom scripts for all pages-->
-            <script src="<?= base_url('assets/'); ?>js/sb-admin-2.min.js"></script>
+            <script>
+                $(function() {
+                    $("#datepicker").datepicker({
+                        changeMonth: true,
+                        changeYear: true
+                    });
+                });
+            </script>
 
 </body>
 

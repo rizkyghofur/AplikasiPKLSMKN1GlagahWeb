@@ -39,6 +39,10 @@ class akun_model extends CI_Model
 
     public function getById($id)
     {
+        $this->db->join('data_guru', 'data_guru.id_guru = pengguna.id', 'left');
+        $this->db->join('data_staf_tu', 'data_staf_tu.id_staf_tu = pengguna.id', 'left');
+        $this->db->join('data_siswa', 'data_siswa.id_siswa = pengguna.id', 'left');
+        $this->db->join('data_dudi', 'data_dudi.id_dudi = pengguna.id', 'left');
         return $this->db->get_where($this->_table, ["id" => $id])->row();
     }
 

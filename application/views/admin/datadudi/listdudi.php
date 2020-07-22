@@ -47,13 +47,13 @@
                                 <table id="table_id" class="table table-striped table-bordered" cellspacing="0" width="100%">
                                     <thead>
                                         <tr>
-                                            <th>Nama DUDI</th>
-                                            <th>Alamat DUDI</th>
-                                            <th>No Telp. DUDI</th>
-                                            <th>Jenis Usaha</th>
-                                            <th>Nama Pimpinan</th>
-                                            <th>No Telp Pimpinan</th>
-                                            <th>Kuota</th>
+                                            <th style="text-align:center">Nama DUDI</th>
+                                            <th style="text-align:center">Alamat DUDI</th>
+                                            <th style="text-align:center">No Telp. DUDI</th>
+                                            <th style="text-align:center">Jenis Usaha</th>
+                                            <th style="text-align:center">Nama Pimpinan</th>
+                                            <th style="text-align:center">No Telp Pimpinan</th>
+                                            <th style="text-align:center">Kuota</th>
                                             <th style="text-align:center">Opsi</th>
                                         </tr>
                                     </thead>
@@ -66,19 +66,19 @@
                                                 <td>
                                                     <?php echo $dtdudi->alamat_dudi ?>
                                                 </td>
-                                                <td>
+                                                <td style="text-align:center">
                                                     <?php echo $dtdudi->no_telp_dudi ?>
                                                 </td>
-                                                <td>
+                                                <td style="text-align:center">
                                                     <?php echo $dtdudi->jenis_usaha ?>
                                                 </td>
-                                                <td>
+                                                <td style="text-align:center">
                                                     <?php echo $dtdudi->nama_pimpinan ?>
                                                 </td>
-                                                <td>
+                                                <td style="text-align:center">
                                                     <?php echo $dtdudi->no_telp_pimpinan ?>
                                                 </td>
-                                                <td>
+                                                <td style="text-align:center">
                                                     <?php
                                                     if ($dtdudi->kuota == 0) { ?>
                                                         <span class="badge badge-success">Kuota Terpenuhi</span>

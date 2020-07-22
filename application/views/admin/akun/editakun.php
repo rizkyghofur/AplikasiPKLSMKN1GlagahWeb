@@ -32,12 +32,6 @@
                     <div class="d-sm-flex align-items-center justify-content-between mb-2">
                         <h1 class="h2 mr-4 mb-0 text-gray-800">Ubah Akun Pengguna</h1>
                     </div>
-                    <?php if ($this->session->flashdata('success')) : ?>
-                        <div class="alert alert-success" role="alert">
-                            <?php echo $this->session->flashdata('success'); ?>
-                        </div>
-                    <?php endif; ?>
-
                     <div class="card mb-3">
                         <div class="card-header">
                             <a href="<?= base_url('admin/akun/') ?>"><i class="fas fa-arrow-left"></i> Kembali</a>
@@ -50,7 +44,7 @@
 
                                 <div class="form-group">
                                     <label for="nama">Nama</label>
-                                    <input class="form-control <?php echo form_error('nama') ? 'is-invalid' : '' ?>" name="nama" readonly value="<?php echo $akun->nama ?>" />
+                                    <input class="form-control <?php echo form_error('nama') ? 'is-invalid' : '' ?>" name="nama" readonly value="<?php echo $akun->nama_siswa ?><?php echo $akun->nama_guru ?><?php echo $akun->nama_staf_tu ?>" />
                                     <div class="invalid-feedback">
                                         <?php echo form_error('nama') ?>
                                     </div>
@@ -74,7 +68,7 @@
 
                                 <div class="form-group">
                                     <label for="role">Role</label>
-                                    <input class="form-control <?php echo form_error('role') ? 'is-invalid' : '' ?>" name="role" readonly value="<?php if ($akun->role == 'siswa') { ?>Siswa<?php } ?><?php if ($akun->role == 'pembimbing_dudi') { ?>Pembimbing DUDI<?php } ?><?php if ($akun->role == 'guru') { ?>Guru<?php } ?> <?php if ($akun->role == 'koordinator_jurusan') { ?>Koordinator Jurusan<?php } ?>"></input>
+                                    <input class="form-control <?php echo form_error('role') ? 'is-invalid' : '' ?>" name="role" readonly value="<?php if ($akun->role == 'siswa') { ?>Siswa<?php } ?><?php if ($akun->role == 'pembimbing_dudi') { ?>Pembimbing DUDI<?php } ?><?php if ($akun->role == 'guru') { ?>Guru<?php } ?> <?php if ($akun->role == 'koordinator_jurusan') { ?>Koordinator Jurusan<?php } ?> <?php if ($akun->role == 'admin_pkl') { ?>Administrator PKL<?php } ?>"></input>
                                     <div class="invalid-feedback">
                                         <?php echo form_error('role') ?>
                                     </div>
@@ -110,14 +104,7 @@
             <?php $this->load->view("_partials/modal.php") ?>
 
             <!-- Bootstrap core JavaScript-->
-            <script src="<?= base_url('assets/'); ?>vendor/jquery/jquery.min.js"></script>
-            <script src="<?= base_url('assets/'); ?>vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-
-            <!-- Core plugin JavaScript-->
-            <script src="<?= base_url('assets/'); ?>vendor/jquery-easing/jquery.easing.min.js"></script>
-
-            <!-- Custom scripts for all pages-->
-            <script src="<?= base_url('assets/'); ?>js/sb-admin-2.min.js"></script>
+            <?php $this->load->view("_partials/js.php") ?>
 
 </body>
 

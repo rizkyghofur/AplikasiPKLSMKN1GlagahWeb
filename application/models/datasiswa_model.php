@@ -25,7 +25,7 @@ class datasiswa_model extends CI_Model
         return [
             [
                 'field' => 'nama_siswa',
-                'label' => 'nama_siswa Siswa',
+                'label' => 'Nama Siswa',
                 'rules' => 'required'
             ],
 
