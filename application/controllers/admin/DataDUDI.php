@@ -30,22 +30,22 @@ class DataDUDI extends CI_Controller
         if ($validation->run()) {
             $datadudi->save();
             $this->session->set_flashdata('success', 'Berhasil disimpan');
-            redirect('admin/datadudi');
+            redirect('admin/DataDUDI');
         }
         $this->load->view("admin/datadudi/daftardudi");
     }
 
     public function editdatadudi($id = null)
     {
-        if (!isset($id)) redirect('admin/datadudi');
+        if (!isset($id)) redirect('admin/DataDUDI');
         $datadudi = $this->datadudi_model;
         $validation = $this->form_validation;
         $validation->set_rules($datadudi->rules());
 
         if ($validation->run()) {
             $datadudi->update();
-            $this->session->set_flashdata('success', 'Berhasil disimpan');
-            redirect('admin/datadudi');
+            $this->session->set_flashdata('success', 'Berhasil diubah');
+            redirect('admin/DataDUDI');
         }
 
         $data["datadudi"] = $datadudi->getById($id);
@@ -57,7 +57,8 @@ class DataDUDI extends CI_Controller
     {
         if (!isset($id)) show_404();
         if ($this->datadudi_model->delete($id)) {
-            redirect(base_url('admin/datadudi'));
+            $this->session->set_flashdata('success', 'Berhasil dihapus');
+            redirect('admin/DataDUDI');
         }
     }
 }

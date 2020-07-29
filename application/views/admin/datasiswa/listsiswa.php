@@ -34,18 +34,17 @@
                     <div class="d-sm-flex align-items-center justify-content-between mb-2">
                         <h1 class="h2 mr-4 mb-0 text-gray-800"> Data Siswa</h1>
                     </div>
+                    
                     <?php if ($this->session->flashdata('success')) : ?>
                         <div class="alert alert-success" role="alert">
                             <?php echo $this->session->flashdata('success'); ?>
                         </div>
                     <?php endif; ?>
                     <?php $this->load->view("_partials/breadcrumb.php") ?>
+                    
                     <!-- Content Row -->
 
                     <div class="card mb-3">
-                        <div class="card-header">
-                            <a href="<?= base_url("admin/datasiswa/daftarsiswa") ?>"><i class="fas fa-plus"></i> Tambah Data Siswa</a>
-                        </div>
                         <div class="card-body">
                             <div class="table-responsive">
                                 <table id="table_id" class="table table-striped table-bordered" cellspacing="0" width="100%">

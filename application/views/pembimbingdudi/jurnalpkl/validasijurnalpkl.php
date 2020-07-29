@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
 
+<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.21/css/jquery.dataTables.min.css">
+
 <head>
     <?php $this->load->view("_partials/head.php") ?>
 </head>
@@ -26,24 +28,32 @@
 
                 <!-- Begin Page Content -->
                 <div class="container-fluid">
+
                     <!-- Page Heading -->
                     <div class="d-sm-flex align-items-center justify-content-between mb-2">
                         <h1 class="h2 mr-4 mb-0 text-gray-800">Validasi Jurnal PKL</h1>
                     </div>
                     <?php $this->load->view("_partials/breadcrumb.php") ?>
+
+                    <?php if ($this->session->flashdata('success')) : ?>
+                        <div class="alert alert-success" role="alert">
+                            <?php echo $this->session->flashdata('success'); ?>
+                        </div>
+                    <?php endif; ?>
+
                     <!-- Content Row -->
                     <div class="card mb-3">
                         <div class="card-body">
                             <div class="table-responsive">
-                                <table class="table table-hover" id="dataTable" width="100%" cellspacing="0">
+                                <table id="table_id" class="table table-striped table-bordered" cellspacing="0" width="100%">
                                     <thead>
                                         <tr>
-                                            <th>Nama Siswa</th>
-                                            <th>Kelas</th>
-                                            <th>Tgl Pelaksanaan</th>
-                                            <th>Topik Pekerjaan</th>
-                                            <th>Validasi</th>
-                                            <th>Catatan</th>
+                                            <th style="text-align:center">Nama Siswa</th>
+                                            <th style="text-align:center">Kelas</th>
+                                            <th style="text-align:center">Tgl Pelaksanaan</th>
+                                            <th style="text-align:center">Topik Pekerjaan</th>
+                                            <th style="text-align:center">Validasi</th>
+                                            <th style="text-align:center">Catatan</th>
                                             <th style="text-align:center">Opsi</th>
                                         </tr>
                                     </thead>
@@ -51,40 +61,39 @@
                                         <?php foreach ($jurnal_pkl as $jurnal) : ?>
                                             <tr>
                                                 <td width="200">
-                                                    <?php echo $jurnal->nama ?>
+                                                    <?php echo $jurnal->nama_siswa ?>
                                                 </td>
-                                                <td>
+                                                <td style="text-align:center">
                                                     <?php echo $jurnal->kelas ?>
                                                 </td>
-                                                <td>
+                                                <td style="text-align:center">
                                                     <?php echo $jurnal->tanggal ?>
                                                 </td>
-                                                <td width="300">
+                                                <td>
                                                     <?php echo $jurnal->topik_pekerjaan ?>
                                                 </td>
-                                                <td>
+                                                <td style="text-align:center">
                                                     <?php
-                                                    if ($jurnal->status_validasi == 'Tervalidasi') { ?>
-                                                        <span class="badge badge-success"><?php echo $jurnal->status_validasi; ?></span>
+                                                    if ($jurnal->status == 'Tervalidasi') { ?>
+                                                        <span class="badge badge-success"><?php echo $jurnal->status; ?></span>
                                                     <?php } ?>
                                                     <?php
-                                                    if ($jurnal->status_validasi == 'Ditolak') { ?>
-                                                        <span class=" badge badge-danger"><?php echo $jurnal->status_validasi; ?></span>
+                                                    if ($jurnal->status == 'Ditolak') { ?>
+                                                        <span class=" badge badge-danger"><?php echo $jurnal->status; ?></span>
                                                     <?php } ?>
                                                     <?php
-                                                    if ($jurnal->status_validasi == 'Belum Tervalidasi') { ?>
-                                                        <span class="badge badge-warning"><?php echo $jurnal->status_validasi; ?></span>
+                                                    if ($jurnal->status == 'Belum Tervalidasi') { ?>
+                                                        <span class="badge badge-warning"><?php echo $jurnal->status; ?></span>
                                                     <?php } ?>
                                                 </td>
                                                 <td>
                                                     <?php echo $jurnal->catatan ?>
                                                 </td>
                                                 <td width="50" style="text-align:center">
-                                                    <a href="<?= base_url('pembimbingdudi/validasijurnalpkl/editvalidasijurnalpkl/' . $jurnal->id_jurnal_pkl) ?>" class="btn btn-small"><i class="fas fa-edit"></i> Validasi</a>
+                                                    <a href="<?= base_url('pembimbingdudi/ValidasiJurnalPKL/editvalidasijurnalpkl/' . $jurnal->id_jurnal_pkl) ?>" class="btn btn-small text-primary"><i class="fas fa-clipboard-check"></i>Validasi</a>
                                                 </td>
                                             </tr>
                                         <?php endforeach; ?>
-
                                     </tbody>
                                 </table>
                             </div>
@@ -110,14 +119,15 @@
         <?php $this->load->view("_partials/modal.php") ?>
 
         <!-- Bootstrap core JavaScript-->
-        <script src="<?= base_url('assets/'); ?>vendor/jquery/jquery.min.js"></script>
-        <script src="<?= base_url('assets/'); ?>vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+        <?php $this->load->view("_partials/js.php") ?>
 
-        <!-- Core plugin JavaScript-->
-        <script src="<?= base_url('assets/'); ?>vendor/jquery-easing/jquery.easing.min.js"></script>
+        <script type="text/javascript" src="https://cdn.datatables.net/1.10.16/js/jquery.dataTables.min.js"></script>
 
-        <!-- Custom scripts for all pages-->
-        <script src="<?= base_url('assets/'); ?>js/sb-admin-2.min.js"></script>
+        <script type="text/javascript">
+            $(document).ready(function() {
+                $('#table_id').DataTable();
+            });
+        </script>
 
 </body>
 

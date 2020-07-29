@@ -20,24 +20,24 @@
         <hr class="sidebar-divider">
 
         <!-- Heading -->
-        <div class="sidebar-heading">
+        <div class="sidebar-heading" style="color: white;">
             Kelola Data
         </div>
 
-        <li class="nav-item <?php echo $this->uri->segment(2) == 'datadudi' ? 'active' : '' ?>">
-            <a class="nav-link" href="<?= base_url('admin/datadudi/'); ?>">
+        <li class="nav-item <?php echo $this->uri->segment(2) == 'DataDUDI' ? 'active' : '' ?>">
+            <a class="nav-link" href="<?= base_url('admin/DataDUDI/'); ?>">
                 <i class="fas fa-fw fa-newspaper"></i>
                 <span>Data DUDI</span></a>
         </li>
 
-        <li class="nav-item <?php echo $this->uri->segment(2) == 'datasiswa' ? 'active' : '' ?>">
-            <a class="nav-link" href="<?= base_url('admin/datasiswa/'); ?>">
+        <li class="nav-item <?php echo $this->uri->segment(2) == 'DataSiswa' ? 'active' : '' ?>">
+            <a class="nav-link" href="<?= base_url('admin/DataSiswa/'); ?>">
                 <i class="fas fa-fw fa-user-graduate"></i>
                 <span>Data Siswa</span></a>
         </li>
 
-        <li class="nav-item <?php echo $this->uri->segment(2) == 'dataguru' ? 'active' : '' ?>">
-            <a class="nav-link" href="<?= base_url('admin/dataguru/'); ?>">
+        <li class="nav-item <?php echo $this->uri->segment(2) == 'DataGuru' ? 'active' : '' ?>">
+            <a class="nav-link" href="<?= base_url('admin/DataGuru/'); ?>">
                 <i class="fas fa-chalkboard-teacher"></i>
                 <span>Data Guru</span></a>
         </li>
@@ -46,12 +46,12 @@
         <hr class="sidebar-divider">
 
         <!-- Heading -->
-        <div class="sidebar-heading">
+        <div class="sidebar-heading" style="color: white;">
             Kelola Akun
         </div>
 
-        <li class="nav-item <?php echo $this->uri->segment(2) == 'akun' ? 'active' : '' ?>">
-            <a class="nav-link" href="<?= base_url('admin/akun/'); ?>">
+        <li class="nav-item <?php echo $this->uri->segment(2) == 'Akun' ? 'active' : '' ?>">
+            <a class="nav-link" href="<?= base_url('admin/Akun/'); ?>">
                 <i class="fas fa-user"></i>
                 <span>Akun Pengguna</span></a>
         </li>
@@ -59,12 +59,12 @@
         <!-- Divider -->
         <hr class="sidebar-divider">
 
-        <div class="sidebar-heading">
+        <div class="sidebar-heading" style="color: white;">
             Kelola Data PKL
         </div>
 
-        <li class="nav-item <?php echo $this->uri->segment(2) == 'pengajuanpkl' ? 'active' : '' ?>">
-            <a class="nav-link" href="<?= base_url('admin/pengajuanpkl/'); ?>">
+        <li class="nav-item <?php echo $this->uri->segment(2) == 'PengajuanPKL' ? 'active' : '' ?>">
+            <a class="nav-link" href="<?= base_url('admin/PengajuanPKL/'); ?>">
                 <i class="far fa-calendar-check"></i>
                 <span>Pengajuan PKL</span></a>
         </li>
@@ -95,5 +95,8 @@
         <div class="text-center d-none d-md-inline">
             <button class="rounded-circle border-0" id="sidebarToggle"></button>
         </div>
+
+        <hr class="sidebar-divider">
+
     </ul>
     <!-- End of Sidebar -->

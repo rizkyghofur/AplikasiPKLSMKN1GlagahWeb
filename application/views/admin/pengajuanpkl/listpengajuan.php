@@ -49,12 +49,12 @@
                                 <table id="table_id" class="table table-striped table-bordered" cellspacing="0" width="100%">
                                     <thead>
                                         <tr>
-                                            <th>Nama Siswa</th>
-                                            <th>Kelas</th>
-                                            <th>Nama DUDI</th>
-                                            <th>Tanggal Masuk</th>
-                                            <th>Tanggal Keluar</th>
-                                            <th>Nama Guru</th>
+                                            <th style="text-align:center">Nama Siswa</th>
+                                            <th style="text-align:center">Kelas</th>
+                                            <th style="text-align:center">Nama DUDI</th>
+                                            <th style="text-align:center">Tanggal Masuk</th>
+                                            <th style="text-align:center">Tanggal Keluar</th>
+                                            <th style="text-align:center">Nama Guru</th>
                                             <th style="text-align:center">Status Validasi</th>
                                             <th style="text-align:center">Opsi</th>
                                         </tr>
@@ -65,15 +65,15 @@
                                                 <td width="150">
                                                     <?php echo $pengajuan->nama_siswa; ?>
                                                 </td>
-                                                <td>
+                                                <td style="text-align:center">
                                                     <?php echo $pengajuan->kelas; ?>
                                                 </td>
                                                 <td>
                                                     <?php echo $pengajuan->nama_dudi; ?>
                                                 </td>
-                                                <td>
+                                                <td style="text-align:center">
                                                     <?php echo $pengajuan->tanggal_masuk; ?>
-                                                </td>
+                                                </td style="text-align:center">
                                                 <td>
                                                     <?php echo $pengajuan->tanggal_keluar; ?>
                                                 </td>
@@ -104,8 +104,8 @@
                                                     <?php } ?>
                                                 </td>
                                                 <td width="185" style="text-align:center">
-                                                    <a href="<?= base_url('admin/pengajuanpkl/editpengajuanpkl/' . $pengajuan->id_pengajuanpkl) ?>" class="btn btn-small"><i class="fas fa-edit"></i> Ubah</a>
-                                                    <a onclick="deleteConfirm('<?= base_url('admin/pengajuanpkl/hapuspengajuanpkl/' . $pengajuan->id_pengajuanpkl) ?>')" href="#!" class="btn btn-small text-danger"><i class="fas fa-trash"></i> Hapus</a>
+                                                    <a href="<?= base_url('admin/PengajuanPKL/editpengajuanpkl/' . $pengajuan->id_pengajuanpkl) ?>" class="btn btn-small"><i class="fas fa-edit"></i> Ubah</a>
+                                                    <a onclick="deleteConfirm('<?= base_url('admin/PengajuanPKL/hapuspengajuanpkl/' . $pengajuan->id_pengajuanpkl) ?>')" href="#!" class="btn btn-small text-danger"><i class="fas fa-trash"></i> Hapus</a>
                                                 </td>
                                             </tr>
                                         <?php endforeach; ?>

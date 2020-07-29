@@ -11,28 +11,24 @@
         <!-- Divider -->
         <hr class="sidebar-divider my-0">
 
-        <!-- Nav Item - Dashboard -->
-        <li class="nav-item <?php echo $this->uri->segment(2) == 'dashboard' ? 'active' : '' ?>">
-            <a class="nav-link" href="<?= base_url('pembimbingdudi/dashboard'); ?>">
-                <i class="fas fa-home"></i>
-                <span>Beranda</span></a>
-        </li>
+        <hr class="sidebar-divider">
 
-        <!-- Divider -->
-        <hr class="sidebar-divider my-0">
+        <div class="sidebar-heading" style="color: white;">
+              Catatan Kegiatan PKL Siswa
+          </div>
 
         <!-- Nav Item - Charts -->
-        <li class="nav-item <?php echo $this->uri->segment(2) == 'validasijurnalpkl' ? 'active' : '' ?>">
-            <a class="nav-link" href="<?= base_url('pembimbingdudi/validasijurnalpkl'); ?>">
+        <li class="nav-item <?php echo $this->uri->segment(2) == 'ValidasiJurnalPKL' ? 'active' : '' ?>">
+            <a class="nav-link" href="<?= base_url('pembimbingdudi/ValidasiJurnalPKL'); ?>">
                 <i class="fas fa-tasks"></i>
                 <span>Validasi Jurnal PKL</span></a>
         </li>
 
         <!-- Nav Item - Charts -->
-        <li class="nav-item <?php echo $this->uri->segment(2) == 'absensipkl' ? 'active' : '' ?>">
-            <a class="nav-link" href="<?= base_url('pembimbingdudi/absensipkl'); ?>">
+        <li class="nav-item <?php echo $this->uri->segment(2) == 'AbsensiPKL' ? 'active' : '' ?>">
+            <a class="nav-link" href="<?= base_url('pembimbingdudi/AbsensiPKL'); ?>">
                 <i class="fas fa-clipboard-check"></i>
-                <span style="font-size: 80%">Ketidakhadiran Siswa PKL</span></a>
+                <span>Ketidakhadiran Siswa PKL</span></a>
         </li>
 
         <!-- Divider -->
@@ -42,6 +38,8 @@
         <div class="text-center d-none d-md-inline">
             <button class="rounded-circle border-0" id="sidebarToggle"></button>
         </div>
+
+        <hr class="sidebar-divider">
 
     </ul>
     <!-- End of Sidebar -->

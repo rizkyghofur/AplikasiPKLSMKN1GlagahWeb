@@ -28,7 +28,7 @@
         <div class="container-fluid">
           <!-- Page Heading -->
           <div class="d-sm-flex align-items-center justify-content-between mb-4">
-            <h1 class="h3 mb-0 text-gray-800">Dashboard</h1>
+            <h1 class="h3 mb-0 text-gray-800">Beranda</h1>
           </div>
           <!-- Content Row -->
           <div class="card text-center">
@@ -40,8 +40,8 @@
                   <div class="span4"></div>
                 </div>
               </div>
-              <h5 class="card-title">Halaman Dasbor Aplikasi PKL SMKN 1 Glagah - Admin PKL</h5>
-              <p class="card-text">Selamat datang, <?php echo $this->session->userdata('nama'); ?></p>
+              <h5 class="card-title">Selamat Datang di Aplikasi PKL SMKN 1 Glagah - Admin PKL</h5>
+              <p class="card-text">Hai, <?php echo $this->session->userdata('nama_staf_tu'); ?></p>
               <div class="span4"></div>
             </div>
           </div>

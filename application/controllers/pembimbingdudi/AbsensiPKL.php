@@ -7,7 +7,11 @@ class AbsensiPKL extends CI_Controller
     public function __construct()
     {
         parent::__construct();
+        $this->load->model("admin");
         $this->load->model("absensipkl_model");
+        if ($this->admin->is_role() != "pembimbing_dudi") {
+            redirect("login/");
+        }
     }
 
     public function index()

@@ -48,20 +48,20 @@
                                 <table id="table_id" class="table table-striped table-bordered" cellspacing="0" width="100%">
                                     <thead>
                                         <tr>
-                                            <th>Username</th>
-                                            <th>Password</th>
-                                            <th>Nama</th>
-                                            <th>Role</th>
+                                            <th style="text-align:center">Username</th>
+                                            <th style="text-align:center">Password</th>
+                                            <th style="text-align:center">Nama</th>
+                                            <th style="text-align:center">Role</th>
                                             <th style="text-align:center">Opsi</th>
                                         </tr>
                                     </thead>
                                     <tbody>
                                         <?php foreach ($pengguna as $akun) : ?>
                                             <tr>
-                                                <td>
+                                                <td style="text-align:center">
                                                     <?php echo $akun->username ?>
                                                 </td>
-                                                <td>
+                                                <td style="text-align:center">
                                                     <?php echo $akun->password ?>
                                                 </td>
                                                 <td>
@@ -69,7 +69,7 @@
                                                     <?php echo $akun->nama_guru ?>
                                                     <?php echo $akun->nama_staf_tu ?>
                                                 </td>
-                                                <td>
+                                                <td style="text-align:center">
                                                     <?php
                                                     if ($akun->role == 'siswa') { ?>
                                                         Siswa
@@ -92,8 +92,8 @@
                                                     <?php } ?>
                                                 </td>
                                                 <td width="185" style="text-align:center">
-                                                    <a href="<?= base_url('admin/akun/editakun/' . $akun->id) ?>" class="btn btn-small"><i class="fas fa-edit"></i> Ubah</a>
-                                                    <a onclick="deleteConfirm('<?= base_url('admin/akun/hapusakun/' . $akun->id) ?>')" href="#!" class="btn btn-small text-danger"><i class="fas fa-trash"></i> Hapus</a>
+                                                    <a href="<?= base_url('admin/Akun/editakun/' . $akun->id) ?>" class="btn btn-small"><i class="fas fa-edit"></i> Ubah</a>
+                                                    <a onclick="deleteConfirm('<?= base_url('admin/Akun/hapusakun/' . $akun->id) ?>')" href="#!" class="btn btn-small text-danger"><i class="fas fa-trash"></i> Hapus</a>
                                                 </td>
                                             </tr>
                                         <?php endforeach; ?>

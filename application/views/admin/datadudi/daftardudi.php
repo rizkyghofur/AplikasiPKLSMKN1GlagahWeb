@@ -34,11 +34,11 @@
                     </div>
                     <div class="card mb-3">
                         <div class="card-header">
-                            <a href="<?= base_url('admin/datadudi/') ?>"><i class="fas fa-arrow-left"></i> Kembali</a>
+                            <a href="<?= base_url('admin/DataDUDI/') ?>"><i class="fas fa-arrow-left"></i> Kembali</a>
                         </div>
                         <div class="card-body">
 
-                            <form action="<?= base_url('admin/datadudi/daftardudi') ?>" method="post">
+                            <form action="<?= base_url('admin/DataDUDI/daftardudi') ?>" method="post">
                                 <div class="form-group">
                                     <label for="nama_dudi">Nama DUDI *</label>
                                     <input class="form-control <?php echo form_error('name') ? 'is-invalid' : '' ?>" type="text" name="nama_dudi" placeholder="" />

@@ -8,7 +8,7 @@ class emp
 
 $id_siswa = $_GET['id_siswa'];
 
-$query = mysqli_query($con, "SELECT * FROM pengajuanpkl where id_siswa=$id_siswa");
+$query = mysqli_query($con, "SELECT * FROM pengajuanpkl where id_siswa=$id_siswa and status_validasi='Diterima' or status_validasi = 'Proses Pengajuan' or status_validasi = 'Belum Tervalidasi'");
 
 $json = array();
 
@@ -17,7 +17,6 @@ while ($row = mysqli_fetch_assoc($query)) {
 }
 
 if (!empty($json)) {
-
     $status_pesan = new emp();
     $status_pesan->status_kode = 1;
     $status_pesan->status_pesan = "Maaf, Anda sudah mengajukan permohonan PKL sebelumnya, silahkan menunggu status validasi penerimaan";

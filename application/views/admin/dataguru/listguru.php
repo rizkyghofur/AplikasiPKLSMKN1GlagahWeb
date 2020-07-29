@@ -34,40 +34,39 @@
                     <div class="d-sm-flex align-items-center justify-content-between mb-2">
                         <h1 class="h2 mr-4 mb-0 text-gray-800"> Data Guru</h1>
                     </div>
+
                     <?php if ($this->session->flashdata('success')) : ?>
                         <div class="alert alert-success" role="alert">
                             <?php echo $this->session->flashdata('success'); ?>
                         </div>
                     <?php endif; ?>
+
                     <?php $this->load->view("_partials/breadcrumb.php") ?>
                     <!-- Content Row -->
 
                     <div class="card mb-3">
-                        <div class="card-header">
-                            <a href="<?= base_url("admin/dataguru/daftarguru") ?>"><i class="fas fa-plus"></i> Tambah Data Guru</a>
-                        </div>
                         <div class="card-body">
                             <div class="table-responsive">
                                 <table id="table_id" class="table table-striped table-bordered" cellspacing="0" width="100%">
                                     <thead>
                                         <tr>
-                                            <th>NIP</th>
-                                            <th>Nama Guru</th>
-                                            <th>Jenis Kelamin</th>
-                                            <th>Alamat</th>
+                                            <th style="text-align:center">NIP</th>
+                                            <th style="text-align:center">Nama Guru</th>
+                                            <th style="text-align:center">Jenis Kelamin</th>
+                                            <th style="text-align:center">Alamat</th>
                                             <th style="text-align:center">Opsi</th>
                                         </tr>
                                     </thead>
                                     <tbody>
                                         <?php foreach ($data_guru as $dtguru) : ?>
                                             <tr>
-                                                <td width="150">
+                                                <td>
                                                     <?php echo $dtguru->nip ?>
                                                 </td>
                                                 <td>
                                                     <?php echo $dtguru->nama_guru ?>
                                                 </td>
-                                                <td>
+                                                <td style="text-align:center">
                                                     <?php echo $dtguru->jenis_kelamin ?>
                                                 </td>
                                                 <td>

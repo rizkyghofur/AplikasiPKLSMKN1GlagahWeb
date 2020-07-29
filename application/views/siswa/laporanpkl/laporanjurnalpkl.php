@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
 
+<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.21/css/jquery.dataTables.min.css">
+
 <head>
     <?php $this->load->view("_partials/head.php") ?>
 </head>
@@ -28,62 +30,55 @@
                 <div class="container-fluid">
                     <!-- Page Heading -->
                     <div class="d-sm-flex align-items-center justify-content-between mb-2">
-                        <h1 class="h2 mr-4 mb-0 text-gray-800">program PKL</h1>
+                        <h1 class="h2 mr-4 mb-0 text-gray-800">Laporan Jurnal PKL</h1>
                     </div>
                     <?php $this->load->view("_partials/breadcrumb.php") ?>
                     <!-- Content Row -->
                     <div class="card mb-3">
                         <div class="card-header">
-
+                            <a class="btn btn-primary" href="<?= base_url("siswa/LaporanJurnalPKL/cetak_jurnal_pkl") ?>"><i class="fas fa-print"></i> Cetak</a>
                         </div>
                         <div class="card-body">
                             <div class="table-responsive">
-                                <table class="table table-hover" id="dataTable" width="100%" cellspacing="0">
+                                <table id="table_id" class="table table-striped table-bordered" cellspacing="0" width="100%">
                                     <thead>
                                         <tr>
-                                            <th>Tgl Pelaksanaan</th>
-                                            <th>Topik Pekerjaan</th>
-                                            <th>Kompetensi Dasar</th>
+                                            <th style="text-align:center">Tgl Pelaksanaan</th>
+                                            <th style="text-align:center">Topik Pekerjaan</th>
+                                            <th style="text-align:center">Rujukan Kompetensi Dasar</th>
+                                            <th style="text-align:center">Status Validasi</th>
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        <?php foreach ($program_pkl as $program) : ?>
+                                        <?php foreach ($jurnal_pkl as $jurnal) : ?>
                                             <tr>
-                                                <td width="200">
-                                                    <?php echo $program->tanggal ?>
+                                                <td style="text-align:center">
+                                                    <?php echo $jurnal->tanggal ?>
                                                 </td>
                                                 <td>
-                                                    <?php echo $program->topik_pekerjaan ?>
+                                                    <?php echo $jurnal->topik_pekerjaan ?>
                                                 </td>
                                                 <td>
-                                                    <?php echo $program->kompetensi_dasar ?>
+                                                    <?php echo $jurnal->kompetensi_dasar ?>
                                                 </td>
                                                 <td style="text-align:center">
                                                     <?php
-                                                    if ($program->status_validasi == 'Tervalidasi') { ?>
-                                                        <span class="badge badge-success"><?php echo $program->status_validasi; ?></span>
+                                                    if ($jurnal->status == 'Tervalidasi') { ?>
+                                                        <span class="badge badge-success"><?php echo $jurnal->status; ?></span>
                                                     <?php } ?>
                                                     <?php
-                                                    if ($program->status_validasi == 'Ditolak') { ?>
-                                                        <span class=" badge badge-danger"><?php echo $program->status_validasi; ?></span>
+                                                    if ($jurnal->status == 'Ditolak') { ?>
+                                                        <span class=" badge badge-danger"><?php echo $jurnal->status; ?></span>
                                                     <?php } ?>
                                                     <?php
-                                                    if ($program->status_validasi == 'Belum Tervalidasi') { ?>
-                                                        <span class="badge badge-warning"><?php echo $program->status_validasi; ?></span>
+                                                    if ($jurnal->status == 'Belum Tervalidasi') { ?>
+                                                        <span class="badge badge-warning"><?php echo $jurnal->status; ?></span>
                                                     <?php } ?>
-                                                </td>
-                                                <td>
-                                                    <?php echo $program->catatan ?>
                                                 </td>
                                             </tr>
                                         <?php endforeach; ?>
                                     </tbody>
                                 </table>
-                            </div>
-                            <div class="row">
-                                <div class="col">
-                                    <?php echo $pagination; ?>
-                                </div>
                             </div>
                         </div>
                     </div>
@@ -107,14 +102,15 @@
         <?php $this->load->view("_partials/modal.php") ?>
 
         <!-- Bootstrap core JavaScript-->
-        <script src="<?= base_url('assets/'); ?>vendor/jquery/jquery.min.js"></script>
-        <script src="<?= base_url('assets/'); ?>vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+        <?php $this->load->view("_partials/js.php") ?>
 
-        <!-- Core plugin JavaScript-->
-        <script src="<?= base_url('assets/'); ?>vendor/jquery-easing/jquery.easing.min.js"></script>
+        <script type="text/javascript" src="https://cdn.datatables.net/1.10.16/js/jquery.dataTables.min.js"></script>
 
-        <!-- Custom scripts for all pages-->
-        <script src="<?= base_url('assets/'); ?>js/sb-admin-2.min.js"></script>
+        <script type="text/javascript">
+            $(document).ready(function() {
+                $('#table_id').DataTable();
+            });
+        </script>
 
 </body>
 

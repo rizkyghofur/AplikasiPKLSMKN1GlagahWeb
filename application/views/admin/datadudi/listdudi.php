@@ -34,13 +34,19 @@
                     <div class="d-sm-flex align-items-center justify-content-between mb-2">
                         <h1 class="h2 mr-4 mb-0 text-gray-800"> Data DUDI</h1>
                     </div>
+                    
+                    <?php if ($this->session->flashdata('success')) : ?>
+                        <div class="alert alert-success" role="alert">
+                            <?php echo $this->session->flashdata('success'); ?>
+                        </div>
+                    <?php endif; ?>
 
                     <?php $this->load->view("_partials/breadcrumb.php") ?>
                     <!-- Content Row -->
 
                     <div class="card mb-3">
                         <div class="card-header">
-                            <a href="<?= base_url("admin/datadudi/daftardudi") ?>"><i class="fas fa-plus"></i> Tambah Data DUDI</a>
+                            <a href="<?= base_url("admin/DataDUDI/daftardudi") ?>"><i class="fas fa-plus"></i> Tambah Data DUDI</a>
                         </div>
                         <div class="card-body">
                             <div class="table-responsive">
@@ -87,8 +93,8 @@
                                                     <?php } ?>
                                                 </td>
                                                 <td width="185" style="text-align:center">
-                                                    <a href="<?= base_url('admin/datadudi/editdatadudi/' . $dtdudi->id_dudi) ?>" class="btn btn-small"><i class="fas fa-edit"></i> Ubah</a>
-                                                    <a onclick="deleteConfirm('<?= base_url('admin/datadudi/hapusdatadudi/' . $dtdudi->id_dudi) ?>')" href="#!" class="btn btn-small text-danger"><i class="fas fa-trash"></i> Hapus</a>
+                                                    <a href="<?= base_url('admin/DataDUDI/editdatadudi/' . $dtdudi->id_dudi) ?>" class="btn btn-small"><i class="fas fa-edit"></i> Ubah</a>
+                                                    <a onclick="deleteConfirm('<?= base_url('admin/DataDUDI/hapusdatadudi/' . $dtdudi->id_dudi) ?>')" href="#!" class="btn btn-small text-danger"><i class="fas fa-trash"></i> Hapus</a>
                                                 </td>
                                             </tr>
                                         <?php endforeach; ?>

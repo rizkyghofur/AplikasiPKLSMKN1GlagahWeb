@@ -34,7 +34,7 @@
                     </div>
                     <div class="card mb-3">
                         <div class="card-header">
-                            <a href="<?= base_url('admin/pengajuanpkl/') ?>"><i class="fas fa-arrow-left"></i> Kembali</a>
+                            <a href="<?= base_url('admin/PengajuanPKL/') ?>"><i class="fas fa-arrow-left"></i> Kembali</a>
                         </div>
                         <div class="card-body">
 
@@ -66,20 +66,24 @@
                                     </div>
                                 </div>
 
-                                <div class="form-group">
-                                    <label for="tanggal_masuk">Tanggal Masuk</label>
-                                    <input class="form-control <?php echo form_error('tanggal_masuk') ? 'is-invalid' : '' ?>" type="date" id="datepicker" name="tanggal_masuk" value="<?php echo $pengajuanpkl->tanggal_masuk ?>" />
-                                    <div class="invalid-feedback">
-                                        <?php echo form_error('tanggal_masuk') ?>
-                                    </div>
-                                </div>
+                                <div class="form-group row row-cols-1 row-cols-sm-2">
 
-                                <div class="form-group">
-                                    <label for="tanggal_keluar">Tanggal Keluar</label>
-                                    <input class="form-control <?php echo form_error('tanggal_keluar') ? 'is-invalid' : '' ?>" type="date" id="datepicker" name="tanggal_keluar" value="<?php echo $pengajuanpkl->tanggal_keluar ?>" />
-                                    <div class="invalid-feedback">
-                                        <?php echo form_error('tanggal_keluar') ?>
+                                    <div class="col">
+                                        <label for="tanggal_masuk">Tanggal Masuk</label>
+                                        <input class="form-control <?php echo form_error('tanggal_masuk') ? 'is-invalid' : '' ?>" type="date" id="datepicker" name="tanggal_masuk" value="<?php echo $pengajuanpkl->tanggal_masuk ?>" />
+                                        <div class="invalid-feedback">
+                                            <?php echo form_error('tanggal_masuk') ?>
+                                        </div>
                                     </div>
+
+                                    <div class="col">
+                                        <label for="tanggal_keluar">Tanggal Keluar</label>
+                                        <input class="form-control <?php echo form_error('tanggal_keluar') ? 'is-invalid' : '' ?>" type="date" id="datepicker" name="tanggal_keluar" value="<?php echo $pengajuanpkl->tanggal_keluar ?>" />
+                                        <div class="invalid-feedback">
+                                            <?php echo form_error('tanggal_keluar') ?>
+                                        </div>
+                                    </div>
+
                                 </div>
 
                                 <div class="form-group">

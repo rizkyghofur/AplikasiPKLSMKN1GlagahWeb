@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
 
+<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.21/css/jquery.dataTables.min.css">
+
 <head>
     <?php $this->load->view("_partials/head.php") ?>
 </head>
@@ -32,28 +34,28 @@
                     <div class="card mb-3">
                         <div class="card-body">
                             <div class="table-responsive">
-                                <table class="table table-hover" id="dataTable" width="100%" cellspacing="0">
+                                <table id="table_id" class="table table-striped table-bordered" cellspacing="0" width="100%">
                                     <thead>
                                         <tr>
-                                            <th>Nama Siswa</th>
-                                            <th>Kelas</th>
-                                            <th>Tanggal Absensi</th>
-                                            <th>Keterangan</th>
+                                            <th style="text-align:center">Nama Siswa</th>
+                                            <th style="text-align:center">Kelas</th>
+                                            <th style="text-align:center">Tanggal Absensi</th>
+                                            <th style="text-align:center">Keterangan</th>
                                         </tr>
                                     </thead>
                                     <tbody>
                                         <?php foreach ($absensi as $absen) : ?>
                                             <tr>
                                                 <td width="500">
-                                                    <?php echo $absen->nama ?>
+                                                    <?php echo $absen->nama_siswa ?>
                                                 </td>
-                                                <td>
+                                                <td style="text-align:center">
                                                     <?php echo $absen->kelas ?>
                                                 </td>
-                                                <td>
+                                                <td style="text-align:center">
                                                     <?php echo $absen->tanggal_absensi ?>
                                                 </td>
-                                                <td>
+                                                <td style="text-align:center">
                                                     <?php echo $absen->keterangan ?>
                                                 </td>
                                             </tr>
@@ -84,14 +86,15 @@
         <?php $this->load->view("_partials/modal.php") ?>
 
         <!-- Bootstrap core JavaScript-->
-        <script src="<?= base_url('assets/'); ?>vendor/jquery/jquery.min.js"></script>
-        <script src="<?= base_url('assets/'); ?>vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+        <?php $this->load->view("_partials/js.php") ?>
 
-        <!-- Core plugin JavaScript-->
-        <script src="<?= base_url('assets/'); ?>vendor/jquery-easing/jquery.easing.min.js"></script>
+        <script type="text/javascript" src="https://cdn.datatables.net/1.10.16/js/jquery.dataTables.min.js"></script>
 
-        <!-- Custom scripts for all pages-->
-        <script src="<?= base_url('assets/'); ?>js/sb-admin-2.min.js"></script>
+        <script type="text/javascript">
+            $(document).ready(function() {
+                $('#table_id').DataTable();
+            });
+        </script>
 
 </body>
 

@@ -5,7 +5,7 @@
 <meta name="author" content="">
 <link rel="shortcut icon" href="<?= base_url('assets/'); ?>img/favicon.ico">
 
-<title>Aplikasi PKL SMKN 1 Glagah - Dasbor Admin</title>
+<title>Aplikasi PKL SMKN 1 Glagah - <?php echo $title ?></title>
 
 <!-- Custom fonts for this template-->
 <link href="<?= base_url('assets/'); ?>vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">

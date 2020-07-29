@@ -32,7 +32,7 @@ class PengajuanPKL extends CI_Controller
         if ($validation->run()) {
             $pengajuanpkl->update();
             $this->session->set_flashdata('success', 'Berhasil disimpan');
-            redirect('admin/pengajuanpkl');
+            redirect('admin/PengajuanPKL');
         }
 
         $data['data_guru'] = $this->pengajuanpkl_model->get_data_guru();

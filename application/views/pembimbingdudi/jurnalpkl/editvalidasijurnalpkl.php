@@ -41,7 +41,7 @@
 
                     <div class="card mb-3">
                         <div class="card-header">
-                            <a href="<?= base_url('pembimbingdudi/validasijurnalpkl/') ?>"><i class="fas fa-arrow-left"></i> Kembali</a>
+                            <a href="<?= base_url('pembimbingdudi/ValidasiJurnalPKL/') ?>"><i class="fas fa-arrow-left"></i> Kembali</a>
                         </div>
                         <div class="card-body">
 
@@ -50,14 +50,46 @@
                                 <input type="hidden" name="id_jurnal_pkl" value="<?php echo $jurnal_pkl->id_jurnal_pkl ?>" />
 
                                 <div class="form-group">
-                                    <label for="status_validasi">Status Validasi</label>
-                                    <select class="form-control <?php echo form_error('status_validasi') ? 'is-invalid' : '' ?>" name="status_validasi">
-                                        <option value="<?php echo $jurnal_pkl->status_validasi ?>"><?php echo $jurnal_pkl->status_validasi ?></option>
+                                    <label for="nama_siswa">Nama Siswa</label>
+                                    <input class="form-control <?php echo form_error('nama_siswa') ? 'is-invalid' : '' ?>" name="nama_siswa" readonly value="<?php echo $jurnal_pkl->nama_siswa ?>" />
+                                    <div class="invalid-feedback">
+                                        <?php echo form_error('nama_siswa') ?>
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="kelas">Kelas</label>
+                                    <input class="form-control <?php echo form_error('kelas') ? 'is-invalid' : '' ?>" name="kelas" readonly value="<?php echo $jurnal_pkl->kelas ?>" />
+                                    <div class="invalid-feedback">
+                                        <?php echo form_error('kelas') ?>
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="tanggal">Tanggal Pelaksanaan</label>
+                                    <input class="form-control <?php echo form_error('tanggal') ? 'is-invalid' : '' ?>" name="tanggal" readonly value="<?php echo $jurnal_pkl->tanggal ?>" />
+                                    <div class="invalid-feedback">
+                                        <?php echo form_error('tanggal') ?>
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="topik_pekerjaan">Topik Pekerjaan</label>
+                                    <textarea class="form-control <?php echo form_error('topik_pekerjaan') ? 'is-invalid' : '' ?>" type="text" name="topik_pekerjaan" readonly><?php echo $jurnal_pkl->topik_pekerjaan ?></textarea>
+                                    <div class="invalid-feedback">
+                                        <?php echo form_error('topik_pekerjaan') ?>
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="status">Status Validasi</label>
+                                    <select class="form-control <?php echo form_error('status') ? 'is-invalid' : '' ?>" name="status">
+                                        <option value="<?php echo $jurnal_pkl->status ?>">Status Validasi : <?php echo $jurnal_pkl->status ?></option>
                                         <option value="Tervalidasi">Tervalidasi</option>
                                         <option value="Ditolak">Ditolak</option>
                                     </select>
                                     <div class="invalid-feedback">
-                                        <?php echo form_error('status_validasi') ?>
+                                        <?php echo form_error('status') ?>
                                     </div>
                                 </div>
 
@@ -77,7 +109,6 @@
                         <div class="card-footer small text-muted">
                             * Wajib diisi
                         </div>
-
 
                     </div>
                     <!-- End of Main Content -->
@@ -99,14 +130,7 @@
             <?php $this->load->view("_partials/modal.php") ?>
 
             <!-- Bootstrap core JavaScript-->
-            <script src="<?= base_url('assets/'); ?>vendor/jquery/jquery.min.js"></script>
-            <script src="<?= base_url('assets/'); ?>vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-
-            <!-- Core plugin JavaScript-->
-            <script src="<?= base_url('assets/'); ?>vendor/jquery-easing/jquery.easing.min.js"></script>
-
-            <!-- Custom scripts for all pages-->
-            <script src="<?= base_url('assets/'); ?>js/sb-admin-2.min.js"></script>
+            <?php $this->load->view("_partials/js.php") ?>
 
 </body>
 

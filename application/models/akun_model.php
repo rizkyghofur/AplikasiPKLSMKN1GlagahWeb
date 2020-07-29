@@ -52,7 +52,6 @@ class akun_model extends CI_Model
         $this->id = $post["id"];
         $this->username = $post["username"];
         $this->password = $post["password"];
-        $this->role = $post["role"];
         return $this->db->update($this->_table, $this, array("id" => $post["id"]));
     }
 
