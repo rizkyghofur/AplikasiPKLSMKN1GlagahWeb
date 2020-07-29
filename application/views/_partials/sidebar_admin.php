@@ -2,7 +2,7 @@
     <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
 
         <!-- Sidebar - Brand -->
-        <a class="sidebar-brand d-flex align-items-center justify-content-center" href="<?= base_url('admin/dashboard/'); ?>">
+        <a class="sidebar-brand d-flex align-items-center justify-content-center" href="<?= base_url('admin/Beranda/'); ?>">
             <div class="sidebar-brand-icon">
             </div>
             <div class="sidebar-brand-text">Halaman Admin PKL</div>
@@ -10,8 +10,8 @@
 
         <hr class="sidebar-divider my-0">
 
-        <li class="nav-item <?php echo $this->uri->segment(2) == 'dashboard' ? 'active' : '' ?>">
-            <a class="nav-link" href="<?= base_url('admin/dashboard/'); ?>">
+        <li class="nav-item <?php echo $this->uri->segment(2) == 'Beranda' ? 'active' : '' ?>">
+            <a class="nav-link" href="<?= base_url('admin/Beranda/'); ?>">
                 <i class="fas fa-fw fa-home"></i>
                 <span>Beranda</span></a>
         </li>

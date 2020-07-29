@@ -50,7 +50,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
 |		my-controller/my-method	-> my_controller/my_method
 */
 $route['default_controller'] = 'login';
-$route['admin'] = 'admin/dashboard';
+$route['admin'] = 'admin/beranda';
 $route['admin/datadudi'] = 'admin/datadudi/index';
 $route['admin/datadudi/daftardudi'] = 'admin/datadudi/daftardudi';
 $route['admin/datadudi/editdatadudi'] = 'admin/datadudi/editdatadudi';
@@ -63,7 +63,7 @@ $route['admin/dataguru/editdataguru'] = 'admin/dataguru/editdataguru';
 $route['admin/akun'] = 'admin/akun/index';
 $route['admin/akun/daftarakun'] = 'admin/akun/daftarakun';
 $route['admin/akun/editakun'] = 'admin/akun/editakun';
-$route['pembimbingdudi'] = 'pembimbingdudi/dashboard';
+$route['pembimbingdudi'] = 'pembimbingdudi/beranda';
 $route['pembimbingdudi/penilaianpkl'] = 'pembimbingdudi/penilaianpkl/index';
 $route['pembimbingdudi/validasijurnalpkl'] = 'pembimbingdudi/validasijurnalpkl/index';
 $route['pembimbingdudi/validasijurnalpkl/editvalidasijurnalpkl'] = 'pembimbingdudi/validasijurnalpkl/editvalidasijurnalpkl';

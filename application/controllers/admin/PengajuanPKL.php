@@ -17,6 +17,7 @@ class PengajuanPKL extends CI_Controller
 
     public function index()
     {
+        $data['title'] = 'Pengajuan PKL';
         $data['pengajuanpkl'] = $this->pengajuanpkl_model->getAll();
         $data['data_guru'] = $this->pengajuanpkl_model->get_data_guru();
         $this->load->view("admin/pengajuanpkl/listpengajuan", $data);
@@ -24,6 +25,7 @@ class PengajuanPKL extends CI_Controller
 
     public function editpengajuanpkl($id = null)
     {
+        $data['title'] = 'Ubah Pengajuan PKL';
         if (!isset($id)) redirect('admin/pengajuanpkl');
         $pengajuanpkl = $this->pengajuanpkl_model;
         $validation = $this->form_validation;

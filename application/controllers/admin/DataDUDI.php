@@ -17,6 +17,7 @@ class DataDUDI extends CI_Controller
 
     public function index()
     {
+        $data['title'] = 'Data DUDI';
         $data['data_dudi'] = $this->datadudi_model->getAll();
         $this->load->view("admin/datadudi/listdudi", $data);
     }
@@ -32,11 +33,13 @@ class DataDUDI extends CI_Controller
             $this->session->set_flashdata('success', 'Berhasil disimpan');
             redirect('admin/DataDUDI');
         }
-        $this->load->view("admin/datadudi/daftardudi");
+        $data['title'] = 'Tambah Data DUDI';
+        $this->load->view("admin/datadudi/daftardudi", $data);
     }
 
     public function editdatadudi($id = null)
     {
+
         if (!isset($id)) redirect('admin/DataDUDI');
         $datadudi = $this->datadudi_model;
         $validation = $this->form_validation;
@@ -47,7 +50,7 @@ class DataDUDI extends CI_Controller
             $this->session->set_flashdata('success', 'Berhasil diubah');
             redirect('admin/DataDUDI');
         }
-
+        $data['title'] = 'Ubah Data DUDI';
         $data["datadudi"] = $datadudi->getById($id);
         if (!$data["datadudi"]) show_404();
         $this->load->view("admin/datadudi/editdatadudi", $data);

@@ -14,13 +14,13 @@ class Login extends CI_Controller
     public function index()
     {
         if ($this->session->userdata("role") == "admin_pkl") {
-            redirect('admin/dashboard/');
+            redirect('admin/beranda/');
         }
         if ($this->session->userdata("role") == "pembimbing_dudi") {
-            redirect('pembimbingdudi/dashboard');
+            redirect('pembimbingdudi/beranda');
         }
         if ($this->session->userdata("role") == "siswa") {
-            redirect('siswa/dashboard/');
+            redirect('siswa/beranda/');
         } else {
 
             $this->form_validation->set_rules('username', 'Username', 'required');
@@ -46,11 +46,11 @@ class Login extends CI_Controller
                         );
                         $this->session->set_userdata($session_data);
                         if ($this->session->userdata("role") === "admin_pkl") {
-                            redirect('admin/dashboard/');
+                            redirect('admin/beranda/');
                         } elseif ($this->session->userdata("role") === "pembimbing_dudi") {
-                            redirect('pembimbingdudi/dashboard/');
+                            redirect('pembimbingdudi/beranda/');
                         } else {
-                            redirect('siswa/dashboard/');
+                            redirect('siswa/beranda/');
                         }
                     }
                 } else {

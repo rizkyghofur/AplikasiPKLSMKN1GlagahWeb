@@ -17,12 +17,14 @@ class Akun extends CI_Controller
 
     public function index()
     {
+        $data['title'] = 'Akun Pengguna';
         $data['pengguna'] = $this->akun_model->getAll();
         $this->load->view("admin/akun/listakun", $data);
     }
 
     public function editakun($id = null)
     {
+        $data['title'] = 'Ubah Akun Pengguna';
         if (!isset($id)) redirect('admin/akun');
         $akun = $this->akun_model;
         $validation = $this->form_validation;

@@ -17,6 +17,7 @@ class DataSiswa extends CI_Controller
 
     public function index()
     {
+        $data['title'] = 'Data Siswa';
         $data['data_siswa'] = $this->datasiswa_model->getAll();
         $this->load->view("admin/datasiswa/listsiswa", $data);
     }

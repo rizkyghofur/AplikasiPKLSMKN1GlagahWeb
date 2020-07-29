@@ -23,10 +23,13 @@ class LaporanProgramPKL extends CI_Controller
     public function cetak_program_pkl($id_siswa = null)
     {
         $this->load->library('fpdf');
-        if (!isset($id_siswa)) redirect('siswa/LaporanProgramPKL');
+        if (!isset($id_siswa)) {
+            redirect('siswa/LaporanProgramPKL');
+        }
         $cetakprogrampkl = $this->programpkl_model;
         $data["data_program_pkl"] = $cetakprogrampkl->getAll();
         $data["program_pkl"] = $cetakprogrampkl->getById($id_siswa);
+        if (!$data["data_program_pkl"]) show_error('Tidak ditemukan data', '404', 'Tidak dapat mencetak laporan program PKL');
         $this->load->view('siswa/laporanpkl/cetakprogrampkl', $data);
     }
 }

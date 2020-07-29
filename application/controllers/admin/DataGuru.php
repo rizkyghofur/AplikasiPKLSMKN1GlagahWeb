@@ -17,6 +17,7 @@ class DataGuru extends CI_Controller
 
     public function index()
     {
+        $data['title'] = 'Data Guru';
         $data['data_guru'] = $this->dataguru_model->getAll();
         $this->load->view("admin/dataguru/listguru", $data);
     }

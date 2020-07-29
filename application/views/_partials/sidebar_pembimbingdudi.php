@@ -2,7 +2,7 @@
     <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
 
         <!-- Sidebar - Brand -->
-        <a class="sidebar-brand d-flex align-items-center justify-content-center" href="<?= base_url('pembimbingdudi/dashboard/'); ?>">
+        <a class="sidebar-brand d-flex align-items-center justify-content-center" href="<?= base_url('pembimbingdudi/Beranda/'); ?>">
             <div class="sidebar-brand-icon">
             </div>
             <div class="sidebar-brand-text">Halaman Pembimbing DUDI</div>
@@ -14,8 +14,8 @@
         <hr class="sidebar-divider">
 
         <div class="sidebar-heading" style="color: white;">
-              Catatan Kegiatan PKL Siswa
-          </div>
+            Catatan Kegiatan PKL Siswa
+        </div>
 
         <!-- Nav Item - Charts -->
         <li class="nav-item <?php echo $this->uri->segment(2) == 'ValidasiJurnalPKL' ? 'active' : '' ?>">

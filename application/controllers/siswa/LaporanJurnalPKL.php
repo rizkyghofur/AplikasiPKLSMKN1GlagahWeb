@@ -24,6 +24,7 @@ class LaporanJurnalPKL extends CI_Controller
     {
         $this->load->library('fpdf');
         $data['jurnal_pkl'] = $this->jurnalpkl_model->getAll();
+        if (!$data["jurnal_pkl"]) show_error('Tidak ditemukan data', '404', 'Tidak dapat mencetak laporan jurnal PKL');
         $this->load->view('siswa/laporanpkl/cetakjurnalpkl', $data);
     }
 }
