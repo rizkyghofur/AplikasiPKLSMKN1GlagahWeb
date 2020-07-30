@@ -13,7 +13,7 @@
     <div id="wrapper">
 
         <!-- Sidebar -->
-        <?php $this->load->view("_partials/sidebar_pembimbingdudi.php") ?>
+        <?php $this->load->view("_partials/sidebar.php") ?>
         <!-- End of Sidebar -->
 
         <!-- Content Wrapper -->

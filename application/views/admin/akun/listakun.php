@@ -13,7 +13,7 @@
     <div id="wrapper">
 
         <!-- Sidebar -->
-        <?php $this->load->view("_partials/sidebar_admin.php") ?>
+        <?php $this->load->view("_partials/sidebar.php") ?>
         <!-- End of Sidebar -->
 
         <!-- Content Wrapper -->
@@ -52,7 +52,6 @@
                                             <th style="text-align:center">Password</th>
                                             <th style="text-align:center">Nama</th>
                                             <th style="text-align:center">Role</th>
-                                            <th style="text-align:center">Opsi</th>
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -90,10 +89,6 @@
                                                     if ($akun->role == 'admin_pkl') { ?>
                                                         Administrator PKL
                                                     <?php } ?>
-                                                </td>
-                                                <td width="185" style="text-align:center">
-                                                    <a href="<?= base_url('admin/Akun/editakun/' . $akun->id) ?>" class="btn btn-small"><i class="fas fa-edit"></i> Ubah</a>
-                                                    <a onclick="deleteConfirm('<?= base_url('admin/Akun/hapusakun/' . $akun->id) ?>')" href="#!" class="btn btn-small text-danger"><i class="fas fa-trash"></i> Hapus</a>
                                                 </td>
                                             </tr>
                                         <?php endforeach; ?>

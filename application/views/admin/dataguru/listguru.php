@@ -13,7 +13,7 @@
     <div id="wrapper">
 
         <!-- Sidebar -->
-        <?php $this->load->view("_partials/sidebar_admin.php") ?>
+        <?php $this->load->view("_partials/sidebar.php") ?>
         <!-- End of Sidebar -->
 
         <!-- Content Wrapper -->
@@ -54,7 +54,6 @@
                                             <th style="text-align:center">Nama Guru</th>
                                             <th style="text-align:center">Jenis Kelamin</th>
                                             <th style="text-align:center">Alamat</th>
-                                            <th style="text-align:center">Opsi</th>
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -71,10 +70,6 @@
                                                 </td>
                                                 <td>
                                                     <?php echo $dtguru->alamat ?>
-                                                </td>
-                                                <td width="185" style="text-align:center">
-                                                    <a href="<?= base_url('admin/dataguru/editdataguru/' . $dtguru->id_guru) ?>" class="btn btn-small"><i class="fas fa-edit"></i> Ubah</a>
-                                                    <a onclick="deleteConfirm('<?= base_url('admin/dataguru/hapusdataguru/' . $dtguru->id_guru) ?>')" href="#!" class="btn btn-small text-danger"><i class="fas fa-trash"></i> Hapus</a>
                                                 </td>
                                             </tr>
                                         <?php endforeach; ?>

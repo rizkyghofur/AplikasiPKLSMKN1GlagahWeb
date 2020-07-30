@@ -8,7 +8,7 @@ class emp
 
 $id_siswa = $_GET['id_siswa'];
 
-$query = mysqli_query($con, "SELECT * FROM `data_siswa` left join pengajuanpkl on pengajuanpkl.id_siswa=data_siswa.id_siswa where data_siswa.id_siswa = $id_siswa");
+$query = mysqli_query($con, "SELECT * FROM `data_siswa` left join pengajuanpkl on pengajuanpkl.id_siswa=data_siswa.id_siswa where data_siswa.id_siswa = $id_siswa order by pengajuanpkl.id_pengajuanpkl desc");
 
 $row = mysqli_fetch_array($query);
 

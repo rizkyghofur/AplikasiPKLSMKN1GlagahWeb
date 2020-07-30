@@ -14,7 +14,7 @@
     <div id="wrapper">
 
         <!-- Sidebar -->
-        <?php $this->load->view("_partials/sidebar_admin.php") ?>
+        <?php $this->load->view("_partials/sidebar.php") ?>
         <!-- End of Sidebar -->
 
         <!-- Content Wrapper -->
@@ -105,7 +105,6 @@
                                                 </td>
                                                 <td width="185" style="text-align:center">
                                                     <a href="<?= base_url('admin/PengajuanPKL/editpengajuanpkl/' . $pengajuan->id_pengajuanpkl) ?>" class="btn btn-small"><i class="fas fa-edit"></i> Ubah</a>
-                                                    <a onclick="deleteConfirm('<?= base_url('admin/PengajuanPKL/hapuspengajuanpkl/' . $pengajuan->id_pengajuanpkl) ?>')" href="#!" class="btn btn-small text-danger"><i class="fas fa-trash"></i> Hapus</a>
                                                 </td>
                                             </tr>
                                         <?php endforeach; ?>

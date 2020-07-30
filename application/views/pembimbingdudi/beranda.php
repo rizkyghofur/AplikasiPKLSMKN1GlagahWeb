@@ -11,7 +11,7 @@
   <div id="wrapper">
 
     <!-- Sidebar -->
-    <?php $this->load->view("_partials/sidebar_siswa.php") ?>
+    <?php $this->load->view("_partials/sidebar.php") ?>
     <!-- End of Sidebar -->
 
     <!-- Content Wrapper -->
@@ -26,12 +26,10 @@
 
         <!-- Begin Page Content -->
         <div class="container-fluid">
-
           <!-- Page Heading -->
           <div class="d-sm-flex align-items-center justify-content-between mb-4">
-            <h1 class="h3 mb-0 text-gray-800">Dashboard</h1>
+            <h1 class="h3 mb-0 text-gray-800">Beranda</h1>
           </div>
-
           <!-- Content Row -->
           <div class="card text-center">
             <div class="container">
@@ -42,8 +40,8 @@
                   <div class="span4"></div>
                 </div>
               </div>
-              <h5 class="card-title">Halaman Dasbor Aplikasi PKL SMKN 1 Glagah - Siswa</h5>
-              <p class="card-text">Selamat datang, <?php echo $this->session->userdata('nama'); ?></p>
+              <h5 class="card-title">Selamat Datang di Aplikasi PKL SMKN 1 Glagah - Pembimbing DUDI</h5>
+              <p class="card-text">Hai, <?php echo $this->session->userdata('nama_dudi'); ?></p>
               <div class="span4"></div>
             </div>
           </div>
@@ -65,17 +63,9 @@
 
     <!-- Logout Modal-->
     <?php $this->load->view("_partials/modal.php") ?>
-    <!-- End of Logout Modal -->
 
     <!-- Bootstrap core JavaScript-->
-    <script src="<?= base_url('assets/'); ?>vendor/jquery/jquery.min.js"></script>
-    <script src="<?= base_url('assets/'); ?>vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-
-    <!-- Core plugin JavaScript-->
-    <script src="<?= base_url('assets/'); ?>vendor/jquery-easing/jquery.easing.min.js"></script>
-
-    <!-- Custom scripts for all pages-->
-    <script src="<?= base_url('assets/'); ?>js/sb-admin-2.min.js"></script>
+    <?php $this->load->view("_partials/js.php") ?>
 
 </body>
 

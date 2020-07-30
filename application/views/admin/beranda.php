@@ -11,7 +11,7 @@
   <div id="wrapper">
 
     <!-- Sidebar -->
-    <?php $this->load->view("_partials/sidebar_pembimbingdudi.php") ?>
+    <?php $this->load->view("_partials/sidebar.php") ?>
     <!-- End of Sidebar -->
 
     <!-- Content Wrapper -->
@@ -40,8 +40,8 @@
                   <div class="span4"></div>
                 </div>
               </div>
-              <h5 class="card-title">Selamat Datang di Aplikasi PKL SMKN 1 Glagah - Pembimbing DUDI</h5>
-              <p class="card-text">Hai, <?php echo $this->session->userdata('nama_dudi'); ?></p>
+              <h5 class="card-title">Selamat Datang di Aplikasi PKL SMKN 1 Glagah - Admin PKL</h5>
+              <p class="card-text">Hai, <?php echo $this->session->userdata('nama_staf_tu'); ?></p>
               <div class="span4"></div>
             </div>
           </div>
@@ -65,14 +65,7 @@
     <?php $this->load->view("_partials/modal.php") ?>
 
     <!-- Bootstrap core JavaScript-->
-    <script src="<?= base_url('assets/'); ?>vendor/jquery/jquery.min.js"></script>
-    <script src="<?= base_url('assets/'); ?>vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-
-    <!-- Core plugin JavaScript-->
-    <script src="<?= base_url('assets/'); ?>vendor/jquery-easing/jquery.easing.min.js"></script>
-
-    <!-- Custom scripts for all pages-->
-    <script src="<?= base_url('assets/'); ?>js/sb-admin-2.min.js"></script>
+    <?php $this->load->view("_partials/js.php") ?>
 
 </body>
 

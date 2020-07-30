@@ -13,7 +13,7 @@
     <div id="wrapper">
 
         <!-- Sidebar -->
-        <?php $this->load->view("_partials/sidebar_admin.php") ?>
+        <?php $this->load->view("_partials/sidebar.php") ?>
         <!-- End of Sidebar -->
 
         <!-- Content Wrapper -->
@@ -34,14 +34,14 @@
                     <div class="d-sm-flex align-items-center justify-content-between mb-2">
                         <h1 class="h2 mr-4 mb-0 text-gray-800"> Data Siswa</h1>
                     </div>
-                    
+
                     <?php if ($this->session->flashdata('success')) : ?>
                         <div class="alert alert-success" role="alert">
                             <?php echo $this->session->flashdata('success'); ?>
                         </div>
                     <?php endif; ?>
                     <?php $this->load->view("_partials/breadcrumb.php") ?>
-                    
+
                     <!-- Content Row -->
 
                     <div class="card mb-3">
@@ -83,10 +83,6 @@
                                                 </td>
                                                 <td>
                                                     <?php echo $dtsiswa->tgl_lahir ?>
-                                                </td>
-                                                <td width="185" style="text-align:center">
-                                                    <a href="<?= base_url('admin/datasiswa/editdatasiswa/' . $dtsiswa->id_siswa) ?>" class="btn btn-small"><i class="fas fa-edit"></i> Ubah</a>
-                                                    <a onclick="deleteConfirm('<?= base_url('admin/datasiswa/hapusdatasiswa/' . $dtsiswa->id_siswa) ?>')" href="#!" class="btn btn-small text-danger"><i class="fas fa-trash"></i> Hapus</a>
                                                 </td>
                                             </tr>
                                         <?php endforeach; ?>
