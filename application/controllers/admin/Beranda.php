@@ -16,7 +16,7 @@ class Beranda extends CI_Controller
     public function index()
     {
         $data['title'] = 'Beranda';
-        $this->load->view("admin/dashboard", $data);
+        $this->load->view("admin/beranda", $data);
     }
 
     public function logout()
