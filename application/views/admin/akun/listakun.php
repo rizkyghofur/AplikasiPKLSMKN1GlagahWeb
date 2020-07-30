@@ -48,25 +48,32 @@
                                 <table id="table_id" class="table table-striped table-bordered" cellspacing="0" width="100%">
                                     <thead>
                                         <tr>
+                                            <th style="text-align:center">No.</th>
+                                            <th style="text-align:center">Nama Pengguna</th>
                                             <th style="text-align:center">Username</th>
                                             <th style="text-align:center">Password</th>
-                                            <th style="text-align:center">Nama</th>
                                             <th style="text-align:center">Role</th>
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        <?php foreach ($pengguna as $akun) : ?>
+                                        <?php
+                                        $i = 1;
+                                        foreach ($pengguna as $akun) : ?>
                                             <tr>
                                                 <td style="text-align:center">
-                                                    <?php echo $akun->username ?>
-                                                </td>
-                                                <td style="text-align:center">
-                                                    <?php echo $akun->password ?>
+                                                    <?php echo $i ?>
                                                 </td>
                                                 <td>
                                                     <?php echo $akun->nama_siswa ?>
                                                     <?php echo $akun->nama_guru ?>
                                                     <?php echo $akun->nama_staf_tu ?>
+                                                    <?php echo $akun->nama_dudi ?>
+                                                </td>
+                                                <td style="text-align:center">
+                                                    <?php echo $akun->username ?>
+                                                </td>
+                                                <td style="text-align:center">
+                                                    <?php echo $akun->password ?>
                                                 </td>
                                                 <td style="text-align:center">
                                                     <?php
@@ -90,6 +97,7 @@
                                                         Administrator PKL
                                                     <?php } ?>
                                                 </td>
+                                                <?php $i++ ?>
                                             </tr>
                                         <?php endforeach; ?>
                                     </tbody>

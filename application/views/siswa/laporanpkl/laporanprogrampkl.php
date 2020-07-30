@@ -45,6 +45,7 @@
                                 <table id="table_id" class="table table-striped table-bordered" cellspacing="0" width="100%">
                                     <thead>
                                         <tr>
+                                            <th style="text-align:center">No.</th>
                                             <th style="text-align:center">Tgl Pelaksanaan</th>
                                             <th style="text-align:center">Topik Pekerjaan</th>
                                             <th style="text-align:center">Kompetensi Dasar</th>
@@ -52,8 +53,13 @@
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        <?php foreach ($program_pkl as $program) : ?>
+                                        <?php
+                                        $i = 1;
+                                        foreach ($program_pkl as $program) : ?>
                                             <tr>
+                                                <td style="text-align:center">
+                                                    <?php echo $i ?>
+                                                </td>
                                                 <td style="text-align:center">
                                                     <?php echo $program->tanggal ?>
                                                 </td>
@@ -66,6 +72,7 @@
                                                 <td>
                                                     <?php echo $program->nama_dudi ?>
                                                 </td>
+                                                <?php $i++ ?>
                                             </tr>
                                         <?php endforeach; ?>
                                     </tbody>

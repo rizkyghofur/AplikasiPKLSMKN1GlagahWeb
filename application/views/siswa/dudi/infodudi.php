@@ -50,6 +50,7 @@
                                 <table id="table_id" class="table table-striped table-bordered" cellspacing="0" width="100%">
                                     <thead>
                                         <tr>
+                                            <th style="text-align:center">No.</th>
                                             <th style="text-align:center">Nama DUDI</th>
                                             <th style="text-align:center">Alamat DUDI</th>
                                             <th style="text-align:center">No Telp. DUDI</th>
@@ -60,9 +61,14 @@
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        <?php foreach ($data_dudi as $dtdudi) : ?>
+                                        <?php
+                                        $i = 1;
+                                        foreach ($data_dudi as $dtdudi) : ?>
                                             <tr>
-                                                <td width="150">
+                                                <td style="text-align:center">
+                                                    <?php echo $i ?>
+                                                </td>
+                                                <td>
                                                     <?php echo $dtdudi->nama_dudi ?>
                                                 </td>
                                                 <td>
@@ -88,6 +94,7 @@
                                                         <?php echo $dtdudi->kuota; ?>
                                                     <?php } ?>
                                                 </td>
+                                                <?php $i++ ?>
                                             <?php endforeach; ?>
                                     </tbody>
                                 </table>

@@ -49,6 +49,7 @@
                                 <table id="table_id" class="table table-striped table-bordered" cellspacing="0" width="100%">
                                     <thead>
                                         <tr>
+                                            <th style="text-align:center">No.</th>
                                             <th style="text-align:center">Nama Siswa</th>
                                             <th style="text-align:center">Kelas</th>
                                             <th style="text-align:center">Nama DUDI</th>
@@ -60,9 +61,14 @@
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        <?php foreach ($pengajuanpkl as $pengajuan) : ?>
+                                        <?php
+                                        $i = 1;
+                                        foreach ($pengajuanpkl as $pengajuan) : ?>
                                             <tr>
-                                                <td width="150">
+                                                <td style="text-align:center">
+                                                    <?php echo $i ?>
+                                                </td>
+                                                <td>
                                                     <?php echo $pengajuan->nama_siswa; ?>
                                                 </td>
                                                 <td style="text-align:center">
@@ -73,8 +79,8 @@
                                                 </td>
                                                 <td style="text-align:center">
                                                     <?php echo $pengajuan->tanggal_masuk; ?>
-                                                </td style="text-align:center">
-                                                <td>
+                                                </td>
+                                                <td style="text-align:center">
                                                     <?php echo $pengajuan->tanggal_keluar; ?>
                                                 </td>
                                                 <td>
@@ -103,9 +109,10 @@
                                                         <span class="badge badge-warning"><?php echo $pengajuan->status_validasi; ?></span>
                                                     <?php } ?>
                                                 </td>
-                                                <td width="185" style="text-align:center">
+                                                <td style="text-align:center">
                                                     <a href="<?= base_url('admin/PengajuanPKL/editpengajuanpkl/' . $pengajuan->id_pengajuanpkl) ?>" class="btn btn-small"><i class="fas fa-edit"></i> Ubah</a>
                                                 </td>
+                                                <?php $i++ ?>
                                             </tr>
                                         <?php endforeach; ?>
                                     </tbody>

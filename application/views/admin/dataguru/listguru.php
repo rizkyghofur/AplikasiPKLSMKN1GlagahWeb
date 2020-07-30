@@ -50,6 +50,7 @@
                                 <table id="table_id" class="table table-striped table-bordered" cellspacing="0" width="100%">
                                     <thead>
                                         <tr>
+                                            <th style="text-align:center">No.</th>
                                             <th style="text-align:center">NIP</th>
                                             <th style="text-align:center">Nama Guru</th>
                                             <th style="text-align:center">Jenis Kelamin</th>
@@ -57,8 +58,13 @@
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        <?php foreach ($data_guru as $dtguru) : ?>
+                                        <?php
+                                        $i = 1;
+                                        foreach ($data_guru as $dtguru) : ?>
                                             <tr>
+                                                <td style="text-align:center">
+                                                    <?php echo $i ?>
+                                                </td>
                                                 <td>
                                                     <?php echo $dtguru->nip ?>
                                                 </td>
@@ -71,9 +77,9 @@
                                                 <td>
                                                     <?php echo $dtguru->alamat ?>
                                                 </td>
+                                                <?php $i++ ?>
                                             </tr>
                                         <?php endforeach; ?>
-
                                     </tbody>
                                 </table>
                             </div>

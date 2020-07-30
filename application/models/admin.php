@@ -3,19 +3,17 @@ defined('BASEPATH') or exit('No direct script access allowed');
 
 class Admin extends CI_Model
 {
-    //fungsi cek session logged in
+
     function is_logged_in()
     {
         return $this->session->userdata('id', 'role');
     }
 
-    //fungsi cek level
     function is_role()
     {
         return $this->session->userdata('role');
     }
 
-    //fungsi check login
     function check_login($table, $field1, $field2)
     {
         $this->db->select('*');

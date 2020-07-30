@@ -53,6 +53,7 @@
                                 <table id="table_id" class="table table-striped table-bordered" cellspacing="0" width="100%">
                                     <thead>
                                         <tr>
+                                            <th style="text-align:center">No.</th>
                                             <th style="text-align:center">Nama DUDI</th>
                                             <th style="text-align:center">Alamat DUDI</th>
                                             <th style="text-align:center">No Telp. DUDI</th>
@@ -64,9 +65,14 @@
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        <?php foreach ($data_dudi as $dtdudi) : ?>
+                                        <?php
+                                        $i = 1;
+                                        foreach ($data_dudi as $dtdudi) : ?>
                                             <tr>
-                                                <td width="150">
+                                                <td>
+                                                    <?php echo $i ?>
+                                                </td>
+                                                <td>
                                                     <?php echo $dtdudi->nama_dudi ?>
                                                 </td>
                                                 <td>
@@ -96,6 +102,7 @@
                                                     <a href="<?= base_url('admin/DataDUDI/editdatadudi/' . $dtdudi->id_dudi) ?>" class="btn btn-small"><i class="fas fa-edit"></i> Ubah</a>
                                                     <a onclick="deleteConfirm('<?= base_url('admin/DataDUDI/hapusdatadudi/' . $dtdudi->id_dudi) ?>')" href="#!" class="btn btn-small text-danger"><i class="fas fa-trash"></i> Hapus</a>
                                                 </td>
+                                                <?php $i++ ?>
                                             </tr>
                                         <?php endforeach; ?>
                                     </tbody>

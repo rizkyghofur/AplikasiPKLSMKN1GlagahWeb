@@ -26,12 +26,15 @@
 
                 <!-- Begin Page Content -->
                 <div class="container-fluid">
+
                     <!-- Page Heading -->
                     <?php $this->load->view("_partials/breadcrumb.php") ?>
+
                     <!-- Content Row -->
                     <div class="d-sm-flex align-items-center justify-content-between mb-2">
                         <h1 class="h2 mr-4 mb-0 text-gray-800">Ubah Data DUDI</h1>
                     </div>
+
                     <div class="card mb-3">
                         <div class="card-header">
                             <a href="<?= base_url('admin/DataDUDI/') ?>"><i class="fas fa-arrow-left"></i> Kembali</a>
@@ -106,7 +109,6 @@
                         <div class="card-footer small text-muted">
                             * Wajib diisi
                         </div>
-
 
                     </div>
                     <!-- End of Main Content -->

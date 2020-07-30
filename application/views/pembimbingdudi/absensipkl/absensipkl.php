@@ -33,7 +33,6 @@
                     <div class="d-sm-flex align-items-center justify-content-between mb-2">
                         <h1 class="h2 mr-4 mb-0 text-gray-800">Absensi Ketidakhadiran Siswa PKL</h1>
                     </div>
-
                     <?php $this->load->view("_partials/breadcrumb.php") ?>
 
                     <!-- Content Row -->
@@ -43,6 +42,7 @@
                                 <table id="table_id" class="table table-striped table-bordered" cellspacing="0" width="100%">
                                     <thead>
                                         <tr>
+                                            <th style="text-align:center">No.</th>
                                             <th style="text-align:center">Nama Siswa</th>
                                             <th style="text-align:center">Kelas</th>
                                             <th style="text-align:center">Tanggal Absensi</th>
@@ -50,9 +50,14 @@
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        <?php foreach ($absensi as $absen) : ?>
+                                        <?php
+                                        $i = 1;
+                                        foreach ($absensi as $absen) : ?>
                                             <tr>
-                                                <td width="500">
+                                                <td style="text-align:center">
+                                                    <?php echo $i ?>
+                                                </td>
+                                                <td>
                                                     <?php echo $absen->nama_siswa ?>
                                                 </td>
                                                 <td style="text-align:center">
@@ -64,9 +69,9 @@
                                                 <td style="text-align:center">
                                                     <?php echo $absen->keterangan ?>
                                                 </td>
+                                                <?php $i++ ?>
                                             </tr>
                                         <?php endforeach; ?>
-
                                     </tbody>
                                 </table>
                             </div>

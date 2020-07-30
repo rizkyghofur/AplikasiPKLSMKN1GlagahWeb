@@ -14,11 +14,6 @@ class pengajuanpkl_model extends CI_Model
     public function rules()
     {
         return [
-            [
-                'field' => 'id_guru',
-                'label' => 'Nama Guru',
-                'rules' => 'required'
-            ],
 
             [
                 'field' => 'status_validasi',

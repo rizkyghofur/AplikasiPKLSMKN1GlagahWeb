@@ -26,13 +26,14 @@
 
                 <!-- Begin Page Content -->
                 <div class="container-fluid">
+
                     <!-- Page Heading -->
                     <div class="d-sm-flex align-items-center justify-content-between mb-2">
                         <h1 class="h2 mr-4 mb-0 text-gray-800"> Ubah Validasi Jurnal PKL</h1>
                     </div>
                     <?php $this->load->view("_partials/breadcrumb.php") ?>
-                    <!-- Content Row -->
 
+                    <!-- Content Row -->
                     <?php if ($this->session->flashdata('success')) : ?>
                         <div class="alert alert-success" role="alert">
                             <?php echo $this->session->flashdata('success'); ?>

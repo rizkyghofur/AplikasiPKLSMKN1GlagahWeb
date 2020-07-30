@@ -28,11 +28,13 @@
 
                 <!-- Begin Page Content -->
                 <div class="container-fluid">
+
                     <!-- Page Heading -->
                     <div class="d-sm-flex align-items-center justify-content-between mb-2">
                         <h1 class="h2 mr-4 mb-0 text-gray-800">Laporan Jurnal PKL</h1>
                     </div>
                     <?php $this->load->view("_partials/breadcrumb.php") ?>
+
                     <!-- Content Row -->
                     <div class="card mb-3">
                         <div class="card-header">
@@ -43,6 +45,7 @@
                                 <table id="table_id" class="table table-striped table-bordered" cellspacing="0" width="100%">
                                     <thead>
                                         <tr>
+                                            <th style="text-align:center">No.</th>
                                             <th style="text-align:center">Tgl Pelaksanaan</th>
                                             <th style="text-align:center">Topik Pekerjaan</th>
                                             <th style="text-align:center">Rujukan Kompetensi Dasar</th>
@@ -50,8 +53,13 @@
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        <?php foreach ($jurnal_pkl as $jurnal) : ?>
+                                        <?php
+                                        $i = 1;
+                                        foreach ($jurnal_pkl as $jurnal) : ?>
                                             <tr>
+                                                <td style="text-align:center">
+                                                    <?php echo $i ?>
+                                                </td>
                                                 <td style="text-align:center">
                                                     <?php echo $jurnal->tanggal ?>
                                                 </td>
@@ -75,6 +83,7 @@
                                                         <span class="badge badge-warning"><?php echo $jurnal->status; ?></span>
                                                     <?php } ?>
                                                 </td>
+                                                <?php $i++ ?>
                                             </tr>
                                         <?php endforeach; ?>
                                     </tbody>

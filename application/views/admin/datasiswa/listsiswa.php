@@ -50,40 +50,42 @@
                                 <table id="table_id" class="table table-striped table-bordered" cellspacing="0" width="100%">
                                     <thead>
                                         <tr>
-                                            <th>NIS</th>
-                                            <th>NISN</th>
-                                            <th>Nama Siswa</th>
-                                            <th>Kelas</th>
-                                            <th>Jenis Kelamin</th>
-                                            <th>Tempat Lahir</th>
-                                            <th>Tanggal Lahir</th>
-                                            <th style="text-align:center">Opsi</th>
+                                            <th style="text-align:center">No.</th>
+                                            <th style="text-align:center">NIS</th>
+                                            <th style="text-align:center">NISN</th>
+                                            <th style="text-align:center">Nama Siswa</th>
+                                            <th style="text-align:center">Kelas</th>
+                                            <th style="text-align:center">Jurusan</th>
+                                            <th style="text-align:center">Jenis Kelamin</th>
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        <?php foreach ($data_siswa as $dtsiswa) : ?>
+                                        <?php
+                                        $i = 1;
+                                        foreach ($data_siswa as $dtsiswa) : ?>
                                             <tr>
-                                                <td width="150">
+                                                <td style="text-align:center">
+                                                    <?php echo $i ?>
+                                                </td>
+                                                <td style="text-align:center">
                                                     <?php echo $dtsiswa->nis ?>
                                                 </td>
-                                                <td>
+                                                <td style="text-align:center">
                                                     <?php echo $dtsiswa->nisn ?>
                                                 </td>
                                                 <td>
                                                     <?php echo $dtsiswa->nama_siswa ?>
                                                 </td>
-                                                <td>
+                                                <td style="text-align:center">
                                                     <?php echo $dtsiswa->kelas ?>
                                                 </td>
-                                                <td>
+                                                <td style="text-align:center">
+                                                    <?php echo $dtsiswa->nama_jurusan ?>
+                                                </td>
+                                                <td style="text-align:center">
                                                     <?php echo $dtsiswa->jenis_kelamin ?>
                                                 </td>
-                                                <td>
-                                                    <?php echo $dtsiswa->tempat_lahir ?>
-                                                </td>
-                                                <td>
-                                                    <?php echo $dtsiswa->tgl_lahir ?>
-                                                </td>
+                                                <?php $i++ ?>
                                             </tr>
                                         <?php endforeach; ?>
                                     </tbody>

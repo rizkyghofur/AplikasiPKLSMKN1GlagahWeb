@@ -48,6 +48,7 @@
                                 <table id="table_id" class="table table-striped table-bordered" cellspacing="0" width="100%">
                                     <thead>
                                         <tr>
+                                            <th style="text-align:center">No.</th>
                                             <th style="text-align:center">Nama Siswa</th>
                                             <th style="text-align:center">Kelas</th>
                                             <th style="text-align:center">Tgl Pelaksanaan</th>
@@ -58,9 +59,14 @@
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        <?php foreach ($jurnal_pkl as $jurnal) : ?>
+                                        <?php
+                                        $i = 1;
+                                        foreach ($jurnal_pkl as $jurnal) : ?>
                                             <tr>
-                                                <td width="200">
+                                                <td style="text-align:center">
+                                                    <?php echo $i ?>
+                                                </td>
+                                                <td>
                                                     <?php echo $jurnal->nama_siswa ?>
                                                 </td>
                                                 <td style="text-align:center">
@@ -89,9 +95,10 @@
                                                 <td>
                                                     <?php echo $jurnal->catatan ?>
                                                 </td>
-                                                <td width="50" style="text-align:center">
+                                                <td style="text-align:center">
                                                     <a href="<?= base_url('pembimbingdudi/ValidasiJurnalPKL/editvalidasijurnalpkl/' . $jurnal->id_jurnal_pkl) ?>" class="btn btn-small text-primary"><i class="fas fa-clipboard-check"></i>Validasi</a>
                                                 </td>
+                                                <?php $i++ ?>
                                             </tr>
                                         <?php endforeach; ?>
                                     </tbody>
