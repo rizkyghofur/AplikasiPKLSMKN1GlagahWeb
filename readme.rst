@@ -12,7 +12,7 @@ Framework Codeigniter
 Sumber Framework Codeigniter 3
 
 *******************
-Penggunaan Server
+Kebutuhan Server
 *******************
 Menggunakan Versi PHP 7.2.3
 
