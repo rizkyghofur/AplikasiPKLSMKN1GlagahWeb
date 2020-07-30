@@ -10,7 +10,7 @@ Framework Codeigniter
 *******************
 
 Sumber Framework Codeigniter 3
-<https://codeigniter.com/download>`_ page.
+<https://codeigniter.com/download>`_.
 
 *******************
 Penggunaan Server
