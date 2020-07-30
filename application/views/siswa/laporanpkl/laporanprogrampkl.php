@@ -48,7 +48,7 @@
                                             <th style="text-align:center">No.</th>
                                             <th style="text-align:center">Tgl Pelaksanaan</th>
                                             <th style="text-align:center">Topik Pekerjaan</th>
-                                            <th style="text-align:center">Kompetensi Dasar</th>
+                                            <th style="text-align:center">Rujukan Kompetensi Dasar</th>
                                             <th style="text-align:center">DUDI / Instansi Pasangan</th>
                                         </tr>
                                     </thead>
