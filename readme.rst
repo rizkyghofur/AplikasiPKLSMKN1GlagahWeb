@@ -21,8 +21,7 @@ Menggunakan Versi PHP 7.2.3
 Instalasi
 ************
 
-Ikuti langkah instalasi aplikasi ini di :  <https://codeigniter.com/user_guide/installation/index.html>`_
-pada CodeIgniter User Guide.
+Ikuti langkah instalasi aplikasi ini di ` CodeIgniter User Guid <https://codeigniter.com/user_guide/installation/index.html>` .
 
 *******
 License
