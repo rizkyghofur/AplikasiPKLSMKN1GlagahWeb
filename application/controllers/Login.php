@@ -37,6 +37,7 @@ class Login extends CI_Controller
                     foreach ($checking as $apps) {
                         $session_data = array(
                             'id'   => $apps->id,
+                            'id_siswa'   => $apps->id_siswa,
                             'username' => $apps->username,
                             'nama_siswa' => $apps->nama_siswa,
                             'nama_staf_tu' => $apps->nama_staf_tu,

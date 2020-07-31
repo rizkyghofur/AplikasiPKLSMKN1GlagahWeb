@@ -196,8 +196,8 @@
                 <span>Jurnal PKL</span></a>
         </li>
 
-        <li class="nav-item <?php echo $this->uri->segment(2) == 'JurnalPKL' ? 'active' : '' ?>">
-            <a class="nav-link" href=" <?= base_url('siswa/JurnalPKL'); ?>">
+        <li class="nav-item <?php echo $this->uri->segment(2) == 'ProgramPKL' ? 'active' : '' ?>">
+            <a class="nav-link" href=" <?= base_url('siswa/ProgramPKL'); ?>">
                 <i class="fas fa-fw fa-clipboard"></i>
                 <span>Program PKL</span></a>
         </li>
@@ -206,24 +206,6 @@
             <a class="nav-link" href=" <?= base_url('siswa/AbsensiPKL'); ?>">
                 <i class="fas fa-fw fa-calendar-check"></i>
                 <span>Absensi PKL</span></a>
-        </li>
-
-        <hr class="sidebar-divider">
-
-        <div class="sidebar-heading" style="color: white;">
-            Laporan PKL
-        </div>
-
-        <li class="nav-item <?php echo $this->uri->segment(2) == 'LaporanJurnalPKL' ? 'active' : '' ?>">
-            <a class="nav-link" href=" <?= base_url('siswa/LaporanJurnalPKL'); ?>">
-                <i class="fas fa-fw fa-print"></i>
-                <span>Laporan Jurnal PKL</span></a>
-        </li>
-
-        <li class="nav-item <?php echo $this->uri->segment(2) == 'LaporanProgramPKL' ? 'active' : '' ?>">
-            <a class="nav-link" href=" <?= base_url('siswa/LaporanProgramPKL/'); ?>">
-                <i class="fas fa-fw fa-print"></i>
-                <span>Laporan Program PKL</span></a>
         </li>
 
         <!-- Divider -->
