@@ -48,11 +48,11 @@ class Login extends CI_Controller
                         );
                         $this->session->set_userdata($session_data);
                         if ($this->session->userdata("role") === "admin_pkl") {
-                            redirect('admin/beranda/');
+                            redirect('admin/Beranda/');
                         } elseif ($this->session->userdata("role") === "pembimbing_dudi") {
-                            redirect('pembimbingdudi/beranda/');
+                            redirect('pembimbingdudi/Beranda/');
                         } else {
-                            redirect('siswa/beranda/');
+                            redirect('siswa/Beranda/');
                         }
                     }
                 } else {

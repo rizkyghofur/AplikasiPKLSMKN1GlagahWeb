@@ -1,8 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.21/css/jquery.dataTables.min.css">
-
 <head>
     <?php $this->load->view("_partials/head.php") ?>
 </head>
@@ -122,8 +120,6 @@
 
         <!-- Custom Bootstrap Script-->
         <?php $this->load->view("_partials/js.php") ?>
-
-        <script type="text/javascript" src="https://cdn.datatables.net/1.10.16/js/jquery.dataTables.min.js"></script>
 
         <script type="text/javascript">
             $(document).ready(function() {

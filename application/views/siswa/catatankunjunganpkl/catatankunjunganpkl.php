@@ -1,8 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.21/css/jquery.dataTables.min.css">
-
 <head>
     <?php $this->load->view("_partials/head.php") ?>
 </head>
@@ -41,7 +39,7 @@
                     <div class="card mb-3">
                         <div class="card-body">
                             <div class="alert alert-primary" role="alert">
-                                <?php echo 'Guru Pembimbing : ' . $data_guru->nama_guru ?>
+                                <strong><?php echo 'Guru Pembimbing : ' . $data_guru->nama_guru ?></strong>
                             </div>
                             <div class="table-responsive">
                                 <table id="table_id" class="table table-striped table-bordered" cellspacing="0" width="100%">
@@ -57,10 +55,10 @@
                                         $i = 1;
                                         foreach ($catatankunjunganpkl as $catatankunjungan) : ?>
                                             <tr>
-                                                <td style="text-align:center">
+                                                <td width="50" style="text-align:center">
                                                     <?php echo $i ?>
                                                 </td>
-                                                <td>
+                                                <td width="250" style="text-align:center">
                                                     <?php echo $catatankunjungan->tanggal_kunjungan ?>
                                                 </td>
                                                 <td>
@@ -94,8 +92,6 @@
 
         <!-- Custom Bootstrap Script-->
         <?php $this->load->view("_partials/js.php") ?>
-
-        <script type="text/javascript" src="https://cdn.datatables.net/1.10.16/js/jquery.dataTables.min.js"></script>
 
         <script type="text/javascript">
             $(document).ready(function() {
