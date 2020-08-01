@@ -17,6 +17,7 @@ class JurnalPKL extends CI_Controller
 
     public function index()
     {
+        $data['title'] = 'Jurnal PKL';
         $data['jurnal_pkl'] = $this->jurnalpkl_model->getAll();
         $this->load->view("siswa/jurnalpkl/listjurnalpkl", $data);
     }
@@ -44,9 +45,9 @@ class JurnalPKL extends CI_Controller
         echo json_encode($data);
     }
 
-    public function editjurnalpkl($id_jurnal_pkl = null)
+    public function editjurnalpkl($id = null)
     {
-        if (!isset($id_jurnal_pkl)) redirect('siswa/JurnalPKL');
+        if (!isset($id)) redirect('siswa/JurnalPKL');
         $jurnalpkl = $this->jurnalpkl_model;
         $validation = $this->form_validation;
         $validation->set_rules($jurnalpkl->rules());
@@ -58,15 +59,15 @@ class JurnalPKL extends CI_Controller
         }
         $data['title'] = 'Ubah Data Jurnal PKL';
         $data['mapel'] = $this->jurnalpkl_model->getMapel();
-        $data["jurnalpkl"] = $jurnalpkl->getById($id_jurnal_pkl);
+        $data["jurnalpkl"] = $jurnalpkl->getById($id);
         if (!$data["jurnalpkl"]) show_404();
         $this->load->view("siswa/jurnalpkl/ubahjurnalpkl", $data);
     }
 
-    public function hapusjurnalpkl($id_jurnal_pkl = null)
+    public function hapusjurnalpkl($id = null)
     {
-        if (!isset($id_jurnal_pkl)) show_404();
-        if ($this->jurnalpkl_model->delete($id_jurnal_pkl)) {
+        if (!isset($id)) show_404();
+        if ($this->jurnalpkl_model->delete($id)) {
             $this->session->set_flashdata('success', 'Berhasil dihapus');
             redirect('siswa/jurnalpkl');
         }
@@ -77,6 +78,6 @@ class JurnalPKL extends CI_Controller
         $this->load->library('fpdf');
         $data['jurnal_pkl'] = $this->jurnalpkl_model->getAll();
         if (!$data["jurnal_pkl"]) show_error('Tidak ditemukan data', '404', 'Tidak dapat mencetak laporan jurnal PKL');
-        $this->load->view('siswa/laporanpkl/cetakjurnalpkl', $data);
+        $this->load->view('siswa/jurnalpkl/cetakjurnalpkl', $data);
     }
 }

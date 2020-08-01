@@ -8,7 +8,7 @@
 
         <li class="breadcrumb-item <?php echo $is_active ? 'active' : '' ?>">
             <?php if ($is_active) : ?>
-                <?php echo ucfirst($segment) ?>
+                <?php echo $title ?>
             <?php else : ?>
                 <a href="<?= base_url($url) ?>"><?php echo ucfirst($segment) ?></a>
             <?php endif; ?>

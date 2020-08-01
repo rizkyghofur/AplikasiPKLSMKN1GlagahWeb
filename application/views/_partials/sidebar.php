@@ -208,6 +208,12 @@
                 <span>Absensi PKL</span></a>
         </li>
 
+        <li class="nav-item <?php echo $this->uri->segment(2) == 'CatatanKunjunganPKL' ? 'active' : '' ?>">
+            <a class="nav-link" href=" <?= base_url('siswa/CatatanKunjunganPKL'); ?>">
+                <i class="fas fa-fw fa-book-reader"></i>
+                <span>Catatan Kunjungan PKL</span></a>
+        </li>
+
         <!-- Divider -->
         <hr class="sidebar-divider d-none d-md-block">
 

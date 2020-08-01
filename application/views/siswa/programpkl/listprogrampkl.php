@@ -31,7 +31,7 @@
 
                     <!-- Page Heading -->
                     <div class="d-sm-flex align-items-center justify-content-between mb-2">
-                        <h1 class="h2 mr-4 mb-0 text-gray-800">Program PKL</h1>
+                        <h1 class="h2 mr-4 mb-0 text-gray-800"><?php echo $title ?></h1>
                     </div>
                     <?php $this->load->view("_partials/breadcrumb.php") ?>
 
@@ -43,9 +43,13 @@
 
                     <!-- Content Row -->
                     <div class="card mb-3">
-                        <div class="card-header">
-                            <a href="<?= base_url("siswa/ProgramPKL/tambahprogrampkl") ?>"><i class="fas fa-plus"></i> Tambah Data Program PKL</a>
-                            <a class="btn btn-primary" href="<?= base_url("siswa/LaporanJurnalPKL/cetak_jurnal_pkl") ?>"><i class="fas fa-print"></i> Cetak</a>
+                        <!-- <div class="card-header d-flex align-items-center">
+                            
+                            
+                        </div> -->
+                        <div class="card-header d-flex justify-content-between">
+                            <a class="btn btn-light" href="<?= base_url("siswa/ProgramPKL/tambahprogrampkl") ?>"><i class="fas fa-plus"></i> Tambah Data Program PKL</a>
+                            <a class="btn btn-primary" href="<?= base_url("siswa/ProgramPKL/cetak_program_pkl") ?>"><i class="fas fa-print"></i> Cetak</a>
                         </div>
                         <div class="card-body">
                             <div class="table-responsive">
@@ -56,8 +60,6 @@
                                             <th style="text-align:center">Tgl Pelaksanaan</th>
                                             <th style="text-align:center">Topik Pekerjaan</th>
                                             <th style="text-align:center">Rujukan Kompetensi Dasar</th>
-                                            <th style="text-align:center">Status Validasi</th>
-                                            <th style="text-align:center">Catatan</th>
                                             <th style="text-align:center">Opsi</th>
                                         </tr>
                                     </thead>
@@ -77,23 +79,6 @@
                                                 </td>
                                                 <td>
                                                     <?php echo $program->kompetensi_dasar ?>
-                                                </td>
-                                                <td style="text-align:center">
-                                                    <?php
-                                                    if ($program->status == 'Tervalidasi') { ?>
-                                                        <span class="badge badge-success"><?php echo $program->status; ?></span>
-                                                    <?php } ?>
-                                                    <?php
-                                                    if ($program->status == 'Ditolak') { ?>
-                                                        <span class=" badge badge-danger"><?php echo $program->status; ?></span>
-                                                    <?php } ?>
-                                                    <?php
-                                                    if ($program->status == 'Belum Tervalidasi') { ?>
-                                                        <span class="badge badge-warning"><?php echo $program->status; ?></span>
-                                                    <?php } ?>
-                                                </td>
-                                                <td>
-                                                    <?php echo $program->catatan ?>
                                                 </td>
                                                 <td width="185" style="text-align:center">
                                                     <a href="<?= base_url('siswa/ProgramPKL/editprogrampkl/' . $program->id_program_pkl) ?>" class="btn btn-small"><i class="fas fa-edit"></i> Ubah</a>

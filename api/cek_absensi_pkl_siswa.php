@@ -20,7 +20,7 @@ while ($row = mysqli_fetch_assoc($query)) {
 if (!empty($json)) {
     $status_pesan = new emp();
     $status_pesan->status_kode = 1;
-    $status_pesan->status_pesan = "Maaf, siswa yang dipilih telah mengisi absensinya hari ini. Silahkan absensi kembali esok hari";
+    $status_pesan->status_pesan = "Maaf, siswa yang dipilih telah mengisi absensinya ditanggal yang Anda masukkan.";
     die(json_encode($status_pesan));
 } else {
     $status_pesan = new emp();

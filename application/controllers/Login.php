@@ -34,16 +34,17 @@ class Login extends CI_Controller
                 $password = $this->input->post('password', TRUE);
                 $checking = $this->admin->check_login('pengguna', array('username' => $username), array('password' => $password));
                 if ($checking != FALSE) {
-                    foreach ($checking as $apps) {
+                    foreach ($checking as $dt) {
                         $session_data = array(
-                            'id'   => $apps->id,
-                            'id_siswa'   => $apps->id_siswa,
-                            'username' => $apps->username,
-                            'nama_siswa' => $apps->nama_siswa,
-                            'nama_staf_tu' => $apps->nama_staf_tu,
-                            'nama_dudi' => $apps->nama_dudi,
-                            'password' => $apps->password,
-                            'role' => $apps->role
+                            'id' => $dt->id,
+                            'id_siswa'   => $dt->id_siswa,
+                            'id_jurusan' => $dt->id_jurusan,
+                            'username' => $dt->username,
+                            'nama_siswa' => $dt->nama_siswa,
+                            'nama_staf_tu' => $dt->nama_staf_tu,
+                            'nama_dudi' => $dt->nama_dudi,
+                            'password' => $dt->password,
+                            'role' => $dt->role
                         );
                         $this->session->set_userdata($session_data);
                         if ($this->session->userdata("role") === "admin_pkl") {

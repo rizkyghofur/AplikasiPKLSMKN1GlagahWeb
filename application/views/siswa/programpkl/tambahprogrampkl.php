@@ -32,15 +32,15 @@
 
                     <!-- Content Row -->
                     <div class="d-sm-flex align-items-center justify-content-between mb-2">
-                        <h1 class="h2 mr-4 mb-0 text-gray-800">Tambah Data Jurnal PKL</h1>
+                        <h1 class="h2 mr-4 mb-0 text-gray-800"><?php echo $title ?></h1>
                     </div>
 
                     <div class="card mb-3">
                         <div class="card-header">
-                            <a href="<?= base_url('siswa/JurnalPKL/') ?>"><i class="fas fa-arrow-left"></i> Kembali</a>
+                            <a href="<?= base_url('siswa/ProgramPKL/') ?>"><i class="fas fa-arrow-left"></i> Kembali</a>
                         </div>
                         <div class="card-body">
-                            <form action="<?= base_url('siswa/JurnalPKL/tambahjurnalpkl') ?>" method="post">
+                            <form action="<?= base_url('siswa/ProgramPKL/tambahprogrampkl') ?>" method="post">
 
                                 <input type="hidden" name="id_siswa" value="<?php echo $this->session->userdata('id_siswa') ?>" />
 

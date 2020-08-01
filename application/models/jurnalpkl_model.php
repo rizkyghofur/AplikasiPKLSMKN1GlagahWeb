@@ -77,9 +77,11 @@ class jurnalpkl_model extends CI_Model
     {
         $post = $this->input->post();
         $this->id_jurnal_pkl = $post["id_jurnal_pkl"];
+        $this->id_siswa = $post["id_siswa"];
+        $this->id_kompetensi_dasar = $post["id_kompetensi_dasar"];
         $this->tanggal = $post["tanggal"];
         $this->topik_pekerjaan = $post["topik_pekerjaan"];
-        $this->id_kompetensi_dasar = $post["id_kompetensi_dasar"];
+        $this->status = $post['status'];
         return $this->db->update($this->_table, $this, array("id_jurnal_pkl" => $post["id_jurnal_pkl"]));
     }
 

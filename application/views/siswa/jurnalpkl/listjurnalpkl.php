@@ -31,7 +31,7 @@
 
                     <!-- Page Heading -->
                     <div class="d-sm-flex align-items-center justify-content-between mb-2">
-                        <h1 class="h2 mr-4 mb-0 text-gray-800">Jurnal PKL</h1>
+                        <h1 class="h2 mr-4 mb-0 text-gray-800"><?php echo $title ?></h1>
                     </div>
                     <?php $this->load->view("_partials/breadcrumb.php") ?>
 
@@ -43,9 +43,9 @@
 
                     <!-- Content Row -->
                     <div class="card mb-3">
-                        <div class="card-header">
-                            <a href="<?= base_url("siswa/JurnalPKL/tambahjurnalpkl") ?>"><i class="fas fa-plus"></i> Tambah Data Jurnal PKL</a>
-                            <a class="btn btn-primary" href="<?= base_url("siswa/LaporanJurnalPKL/cetak_jurnal_pkl") ?>"><i class="fas fa-print"></i> Cetak</a>
+                        <div class="card-header d-flex justify-content-between mb-2">
+                            <a class="btn btn-light" href="<?= base_url("siswa/JurnalPKL/tambahjurnalpkl") ?>"><i class="fas fa-plus"></i> Tambah Data Jurnal PKL</a>
+                            <a class="btn btn-primary" href="<?= base_url("siswa/JurnalPKL/cetak_jurnal_pkl") ?>"><i class="fas fa-print"></i> Cetak</a>
                         </div>
                         <div class="card-body">
                             <div class="table-responsive">
