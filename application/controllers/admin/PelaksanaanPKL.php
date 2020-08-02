@@ -18,6 +18,7 @@ class PelaksanaanPKL extends CI_Controller
     public function index()
     {
         $data['title'] = 'Pelaksanaan PKL';
+        $data['pelaksanaanpkl'] = $this->pelaksanaanpkl_model->getAll();
         $this->load->view("admin/pelaksanaanpkl/listpelaksanaanpkl", $data);
     }
 

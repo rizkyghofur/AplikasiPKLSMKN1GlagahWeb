@@ -48,71 +48,44 @@
                                     <thead>
                                         <tr>
                                             <th style="text-align:center">No.</th>
-                                            <th style="text-align:center">Nama Siswa</th>
-                                            <th style="text-align:center">Kelas</th>
                                             <th style="text-align:center">Nama DUDI</th>
                                             <th style="text-align:center">Tanggal Masuk</th>
                                             <th style="text-align:center">Tanggal Keluar</th>
-                                            <th style="text-align:center">Nama Guru</th>
-                                            <th style="text-align:center">Status Validasi</th>
+                                            <th style="text-align:center">Jumlah Siswa</th>
                                             <th style="text-align:center">Opsi</th>
                                         </tr>
                                     </thead>
                                     <tbody>
                                         <?php
                                         $i = 1;
-                                        foreach ($pengajuanpkl as $pengajuan) : ?>
-                                            <tr>
-                                                <td style="text-align:center">
-                                                    <?php echo $i ?>
-                                                </td>
-                                                <td>
-                                                    <?php echo $pengajuan->nama_siswa; ?>
-                                                </td>
-                                                <td style="text-align:center">
-                                                    <?php echo $pengajuan->kelas; ?>
-                                                </td>
-                                                <td>
-                                                    <?php echo $pengajuan->nama_dudi; ?>
-                                                </td>
-                                                <td style="text-align:center">
-                                                    <?php echo $pengajuan->tanggal_masuk; ?>
-                                                </td>
-                                                <td style="text-align:center">
-                                                    <?php echo $pengajuan->tanggal_keluar; ?>
-                                                </td>
-                                                <td>
-                                                    <?php
-                                                    if ($pengajuan->id_guru == 0) { ?>
-                                                        Belum ditunjuk
-                                                    <?php } else { ?>
-                                                        <?php echo $pengajuan->nama_guru; ?>
-                                                    <?php } ?>
-                                                </td>
-                                                <td style="text-align:center">
-                                                    <?php
-                                                    if ($pengajuan->status_validasi == 'Diterima') { ?>
-                                                        <span class="badge badge-success"><?php echo $pengajuan->status_validasi; ?></span>
-                                                    <?php } ?>
-                                                    <?php
-                                                    if ($pengajuan->status_validasi == 'Ditolak') { ?>
-                                                        <span class=" badge badge-danger"><?php echo $pengajuan->status_validasi; ?></span>
-                                                    <?php } ?>
-                                                    <?php
-                                                    if ($pengajuan->status_validasi == 'Proses Pengajuan') { ?>
-                                                        <span class=" badge badge-info"><?php echo $pengajuan->status_validasi; ?></span>
-                                                    <?php } ?>
-                                                    <?php
-                                                    if ($pengajuan->status_validasi == 'Belum Tervalidasi') { ?>
-                                                        <span class="badge badge-warning"><?php echo $pengajuan->status_validasi; ?></span>
-                                                    <?php } ?>
-                                                </td>
-                                                <td style="text-align:center">
-                                                    <a href="<?= base_url('admin/PengajuanPKL/editpengajuanpkl/' . $pengajuan->id_pengajuanpkl) ?>" class="btn btn-small"><i class="fas fa-edit"></i> Ubah</a>
-                                                </td>
-                                                <?php $i++ ?>
-                                            </tr>
-                                        <?php endforeach; ?>
+                                        // foreach ($pelaksanaanpkl as $pelaksanaan) : 
+                                        ?>
+                                        <tr>
+                                            <td style="text-align:center">
+                                                <?php echo $i ?>
+                                            </td>
+                                            <td>
+                                                <?php echo $pelaksanaanpkl->nama_dudi; ?>
+                                            </td>
+                                            <td style="text-align:center">
+                                                <?php echo $pelaksanaan->tanggal_masuk; ?>
+                                            </td>
+                                            <td style="text-align:center">
+                                                <?php echo $pelaksanaan->tanggal_keluar; ?>
+                                            </td>
+                                            <td>
+                                                <?php
+                                                if ($pelaksanaan->id_guru == 0) { ?>
+                                                    Belum ditunjuk
+                                                <?php } else { ?>
+                                                    <?php echo $pelaksanaan->nama_guru; ?>
+                                                <?php } ?>
+                                            </td>
+                                            <td width="100" style="text-align:center">
+                                                <a href="<?= base_url('admin/PelaksanaanPKL/editpelaksanaanpkl/' . $pelaksanaan->id_pengajuanpkl) ?>" class="btn btn-small"><i class="fas fa-user-cog"></i><br> Atur Akun Siswa</a>
+                                            </td>
+                                            <?php $i++ ?>
+                                        </tr>
                                     </tbody>
                                 </table>
                             </div>

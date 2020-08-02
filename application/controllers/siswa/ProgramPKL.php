@@ -9,6 +9,7 @@ class ProgramPKL extends CI_Controller
         parent::__construct();
         $this->load->model('admin');
         $this->load->model("programpkl_model");
+        $this->load->model("permohonanpkl_model");
         $this->load->library("form_validation");
         if ($this->admin->is_role() != "siswa") {
             redirect("login/");
@@ -18,6 +19,7 @@ class ProgramPKL extends CI_Controller
     public function index()
     {
         $data['title'] = 'Program PKL';
+        $data['pengajuanpkl'] = $this->permohonanpkl_model->getAll();
         $data['program_pkl'] = $this->programpkl_model->getAll();
         $this->load->view("siswa/programpkl/listprogrampkl", $data);
     }

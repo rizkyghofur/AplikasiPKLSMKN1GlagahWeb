@@ -74,21 +74,21 @@
 
             <li class="nav-item <?php echo $this->uri->segment(2) == 'pelaksanaanpkl' ? 'active' : '' ?>">
                 <a class="nav-link" href="<?= base_url('admin/pelaksanaanpkl/'); ?>">
-                    <i class="far fa-calendar-check"></i>
+                    <i class="fas fa-fw fa-address-card"></i>
                     <span>Pelaksanaan PKL</span></a>
             </li>
 
             <hr class="sidebar-divider">
 
             <div class="sidebar-heading">
-                Nilai PKL
+                Penilaian PKL
             </div>
 
             <li class="nav-item <?php echo $this->uri->segment(2) == 'Cetak Nilai PKL' ? 'active' : '' ?>">
             <li class="nav-item">
                 <a class="nav-link" href="<?= base_url('admin/cetaknilaipkl/'); ?>">
                     <i class="fas fa-print"></i>
-                    <span>Nilai PKL</span></a>
+                    <span>Penilaian PKL</span></a>
             </li>
 
             <!-- Divider -->

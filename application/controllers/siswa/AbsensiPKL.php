@@ -8,6 +8,7 @@ class AbsensiPKL extends CI_Controller
     {
         parent::__construct();
         $this->load->model("absensipkl_model");
+        $this->load->model("permohonanpkl_model");
         $this->load->model('admin');
         if ($this->admin->is_role() != "siswa") {
             redirect("login/");
@@ -18,6 +19,7 @@ class AbsensiPKL extends CI_Controller
     {
         $data['title'] = 'Absensi PKL';
         $data['absensi'] = $this->absensipkl_model->getAll();
+        $data['pengajuanpkl'] = $this->permohonanpkl_model->getAll();
         $this->load->view("siswa/absensipkl/listabsensipkl", $data);
     }
 }

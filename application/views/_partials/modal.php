@@ -46,11 +46,18 @@
                       </button>
                   </div>
                   <div class="modal-body">
-                      ...
-                  </div>
-                  <div class="modal-footer">
-                      <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                      <button type="button" class="btn btn-primary">Save changes</button>
+                      <?php if ($pengajuanpkl->status_keanggotaan == "Ketua Kelompok") { ?>
+                          ...
+                          <div class="modal-footer">
+                              <button type="button" class="btn btn-secondary" data-dismiss="modal">Batal</button>
+                              <button type="button" class="btn btn-primary">Simpan</button>
+                          </div>
+                      <?php } else { ?>
+                          Maaf, Anda tidak diizinkan menambahkan absensi, silahkan hubungi Ketua Kelompok PKL Anda.
+                          <div class="modal-footer">
+                              <button type="button" class="btn btn-secondary" data-dismiss="modal">Tutup</button>
+                          </div>
+                      <?php } ?>
                   </div>
               </div>
           </div>
@@ -66,11 +73,18 @@
                       </button>
                   </div>
                   <div class="modal-body">
-                      ...
-                  </div>
-                  <div class="modal-footer">
-                      <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                      <button type="button" class="btn btn-primary">Save changes</button>
+                      <?php if (empty($permohonanpkl->status_validasi) || $permohonanpkl->status_validasi == "Ditolak") { ?>
+                          ...
+                          <div class="modal-footer">
+                              <button type="button" class="btn btn-secondary" data-dismiss="modal">Batal</button>
+                              <button type="button" class="btn btn-primary">Simpan</button>
+                          </div>
+                      <?php } else { ?>
+                          Maaf, Anda sudah mengajukan permohonan PKL sebelumnya, silahkan menunggu validasi permohonan PKL dari Koordinator PKL.
+                          <div class="modal-footer">
+                              <button type="button" class="btn btn-secondary" data-dismiss="modal">Tutup</button>
+                          </div>
+                      <?php } ?>
                   </div>
               </div>
           </div>
