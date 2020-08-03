@@ -26,12 +26,11 @@
                 <!-- End of Topbar -->
 
                 <!-- Begin Page Content -->
-
                 <div class="container-fluid">
-                    <!-- Page Heading -->
 
+                    <!-- Page Heading -->
                     <div class="d-sm-flex align-items-center justify-content-between mb-2">
-                        <h1 class="h2 mr-4 mb-0 text-gray-800"> Data Pengajuan PKL</h1>
+                        <h1 class="h2 mr-4 mb-0 text-gray-800"> Data Pelaksanaan PKL</h1>
                     </div>
                     <?php if ($this->session->flashdata('success')) : ?>
                         <div class="alert alert-success" role="alert">
@@ -39,8 +38,8 @@
                         </div>
                     <?php endif; ?>
                     <?php $this->load->view("_partials/breadcrumb.php") ?>
-                    <!-- Content Row -->
 
+                    <!-- Content Row -->
                     <div class="card mb-3">
                         <div class="card-body">
                             <div class="table-responsive">
@@ -58,34 +57,30 @@
                                     <tbody>
                                         <?php
                                         $i = 1;
-                                        // foreach ($pelaksanaanpkl as $pelaksanaan) : 
+                                        foreach ($pelaksanaanpkl as $pelaksanaan) :
                                         ?>
-                                        <tr>
-                                            <td style="text-align:center">
-                                                <?php echo $i ?>
-                                            </td>
-                                            <td>
-                                                <?php echo $pelaksanaanpkl->nama_dudi; ?>
-                                            </td>
-                                            <td style="text-align:center">
-                                                <?php echo $pelaksanaan->tanggal_masuk; ?>
-                                            </td>
-                                            <td style="text-align:center">
-                                                <?php echo $pelaksanaan->tanggal_keluar; ?>
-                                            </td>
-                                            <td>
-                                                <?php
-                                                if ($pelaksanaan->id_guru == 0) { ?>
-                                                    Belum ditunjuk
-                                                <?php } else { ?>
-                                                    <?php echo $pelaksanaan->nama_guru; ?>
-                                                <?php } ?>
-                                            </td>
-                                            <td width="100" style="text-align:center">
-                                                <a href="<?= base_url('admin/PelaksanaanPKL/editpelaksanaanpkl/' . $pelaksanaan->id_pengajuanpkl) ?>" class="btn btn-small"><i class="fas fa-user-cog"></i><br> Atur Akun Siswa</a>
-                                            </td>
-                                            <?php $i++ ?>
-                                        </tr>
+                                            <tr>
+                                                <td width="25" style="text-align:center">
+                                                    <?php echo $i ?>
+                                                </td>
+                                                <td>
+                                                    <?php echo $pelaksanaan->nama_dudi; ?>
+                                                </td>
+                                                <td style="text-align:center">
+                                                    <?php echo $pelaksanaan->tanggal_masuk; ?>
+                                                </td>
+                                                <td style="text-align:center">
+                                                    <?php echo $pelaksanaan->tanggal_keluar; ?>
+                                                </td>
+                                                <td width="100" style="text-align:center">
+                                                    <?php echo $pelaksanaan->jumlah_siswa; ?>
+                                                </td>
+                                                <td width="100" style="text-align:center">
+                                                    <a href="<?= base_url('admin/PelaksanaanPKL/editpelaksanaanpkl/' . $pelaksanaan->id_dudi) ?>" class="btn btn-small"><i class="fas fa-user-cog"></i><br> Atur Akun Siswa</a>
+                                                </td>
+                                                <?php $i++ ?>
+                                            </tr>
+                                        <?php endforeach; ?>
                                     </tbody>
                                 </table>
                             </div>

@@ -51,6 +51,7 @@
                                             <th style="text-align:center">Nama Siswa</th>
                                             <th style="text-align:center">Kelas</th>
                                             <th style="text-align:center">Nama DUDI</th>
+                                            <th style="text-align:center">Tanggal Pengajuan</th>
                                             <th style="text-align:center">Tanggal Masuk</th>
                                             <th style="text-align:center">Tanggal Keluar</th>
                                             <th style="text-align:center">Nama Guru</th>
@@ -74,6 +75,9 @@
                                                 </td>
                                                 <td>
                                                     <?php echo $pengajuan->nama_dudi; ?>
+                                                </td>
+                                                <td>
+                                                    <?php echo $pengajuan->tanggal_pengajuan; ?>
                                                 </td>
                                                 <td style="text-align:center">
                                                     <?php echo $pengajuan->tanggal_masuk; ?>

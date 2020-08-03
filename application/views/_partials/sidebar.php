@@ -72,8 +72,8 @@
                     <span>Pengajuan PKL</span></a>
             </li>
 
-            <li class="nav-item <?php echo $this->uri->segment(2) == 'pelaksanaanpkl' ? 'active' : '' ?>">
-                <a class="nav-link" href="<?= base_url('admin/pelaksanaanpkl/'); ?>">
+            <li class="nav-item <?php echo $this->uri->segment(2) == 'PelaksanaanPKL' ? 'active' : '' ?>">
+                <a class="nav-link" href="<?= base_url('admin/PelaksanaanPKL/'); ?>">
                     <i class="fas fa-fw fa-address-card"></i>
                     <span>Pelaksanaan PKL</span></a>
             </li>

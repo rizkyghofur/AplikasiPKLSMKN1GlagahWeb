@@ -62,9 +62,9 @@
 
                                 <div class="alert alert-success" role="alert">
                                     <h4 class="alert-heading">Selamat, Permohonan PKL Anda diterima!</h4>
-                                    <p>Selamat, permohonanpkl PKL Anda diterma oleh pihak perusahaan <?php echo $permohonanpkl->nama_dudi ?>, berikut adalah waktu pelaksanaan PKL </p>
-                                    <p><?php echo $permohonanpkl->tanggal_masuk ?></p>
-                                    <p><?php echo $permohonanpkl->tanggal_keluar ?></p>
+                                    <p>Selamat, permohonan PKL Anda telah diterima oleh pihak perusahaan <strong><?php echo $permohonanpkl->nama_dudi ?></strong>, berikut adalah waktu pelaksanaan PKL : </p>
+                                    <p><strong>Tanggal Masuk Pelaksanaan PKL : <?php echo $permohonanpkl->tanggal_masuk ?></strong></p>
+                                    <p><strong>Tanggal Usai Pelaksanaan PKL : <?php echo $permohonanpkl->tanggal_keluar ?></strong></p>
                                     <hr>
                                     <p class="mb-0">Jika terdapat pernyataan terkait PKL, silahkan hubungi Koordinator PKL, Bapak/Ibu Guru, atau Koordinator Jurusan di Program Studi Anda</p>
                                 </div>
@@ -73,7 +73,7 @@
 
                                 <div class="alert alert-warning" role="alert">
                                     <h4 class="alert-heading">Selamat, Permohonan PKL sedang diproses!</h4>
-                                    <p>Permohonan PKL Anda sedang diproses oleh Koordinator PKL dan akan diteruskan kepada pihak perusahaan <?php echo $permohonanpkl->nama_dudi ?>.</p>
+                                    <p>Permohonan PKL Anda sedang diproses oleh Koordinator PKL dan akan diteruskan kepada pihak perusahaan <strong><?php echo $permohonanpkl->nama_dudi ?></strong>.</p>
                                     <p>Silahkan menunggu proses validasi berikutnya.</p>
                                     <hr>
                                     <p class="mb-0">Jika terdapat pernyataan terkait PKL, silahkan hubungi Koordinator PKL, Bapak/Ibu Guru, atau Koordinator Jurusan di Program Studi Anda</p>
@@ -93,7 +93,7 @@
 
                                 <div class="alert alert-secondary" role="alert">
                                     <h4 class="alert-heading">Permohonan PKL Anda telah masuk dalam sistem!</h4>
-                                    <p>Permohonan PKL Anda akan diproses oleh Koordinator PKL dan akan diteruskan kepada pihak perusahaan <?php echo $permohonanpkl->nama_dudi ?>.</p>
+                                    <p>Permohonan PKL Anda akan diproses oleh Koordinator PKL dan akan diteruskan kepada pihak perusahaan <strong><?php echo $permohonanpkl->nama_dudi ?></strong>.</p>
                                     <hr>
                                     <p class="mb-0">Jika terdapat pernyataan terkait PKL, silahkan hubungi Koordinator PKL, Bapak/Ibu Guru, atau Koordinator Jurusan di Program Studi Anda</p>
                                 </div>
@@ -109,6 +109,7 @@
                                         <tr>
                                             <th style="text-align:center">No.</th>
                                             <th style="text-align:center">Nama DUDI</th>
+                                            <th style="text-align:center">Tanggal Pengajuan</th>
                                             <th style="text-align:center">Tanggal Masuk</th>
                                             <th style="text-align:center">Tanggal Keluar</th>
                                             <th style="text-align:center">Nama Guru</th>
@@ -125,6 +126,9 @@
                                                 </td>
                                                 <td>
                                                     <?php echo $pengajuan->nama_dudi; ?>
+                                                </td>
+                                                <td>
+                                                    <?php echo $pengajuan->tanggal_pengajuan; ?>
                                                 </td>
                                                 <td style="text-align:center">
                                                     <?php if ($pengajuan->tanggal_masuk == "2020-01-01") {

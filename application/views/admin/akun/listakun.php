@@ -58,7 +58,7 @@
                                         $i = 1;
                                         foreach ($pengguna as $akun) : ?>
                                             <tr>
-                                                <td style="text-align:center">
+                                                <td width="25" style="text-align:center">
                                                     <?php echo $i ?>
                                                 </td>
                                                 <td>

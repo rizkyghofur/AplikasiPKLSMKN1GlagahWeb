@@ -8,7 +8,7 @@ class Beranda extends CI_Controller
     {
         parent::__construct();
         $this->load->model('admin');
-        $this->load->model('datadudi_model');
+        $this->load->model('pengajuanpkl_model');
         if ($this->admin->is_role() != "admin_pkl") {
             redirect("login/");
         }
@@ -17,7 +17,16 @@ class Beranda extends CI_Controller
     public function index()
     {
         $data['title'] = 'Beranda';
-        $data['belum_mengajukan'] = $this->datadudi_model->getAll();
+        $data['total_pengajuan'] = $this->pengajuanpkl_model->getTotalPengajuan();
+        $data['total_siswa'] = $this->pengajuanpkl_model->getTotalSiswa();
+        $data['siswa_belum_mengajukan'] = $this->pengajuanpkl_model->getTotalSiswaBelumMengajukan();
+        $data['siswa_sudah_mengajukan'] = $this->pengajuanpkl_model->getTotalSiswaSudahMengajukan();
+        $data['pengajuanpkl'] = $this->pengajuanpkl_model->getAll();
+        $data['notif_belumtervalidasi'] = $this->pengajuanpkl_model->getNotifBelumTervalidasi();
+        $data['belum_tervalidasi'] = $this->pengajuanpkl_model->getBelumTervalidasi();
+        $data['proses_pengajuan'] = $this->pengajuanpkl_model->getProsesPengajuan();
+        $data['diterima'] = $this->pengajuanpkl_model->getDiterima();
+        $data['ditolak'] = $this->pengajuanpkl_model->getDitolak();
         $this->load->view("admin/beranda", $data);
     }
 

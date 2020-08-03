@@ -60,7 +60,7 @@
                                         $i = 1;
                                         foreach ($data_guru as $dtguru) : ?>
                                             <tr>
-                                                <td style="text-align:center">
+                                                <td width="25" style="text-align:center">
                                                     <?php echo $i ?>
                                                 </td>
                                                 <td>

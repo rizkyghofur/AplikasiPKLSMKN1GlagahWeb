@@ -19,7 +19,31 @@ class PengajuanPKL extends CI_Controller
     {
         $data['title'] = 'Pengajuan PKL';
         $data['pengajuanpkl'] = $this->pengajuanpkl_model->getAll();
+        $data['notif_belumtervalidasi'] = $this->pengajuanpkl_model->getNotifBelumTervalidasi();
+        $data['belum_tervalidasi'] = $this->pengajuanpkl_model->getBelumTervalidasi();
         $data['data_guru'] = $this->pengajuanpkl_model->get_data_guru();
         $this->load->view("admin/pengajuanpkl/listpengajuan", $data);
+    }
+
+    public function editpengajuanpkl($id = null)
+    {
+        $data['title'] = 'Ubah Pengajuan PKL';
+        if (!isset($id)) redirect('admin/pengajuanpkl');
+        $pengajuanpkl = $this->pengajuanpkl_model;
+        $validation = $this->form_validation;
+        $validation->set_rules($pengajuanpkl->rules());
+
+        if ($validation->run()) {
+            $pengajuanpkl->update();
+            $this->session->set_flashdata('success', 'Berhasil disimpan');
+            redirect('admin/PengajuanPKL');
+        }
+
+        $data['data_guru'] = $this->pengajuanpkl_model->get_data_guru();
+        $data["pengajuanpkl"] = $pengajuanpkl->getById($id);
+        $data['notif_belumtervalidasi'] = $this->pengajuanpkl_model->getNotifBelumTervalidasi();
+        $data['belum_tervalidasi'] = $this->pengajuanpkl_model->getBelumTervalidasi();
+        if (!$data["pengajuanpkl"]) show_404();
+        $this->load->view("admin/pengajuanpkl/editpengajuanpkl", $data);
     }
 }

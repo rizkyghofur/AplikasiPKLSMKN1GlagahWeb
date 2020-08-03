@@ -2,23 +2,39 @@
 
 class pelaksanaanpkl_model extends CI_Model
 {
-
-    private $_table = "pengajuanpkl";
+    private $_table = 'pengajuanpkl';
 
     public $id_pengajuanpkl;
-    public $tanggal_masuk;
-    public $tanggal_keluar;
-    public $id_guru;
-    public $status_validasi;
+    public $status_keanggotaan;
+
+    public function rules()
+    {
+        return [
+            [
+                'field' => 'status_keanggotaan',
+                'label' => 'Status Keanggotaan',
+                'rules' => 'required'
+            ]
+        ];
+    }
 
     public function getAll()
     {
-        $this->db->select('*');
-        $this->db->join('data_guru', 'data_guru.id_guru = pengajuanpkl.id_guru', 'left');
-        $this->db->join('data_siswa', 'data_siswa.id_siswa = pengajuanpkl.id_siswa');
-        $this->db->join('data_dudi', 'data_dudi.id_dudi = pengajuanpkl.id_dudi');
-        $this->db->order_by('id_pengajuanpkl', 'desc');
-        $this->db->group_by('data_dudi.nama_dudi');
-        return $this->db->get($this->_table)->result();
+        $query = $this->db->query('SELECT *, count(pengajuanpkl.id_siswa) as jumlah_siswa FROM `pengajuanpkl` join data_dudi on data_dudi.id_dudi = pengajuanpkl.id_dudi where pengajuanpkl.status_validasi = "Diterima" group by pengajuanpkl.id_dudi');
+        return $query->result();
+    }
+
+    public function getById($id_dudi)
+    {
+        $query = $this->db->query('SELECT * FROM `pengajuanpkl` join data_siswa on data_siswa.id_siswa = pengajuanpkl.id_siswa join data_dudi on data_dudi.id_dudi = pengajuanpkl.id_dudi where pengajuanpkl.status_validasi = "Diterima" and pengajuanpkl.id_dudi = ' . $id_dudi);
+        return $query->result();
+    }
+
+    public function update()
+    {
+        $post = $this->input->post();
+        $this->id_pengajuanpkl = $post["id_pengajuanpkl"];
+        $this->status_keanggotaan = $post["status_keanggotaan"];
+        return $this->db->update($this->_table, $this, array("id_pengajuanpkl" => $post["id_pengajuanpkl"]));
     }
 }
