@@ -27,7 +27,7 @@ class absensipkl_model extends CI_Model
         $this->db->from('absensi');
         $this->db->join('pengajuanpkl', 'pengajuanpkl.id_siswa = absensi.id_siswa');
         $this->db->join('data_siswa', 'data_siswa.id_siswa = absensi.id_siswa');
-        $this->db->where('pengajuanpkl.id_dudi', $this->session->userdata('id'));
+        $this->db->where('pengajuanpkl.id_dudi', $this->session->userdata('id_dudi'));
         $query = $this->db->get();
         return $query->result();
     }
