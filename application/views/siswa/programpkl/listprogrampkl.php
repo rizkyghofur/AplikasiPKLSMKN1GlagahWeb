@@ -35,6 +35,7 @@
 
                     <?php if ($this->session->flashdata('success')) : ?>
                         <div class="alert alert-success" role="alert">
+                            <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
                             <?php echo $this->session->flashdata('success'); ?>
                         </div>
                     <?php endif; ?>

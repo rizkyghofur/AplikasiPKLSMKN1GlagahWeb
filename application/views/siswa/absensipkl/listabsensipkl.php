@@ -35,7 +35,15 @@
 
                     <?php if ($this->session->flashdata('success')) : ?>
                         <div class="alert alert-success" role="alert">
+                            <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
                             <?php echo $this->session->flashdata('success'); ?>
+                        </div>
+                    <?php endif; ?>
+
+                    <?php if ($this->session->flashdata('danger')) : ?>
+                        <div class="alert alert-danger" role="alert">
+                            <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+                            <?php echo $this->session->flashdata('danger'); ?>
                         </div>
                     <?php endif; ?>
 
@@ -70,6 +78,7 @@
                                                     <th style="text-align:center">Kelas</th>
                                                     <th style="text-align:center">Tanggal Absensi</th>
                                                     <th style="text-align:center">Keterangan</th>
+                                                    <th style="text-align:center">Opsi</th>
                                                 </tr>
                                             </thead>
                                             <tbody>
@@ -83,7 +92,7 @@
                                                         <td>
                                                             <?php echo $absen->nama_siswa ?>
                                                         </td>
-                                                        <td>
+                                                        <td style="text-align:center">
                                                             <?php echo $absen->kelas ?>
                                                         </td>
                                                         <td style="text-align:center">
@@ -91,6 +100,9 @@
                                                         </td>
                                                         <td style="text-align:center">
                                                             <?php echo $absen->keterangan ?>
+                                                        </td>
+                                                        <td style="text-align:center">
+                                                            <a onclick="deleteConfirm('<?= base_url('siswa/AbsensiPKL/hapusabsensipkl/' . $absen->id_absensi) ?>')" href="#!" class="btn btn-small text-danger"><i class="fas fa-trash"></i> Hapus</a>
                                                         </td>
                                                         <?php $i++ ?>
                                                     <?php endforeach; ?>

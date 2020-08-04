@@ -94,7 +94,7 @@
                                                     <?php echo $jurnal->catatan ?>
                                                 </td>
                                                 <td style="text-align:center">
-                                                    <a href="<?= base_url('pembimbingdudi/ValidasiJurnalPKL/editvalidasijurnalpkl/' . $jurnal->id_jurnal_pkl) ?>" class="btn btn-small text-primary"><i class="fas fa-clipboard-check"></i>Validasi</a>
+                                                    <a href="<?= base_url('pembimbingdudi/ValidasiJurnalPKL/editvalidasijurnalpkl/' . $jurnal->id_jurnal_pkl) ?>" class="btn btn-primary text-white"><i class="fas fa-clipboard-check"></i> Validasi</a>
                                                 </td>
                                                 <?php $i++ ?>
                                             </tr>

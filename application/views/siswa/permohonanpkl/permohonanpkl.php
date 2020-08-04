@@ -35,7 +35,15 @@
 
                     <?php if ($this->session->flashdata('success')) : ?>
                         <div class="alert alert-success" role="alert">
+                            <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
                             <?php echo $this->session->flashdata('success'); ?>
+                        </div>
+                    <?php endif; ?>
+
+                    <?php if ($this->session->flashdata('danger')) : ?>
+                        <div class="alert alert-danger" role="alert">
+                            <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+                            <?php echo $this->session->flashdata('danger'); ?>
                         </div>
                     <?php endif; ?>
 
@@ -62,10 +70,12 @@
 
                                 <div class="alert alert-success" role="alert">
                                     <h4 class="alert-heading">Selamat, Permohonan PKL Anda diterima!</h4>
-                                    <p>Selamat, permohonan PKL Anda telah diterima oleh pihak perusahaan <strong><?php echo $permohonanpkl->nama_dudi ?></strong>, berikut adalah waktu pelaksanaan PKL : </p>
+                                    <p>Selamat, permohonan PKL Anda telah diterima oleh pihak perusahaan <strong><?php echo $permohonanpkl->nama_dudi ?></strong>, berikut adalah keterangan terkait pelaksanaan PKL : </p>
                                     <p><strong>Tanggal Masuk Pelaksanaan PKL : <?php echo $permohonanpkl->tanggal_masuk ?></strong></p>
                                     <p><strong>Tanggal Usai Pelaksanaan PKL : <?php echo $permohonanpkl->tanggal_keluar ?></strong></p>
+                                    <p><strong>Status Keanggotan Kelompok PKL : <?php echo $permohonanpkl->status_keanggotaan ?></strong></p>
                                     <hr>
+                                    <p>Silahkan mempersiapkan diri untuk memulai pelaksanaan PKL, semoga sukses!</p>
                                     <p class="mb-0">Jika terdapat pernyataan terkait PKL, silahkan hubungi Koordinator PKL, Bapak/Ibu Guru, atau Koordinator Jurusan di Program Studi Anda</p>
                                 </div>
 
@@ -83,7 +93,7 @@
 
                                 <div class="alert alert-danger" role="alert">
                                     <h4 class="alert-heading"><strong>Maaf, Permohonan PKL Anda ditolak!</strong></h4>
-                                    <p>Maaf, permohonan PKL Anda ditolak oleh pihak perusahaan <strong><?php echo $permohonanpkl->nama_dudi ?></strong></p>
+                                    <p>Maaf, permohonan PKL Anda ditolak oleh pihak perusahaan <strong><?php echo $permohonanpkl->nama_dudi ?></strong>.</p>
                                     <p>Silahkan mengajukan permohonan PKL kembali.</p>
                                     <hr>
                                     <p class="mb-0">Jika terdapat pernyataan terkait PKL, silahkan hubungi Koordinator PKL, Bapak/Ibu Guru, atau Koordinator Jurusan di Program Studi Anda</p>
@@ -94,6 +104,8 @@
                                 <div class="alert alert-secondary" role="alert">
                                     <h4 class="alert-heading">Permohonan PKL Anda telah masuk dalam sistem!</h4>
                                     <p>Permohonan PKL Anda akan diproses oleh Koordinator PKL dan akan diteruskan kepada pihak perusahaan <strong><?php echo $permohonanpkl->nama_dudi ?></strong>.</p>
+                                    <p>Anda dapat menghapus permohonan PKL saat ini jika terdapat kesalahan memasukkan data permohonan PKL.</p>
+                                    <a onclick="deleteConfirm('<?= base_url('siswa/PermohonanPKL/hapuspermohonanpkl/' . $permohonanpkl->id_pengajuanpkl) ?>')" href="#!" class="btn btn-danger"><i class="fas fa-trash"></i> Hapus</a>
                                     <hr>
                                     <p class="mb-0">Jika terdapat pernyataan terkait PKL, silahkan hubungi Koordinator PKL, Bapak/Ibu Guru, atau Koordinator Jurusan di Program Studi Anda</p>
                                 </div>
@@ -101,7 +113,7 @@
                             <?php } ?>
 
                             <div class="d-sm-flex align-items-center justify-content-between mb-2">
-                                <h4 class="h4 mr-4 mt-4 mb-1 text-gray-800"> Riwayat Permohonan PKL</h4>
+                                <h4 class="h4 mr-4 mt-4 mb-1 text-gray-800"> Daftar Permohonan PKL Sebelumnya</h4>
                             </div>
                             <div class="table-responsive">
                                 <table id="table" class="table table-striped table-bordered" cellspacing="0" width="100%">
@@ -109,7 +121,7 @@
                                         <tr>
                                             <th style="text-align:center">No.</th>
                                             <th style="text-align:center">Nama DUDI</th>
-                                            <th style="text-align:center">Tanggal Pengajuan</th>
+                                            <th style="text-align:center">Waktu Pengajuan</th>
                                             <th style="text-align:center">Tanggal Masuk</th>
                                             <th style="text-align:center">Tanggal Keluar</th>
                                             <th style="text-align:center">Nama Guru</th>

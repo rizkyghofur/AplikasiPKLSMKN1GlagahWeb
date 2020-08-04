@@ -17,7 +17,7 @@ class AbsensiPKL extends CI_Controller
     public function index()
     {
         $data['title'] = 'Absensi PKL Siswa';
-        $data["absensi"] = $this->absensipkl_model->getAll();
+        $data["absensi"] = $this->absensipkl_model->getKetidakhadiran();
         $this->load->view("pembimbingdudi/absensipkl/absensipkl", $data);
     }
 }

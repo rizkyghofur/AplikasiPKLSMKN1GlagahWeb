@@ -53,7 +53,11 @@
                             <?php } else { ?>
                                 <div class="card-body">
                                     <div class="alert alert-primary" role="alert">
-                                        <strong><?php echo 'Guru Pembimbing : ' . $data_guru->nama_guru ?></strong>
+                                        <?php if (!isset($data_guru->nama_guru)) { ?>
+                                            Guru Pembimbing : Belum Ditentukan
+                                        <?php } else { ?>
+                                            <strong><?php echo 'Guru Pembimbing : ' . $data_guru->nama_guru ?></strong>
+                                        <?php } ?>
                                     </div>
                                     <div class="table-responsive">
                                         <table id="table_id" class="table table-striped table-bordered" cellspacing="0" width="100%">
