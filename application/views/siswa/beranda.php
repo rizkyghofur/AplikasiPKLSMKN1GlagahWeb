@@ -42,33 +42,35 @@
                   <div class="span4"></div>
                 </div>
               </div>
-              <h5 class="card-title">Selamat Datang di Aplikasi PKL SMKN 1 Glagah - Siswa</h5>
-              <p class="card-text">Hai, <?php echo $this->session->userdata('nama_siswa'); ?></p>
+              <h5 class="card-title">Selamat Datang di Aplikasi Praktik Kerja Lapangan SMKN 1 Glagah</h5>
+              <p class="card-text">Hai, <?php echo $this->session->userdata('nama_siswa'); ?>.</p>
               <div class="span4"></div>
             </div>
           </div>
-        </div>
-        <!-- End of Main Content -->
 
-        <!-- Footer -->
-        <?php $this->load->view("_partials/footer.php") ?>
-        <!-- End of Footer -->
+        </div>
+        <!-- End of Content Fluid -->
 
       </div>
-      <!-- End of Content Wrapper -->
+      <!-- End of Main Content -->
 
     </div>
-    <!-- End of Page Wrapper -->
+    <!-- End of Content Wrapper -->
 
-    <!-- Scroll to Top Button-->
-    <?php $this->load->view("_partials/scrolltop.php") ?>
+  </div>
+  <!-- Footer -->
+  <?php $this->load->view("_partials/footer.php") ?>
+  <!-- End of Footer -->
 
-    <!-- Logout Modal-->
-    <?php $this->load->view("_partials/modal.php") ?>
-    <!-- End of Logout Modal -->
+  <!-- Scroll to Top Button-->
+  <?php $this->load->view("_partials/scrolltop.php") ?>
 
-    <!-- Bootstrap core JavaScript-->
-    <?php $this->load->view("_partials/js.php") ?>
+  <!-- Logout Modal-->
+  <?php $this->load->view("_partials/modal.php") ?>
+  <!-- End of Logout Modal -->
+
+  <!-- Bootstrap core JavaScript-->
+  <?php $this->load->view("_partials/js.php") ?>
 
 </body>
 

@@ -4,12 +4,12 @@
         <?php if ($this->session->userdata("role") === "admin_pkl") { ?>
 
             <!-- Sidebar - Brand -->
-
             <a class="sidebar-brand d-flex align-items-center justify-content-center" href="<?= base_url('admin/Beranda/'); ?>">
                 <div class="sidebar-brand-icon">
+                    <img class="center mx-auto" width=50px src="<?= base_url('assets/img/login.png'); ?>" />
                 </div>
-                <div class="sidebar-brand-text">Halaman Admin PKL</div>
             </a>
+            <p class="text-center text-white text-uppercase font-weight-bold">Halaman Admin</p>
 
             <hr class="sidebar-divider my-0">
 
@@ -112,9 +112,10 @@
         <!-- Sidebar - Brand -->
         <a class="sidebar-brand d-flex align-items-center justify-content-center" href="<?= base_url('pembimbingdudi/Beranda/'); ?>">
             <div class="sidebar-brand-icon">
+                <img class="center mx-auto" width=50px src="<?= base_url('assets/img/login.png'); ?>" />
             </div>
-            <div class="sidebar-brand-text">Halaman Pembimbing DUDI</div>
         </a>
+        <p class="text-center text-white text-uppercase font-weight-bold">Halaman Pembimbing DUDI</p>
 
         <!-- Divider -->
         <hr class="sidebar-divider my-0">
@@ -136,7 +137,7 @@
         <li class="nav-item <?php echo $this->uri->segment(2) == 'AbsensiPKL' ? 'active' : '' ?>">
             <a class="nav-link" href="<?= base_url('pembimbingdudi/AbsensiPKL'); ?>">
                 <i class="fas fa-clipboard-check"></i>
-                <span>Ketidakhadiran Siswa PKL</span></a>
+                <span>Absensi Siswa PKL</span></a>
         </li>
 
         <!-- Divider -->
@@ -159,13 +160,13 @@
         <!-- Sidebar - Brand -->
         <a class="sidebar-brand d-flex align-items-center justify-content-center" href="<?= base_url('siswa/Beranda/'); ?>">
             <div class="sidebar-brand-icon">
+                <img class="center mx-auto" width=50px src="<?= base_url('assets/img/login.png'); ?>" />
             </div>
-            <div class="sidebar-brand-text"> Halaman Siswa </div>
         </a>
+        <p class="text-center text-white text-uppercase font-weight-bold">Halaman Siswa</p>
 
         <!-- Divider -->
         <hr class="sidebar-divider my-0">
-
         <hr class="sidebar-divider">
 
         <div class="sidebar-heading" style="color: white;">
@@ -205,7 +206,7 @@
         <li class="nav-item <?php echo $this->uri->segment(2) == 'AbsensiPKL' ? 'active' : '' ?>">
             <a class="nav-link" href=" <?= base_url('siswa/AbsensiPKL'); ?>">
                 <i class="fas fa-fw fa-calendar-check"></i>
-                <span>Absensi PKL</span></a>
+                <span>Presensi PKL</span></a>
         </li>
 
         <li class="nav-item <?php echo $this->uri->segment(2) == 'CatatanKunjunganPKL' ? 'active' : '' ?>">

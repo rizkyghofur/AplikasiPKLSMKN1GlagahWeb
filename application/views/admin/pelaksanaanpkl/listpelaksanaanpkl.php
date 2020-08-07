@@ -90,15 +90,17 @@
             </div>
             <!-- End of Main Content -->
 
-            <!-- Footer -->
-            <?php $this->load->view("_partials/footer.php") ?>
-            <!-- End of Footer -->
-
         </div>
         <!-- End of Content Wrapper -->
 
     </div>
     <!-- End of Page Wrapper -->
+
+    <!-- Footer -->
+    <?php $this->load->view("_partials/footer.php") ?>
+    <!-- End of Footer -->
+
+    </div>
 
     <!-- Scroll to Top Button-->
     <?php $this->load->view("_partials/scrolltop.php") ?>

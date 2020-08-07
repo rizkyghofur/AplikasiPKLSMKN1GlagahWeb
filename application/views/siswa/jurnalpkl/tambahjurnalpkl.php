@@ -36,120 +36,158 @@
                     </div>
 
                     <div class="card mb-3">
-                        <div class="card-header">
-                            <a href="<?= base_url('siswa/JurnalPKL/') ?>"><i class="fas fa-arrow-left"></i> Kembali</a>
-                        </div>
-                        <div class="card-body">
-                            <form action="<?= base_url('siswa/JurnalPKL/tambahjurnalpkl') ?>" method="post">
+                        <?php if (!isset($pengajuanpkl->status_validasi) || $pengajuanpkl->status_validasi != "Diterima") { ?>
+                            <div class="card-body">
+                                <div class="alert alert-danger" role="alert">
+                                    <h4 class="alert-heading"><strong>Maaf, Anda tidak diizinkan mengakses menu ini!</strong></h4>
+                                    <p>Karena pengajuan PKL Anda masih berstatus
+                                        <?php if (empty($pengajuanpkl->status_validasi)) { ?>
+                                            <strong> Belum mengajukan. </strong>
+                                        <?php } else { ?>
+                                            <strong><?php echo $pengajuanpkl->status_validasi ?></strong>.</p>
+                                <?php } ?>
+                                <hr>
+                                <p class="mb-0">Jika terdapat pernyataan terkait PKL, silahkan hubungi Koordinator PKL, Bapak/Ibu Guru, atau Koordinator Jurusan di Program Studi Anda</p>
+                                </div>
+                            <?php } else { ?>
+                                <div class="card-header">
+                                    <a href="<?= base_url('siswa/JurnalPKL/') ?>"><i class="fas fa-arrow-left"></i> Kembali</a>
+                                </div>
+                                <div class="card-body">
+                                    <form action="<?= base_url('siswa/JurnalPKL/tambahjurnalpkl') ?>" method="post" enctype="multipart/form-data">
 
-                                <input type="hidden" name="id_siswa" value="<?php echo $this->session->userdata('id_siswa') ?>" />
+                                        <input type="hidden" name="id_siswa" value="<?php echo $this->session->userdata('id_siswa') ?>" />
 
-                                <div class="form-group row">
-                                    <div class="col-sm-3">
-                                        <label for="tanggal">Tanggal</label>
-                                        <input class="form-control <?php echo form_error('tanggal') ? 'is-invalid' : '' ?>" id="datepicker" type="date" name="tanggal" placeholder="" value="<?php echo date('Y-m-d'); ?>"></input>
-                                        <div class="invalid-feedback">
-                                            <?php echo form_error('tanggal') ?>
+                                        <div class="form-group row">
+                                            <div class="col-sm-3">
+                                                <label for="tanggal">Tanggal</label>
+                                                <input class="form-control <?php echo form_error('tanggal') ? 'is-invalid' : '' ?>" id="datepicker" type="date" name="tanggal" placeholder="" value="<?php echo date('Y-m-d'); ?>"></input>
+                                                <div class="invalid-feedback">
+                                                    <?php echo form_error('tanggal') ?>
+                                                </div>
+                                            </div>
                                         </div>
-                                    </div>
+
+                                        <div class="form-group">
+                                            <label>Mata Pelajaran</label>
+                                            <select class="form-control <?php echo form_error('mapel') ? 'is-invalid' : '' ?>" name="mapel" id="mapel">
+                                                <option value="0">Pilih Mata Pelajaran : </option>
+                                                <?php foreach ($mapel as $row) { ?>
+                                                    <option value="<?php echo $row->id; ?>"><?php echo $row->nama_mapel; ?></option>
+                                                <?php } ?>
+                                            </select>
+                                        </div>
+
+                                        <div class="form-group">
+                                            <label for="id_kompetensi_dasar">Kompetensi Dasar</label>
+                                            <select class="id_kompetensi_dasar form-control <?php echo form_error('id_kompetensi_dasar') ? 'is-invalid' : '' ?>" name="id_kompetensi_dasar" id="id_kompetensi_dasar">
+                                                <option value="">Pilih Kompetensi Dasar : </option>
+                                            </select>
+                                            <div class="invalid-feedback">
+                                                <?php echo form_error('id_kompetensi_dasar') ?>
+                                            </div>
+                                        </div>
+
+                                        <div class="form-group">
+                                            <label for="topik_pekerjaan">Topik Pekerjaan</label>
+                                            <textarea class="form-control <?php echo form_error('topik_pekerjaan') ? 'is-invalid' : '' ?>" type="text" name="topik_pekerjaan" placeholder=""></textarea>
+                                            <div class="invalid-feedback">
+                                                <?php echo form_error('topik_pekerjaan') ?>
+                                            </div>
+                                        </div>
+
+                                        <div class="form-group">
+                                            <label for="dokumentasi">Dokumentasi <strong>(Maks. ukuran file 1MB)</strong> </label>
+                                            <input id="dokumentasi" class="form-control-file <?php echo form_error('dokumentasi') ? 'is-invalid' : '' ?>" type="file" name="dokumentasi" accept="image/*" />
+                                            <div class="invalid-feedback">
+                                                <?php echo form_error('dokumentasi') ?>
+                                            </div>
+                                        </div>
+
+                                        <input type="hidden" name="status" value="Belum Tervalidasi" />
+
+                                        <input class="btn btn-success" type="submit" name="btn" value="Simpan" />
+
+                                    </form>
+
                                 </div>
 
-                                <div class="form-group">
-                                    <label>Mata Pelajaran</label>
-                                    <select class="form-control <?php echo form_error('mapel') ? 'is-invalid' : '' ?>" name="mapel" id="mapel">
-                                        <option value="0">Pilih Mata Pelajaran : </option>
-                                        <?php foreach ($mapel as $row) { ?>
-                                            <option value="<?php echo $row->id; ?>"><?php echo $row->nama_mapel; ?></option>
-                                        <?php } ?>
-                                    </select>
+                                <div class="card-footer small text-muted">
+                                    * Wajib diisi
                                 </div>
 
-                                <div class="form-group">
-                                    <label for="id_kompetensi_dasar">Kompetensi Dasar</label>
-                                    <select class="id_kompetensi_dasar form-control <?php echo form_error('id_kompetensi_dasar') ? 'is-invalid' : '' ?>" name="id_kompetensi_dasar" id="id_kompetensi_dasar">
-                                        <option value="">Pilih Kompetensi Dasar : </option>
-                                    </select>
-                                    <div class="invalid-feedback">
-                                        <?php echo form_error('id_kompetensi_dasar') ?>
-                                    </div>
-                                </div>
+                            <?php } ?>
 
-                                <div class="form-group">
-                                    <label for="topik_pekerjaan">Topik Pekerjaan</label>
-                                    <textarea class="form-control <?php echo form_error('topik_pekerjaan') ? 'is-invalid' : '' ?>" type="text" name="topik_pekerjaan" placeholder=""></textarea>
-                                    <div class="invalid-feedback">
-                                        <?php echo form_error('topik_pekerjaan') ?>
-                                    </div>
-                                </div>
-
-                                <input type="hidden" name="status" value="Belum Tervalidasi" />
-
-                                <input class="btn btn-success" type="submit" name="btn" value="Simpan" />
-
-                            </form>
-
-                        </div>
-
-                        <div class="card-footer small text-muted">
-                            * Wajib diisi
-                        </div>
+                            </div>
+                            <!-- End of Content Row -->
 
                     </div>
-                    <!-- End of Main Content -->
-
-                    <!-- Footer -->
-                    <?php $this->load->view("_partials/footer.php") ?>
-                    <!-- End of Footer -->
+                    <!-- End of Content Fluid -->
 
                 </div>
-                <!-- End of Content Wrapper -->
+                <!-- End of Main Content -->
 
             </div>
-            <!-- End of Page Wrapper -->
+            <!-- End of Content Wrapper -->
 
-            <!-- Scroll to Top Button-->
-            <?php $this->load->view("_partials/scrolltop.php") ?>
+        </div>
+        <!-- Footer -->
+        <?php $this->load->view("_partials/footer.php") ?>
+        <!-- End of Footer -->
 
-            <!-- Logout Modal-->
-            <?php $this->load->view("_partials/modal.php") ?>
+        <!-- Scroll to Top Button-->
+        <?php $this->load->view("_partials/scrolltop.php") ?>
 
-            <!-- Bootstrap core JavaScript-->
-            <?php $this->load->view("_partials/js.php") ?>
+        <!-- Logout Modal-->
+        <?php $this->load->view("_partials/modal.php") ?>
 
-            <script type="text/javascript">
-                $(document).ready(function() {
-                    $('#mapel').change(function() {
-                        var id = $(this).val();
-                        $.ajax({
-                            url: "<?php echo base_url(); ?>siswa/JurnalPKL/getKompetensidasar",
-                            method: "POST",
-                            data: {
-                                id: id
-                            },
-                            async: true,
-                            dataType: 'json',
-                            success: function(data) {
-                                var html = '';
-                                var i;
-                                for (i = 0; i < data.length; i++) {
-                                    html += '<option value=' + data[i].id + '>' + data[i].kompetensi_dasar + '</option>';
-                                }
-                                $('.id_kompetensi_dasar').html(html);
+        <!-- Bootstrap core JavaScript-->
+        <?php $this->load->view("_partials/js.php") ?>
+
+        <script type="text/javascript">
+            $(document).ready(function() {
+                $('#mapel').change(function() {
+                    var id = $(this).val();
+                    $.ajax({
+                        url: "<?php echo base_url(); ?>siswa/JurnalPKL/getKompetensidasar",
+                        method: "POST",
+                        data: {
+                            id: id
+                        },
+                        async: true,
+                        dataType: 'json',
+                        success: function(data) {
+                            var html = '';
+                            var i;
+                            for (i = 0; i < data.length; i++) {
+                                html += '<option value=' + data[i].id + '>' + data[i].kompetensi_dasar + '</option>';
                             }
-                        });
-                        return false;
+                            $('.id_kompetensi_dasar').html(html);
+                        }
                     });
+                    return false;
                 });
-            </script>
+            });
+        </script>
 
-            <script>
-                $(function() {
-                    $("#datepicker").datepicker({
-                        changeMonth: true,
-                        changeYear: true
-                    });
+        <script>
+            $(function() {
+                $("#datepicker").datepicker({
+                    changeMonth: true,
+                    changeYear: true
                 });
-            </script>
+            });
+        </script>
+
+        <script>
+            var uploadField = document.getElementById("dokumentasi");
+            uploadField.onchange = function() {
+                if (this.files[0].size > 1048576) {
+                    alert("Foto terlalu besar");
+                    this.value = "";
+                };
+            };
+        </script>
 
 </body>
 

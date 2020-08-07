@@ -96,37 +96,40 @@
                 </div>
                 <!-- End of Main Content -->
 
-                <!-- Footer -->
-                <?php $this->load->view("_partials/footer.php") ?>
-                <!-- End of Footer -->
-
             </div>
-            <!-- End of Content Wrapper -->
+            <!-- End of Content Fluid -->
 
         </div>
-        <!-- End of Page Wrapper -->
+        <!-- End of Main Content -->
 
-        <!-- Scroll to Top Button-->
-        <?php $this->load->view("_partials/scrolltop.php") ?>
+    </div>
+    <!-- End of Content Wrapper -->
 
-        <!-- Logout Modal-->
-        <?php $this->load->view("_partials/modal.php") ?>
+    <!-- Footer -->
+    <?php $this->load->view("_partials/footer.php") ?>
+    <!-- End of Footer -->
 
-        <!-- Custom Bootstrap Script-->
-        <?php $this->load->view("_partials/js.php") ?>
+    <!-- Scroll to Top Button-->
+    <?php $this->load->view("_partials/scrolltop.php") ?>
 
-        <script type="text/javascript">
-            $(document).ready(function() {
-                $('#table_id').DataTable();
-            });
-        </script>
+    <!-- Logout Modal-->
+    <?php $this->load->view("_partials/modal.php") ?>
 
-        <script>
-            function deleteConfirm(url) {
-                $('#btn-delete').attr('href', url);
-                $('#deleteModal').modal();
-            }
-        </script>
+    <!-- Custom Bootstrap Script-->
+    <?php $this->load->view("_partials/js.php") ?>
+
+    <script type="text/javascript">
+        $(document).ready(function() {
+            $('#table_id').DataTable();
+        });
+    </script>
+
+    <script>
+        function deleteConfirm(url) {
+            $('#btn-delete').attr('href', url);
+            $('#deleteModal').modal();
+        }
+    </script>
 
 </body>
 

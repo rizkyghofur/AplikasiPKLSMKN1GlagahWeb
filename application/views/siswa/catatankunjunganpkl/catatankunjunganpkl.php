@@ -63,7 +63,7 @@
                                         <table id="table_id" class="table table-striped table-bordered" cellspacing="0" width="100%">
                                             <thead>
                                                 <tr>
-                                                    <th style="text-align:center">No.</th>
+                                                    <th width="15" style="text-align:center">No.</th>
                                                     <th style="text-align:center">Tanggal Kunjungan</th>
                                                     <th style="text-align:center">Catatan Kunjungan</th>
                                                 </tr>
@@ -73,7 +73,7 @@
                                                 $i = 1;
                                                 foreach ($catatankunjunganpkl as $catatankunjungan) : ?>
                                                     <tr>
-                                                        <td width="50" style="text-align:center">
+                                                        <td width="15" style="text-align:center">
                                                             <?php echo $i ?>
                                                         </td>
                                                         <td width="250" style="text-align:center">
@@ -89,41 +89,45 @@
                                     </div>
                                 </div>
                             <?php } ?>
-                            </div>
-                    </div>
-                    <!-- End of Main Content -->
 
-                    <!-- Footer -->
-                    <?php $this->load->view("_partials/footer.php") ?>
-                    <!-- End of Footer -->
+                            </div>
+                            <!-- End of Content Row -->
+
+                    </div>
+                    <!-- End of Content Fluid -->
 
                 </div>
-                <!-- End of Content Wrapper -->
+                <!-- End of Main Content -->
 
             </div>
-            <!-- End of Page Wrapper -->
+            <!-- End of Content Wrapper -->
 
-            <!-- Scroll to Top Button-->
-            <?php $this->load->view("_partials/scrolltop.php") ?>
+        </div>
+        <!-- Footer -->
+        <?php $this->load->view("_partials/footer.php") ?>
+        <!-- End of Footer -->
 
-            <!-- Logout Modal-->
-            <?php $this->load->view("_partials/modal.php") ?>
+        <!-- Scroll to Top Button-->
+        <?php $this->load->view("_partials/scrolltop.php") ?>
 
-            <!-- Custom Bootstrap Script-->
-            <?php $this->load->view("_partials/js.php") ?>
+        <!-- Logout Modal-->
+        <?php $this->load->view("_partials/modal.php") ?>
 
-            <script type="text/javascript">
-                $(document).ready(function() {
-                    $('#table_id').DataTable();
-                });
-            </script>
+        <!-- Custom Bootstrap Script-->
+        <?php $this->load->view("_partials/js.php") ?>
 
-            <script>
-                function deleteConfirm(url) {
-                    $('#btn-delete').attr('href', url);
-                    $('#deleteModal').modal();
-                }
-            </script>
+        <script type="text/javascript">
+            $(document).ready(function() {
+                $('#table_id').DataTable();
+            });
+        </script>
+
+        <script>
+            function deleteConfirm(url) {
+                $('#btn-delete').attr('href', url);
+                $('#deleteModal').modal();
+            }
+        </script>
 
 </body>
 

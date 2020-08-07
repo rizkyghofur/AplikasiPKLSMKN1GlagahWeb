@@ -1,10 +1,8 @@
-<!-- Sticky Footer -->
-<footer class="page-footer font-small blue">
-
-    <!-- Copyright -->
-    <div class="footer-copyright text-center py-3"> Hak cipta © 2020,
-        <a href="https://smkn1glagah.sch.id/"> SMKN 1 Glagah</a>
+<footer class="sticky-footer bg-white">
+    <div class="container my-auto">
+        <div class="copyright text-center my-auto">
+            Hak cipta © 2020, <a href="https://smkn1glagah.sch.id/"> SMKN 1 Glagah</a>
+        </div>
     </div>
-    <!-- Copyright -->
-
+    </div>
 </footer>

@@ -37,6 +37,7 @@ class ProgramPKL extends CI_Controller
         }
         $data['title'] = 'Tambah Data Program PKL';
         $data['mapel'] = $this->programpkl_model->getMapel();
+        $data['pengajuanpkl'] = $this->permohonanpkl_model->getAll();
         $this->load->view("siswa/programpkl/tambahprogrampkl", $data);
     }
 
@@ -61,6 +62,7 @@ class ProgramPKL extends CI_Controller
         }
         $data['title'] = 'Ubah Data Jurnal PKL';
         $data['mapel'] = $this->programpkl_model->getMapel();
+        $data['pengajuanpkl'] = $this->permohonanpkl_model->getAll();
         $data["programpkl"] = $programpkl->getId($id);
         if (!$data["programpkl"]) show_404();
         $this->load->view("siswa/programpkl/ubahprogrampkl", $data);

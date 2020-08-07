@@ -52,9 +52,16 @@
                     <!-- Content Row -->
 
                     <div class="card mb-3">
-                        <div class="card-header d-flex justify-content-between mb-2">
-                            <button type="button" class="btn btn-light" data-toggle="modal" data-target="#tambahpermohonanpkl"><i class="fas fa-plus"></i> Tambah Permohonan PKL</button>
-                        </div>
+
+                        <?php if (empty($permohonanpkl->status_validasi)) { ?>
+                            <div class="card-header d-flex justify-content-between mb-2">
+                                <button type="button" class="btn btn-light" data-toggle="modal" data-target="#tambahpermohonanpkl"><i class="fas fa-plus"></i> Tambah Permohonan PKL</button>
+                            </div>
+                        <?php } elseif ($permohonanpkl->status_validasi == 'Ditolak') { ?>
+                            <div class="card-header d-flex justify-content-between mb-2">
+                                <button type="button" class="btn btn-light" data-toggle="modal" data-target="#tambahpermohonanpkl"><i class="fas fa-plus"></i> Tambah Permohonan PKL</button>
+                            </div>
+                        <?php } ?>
                         <div class="card-body">
 
                             <?php if (empty($permohonanpkl->status_validasi)) { ?>
@@ -119,7 +126,7 @@
                                 <table id="table" class="table table-striped table-bordered" cellspacing="0" width="100%">
                                     <thead>
                                         <tr>
-                                            <th style="text-align:center">No.</th>
+                                            <th width="15" style="text-align:center">No.</th>
                                             <th style="text-align:center">Nama DUDI</th>
                                             <th style="text-align:center">Waktu Pengajuan</th>
                                             <th style="text-align:center">Tanggal Masuk</th>
@@ -133,13 +140,13 @@
                                         $i = 1;
                                         foreach ($pengajuanpkl as $pengajuan) : ?>
                                             <tr>
-                                                <td style="text-align:center">
+                                                <td width="15" style="text-align:center">
                                                     <?php echo $i ?>
                                                 </td>
                                                 <td>
                                                     <?php echo $pengajuan->nama_dudi; ?>
                                                 </td>
-                                                <td>
+                                                <td style="text-align:center">
                                                     <?php echo $pengajuan->tanggal_pengajuan; ?>
                                                 </td>
                                                 <td style="text-align:center">
@@ -191,18 +198,19 @@
                         </div>
                     </div>
                 </div>
+
             </div>
             <!-- End of Main Content -->
-
-            <!-- Footer -->
-            <?php $this->load->view("_partials/footer.php") ?>
-            <!-- End of Footer -->
 
         </div>
         <!-- End of Content Wrapper -->
 
     </div>
     <!-- End of Page Wrapper -->
+
+    <!-- Footer -->
+    <?php $this->load->view("_partials/footer.php") ?>
+    <!-- End of Footer -->
 
     <!-- Scroll to Top Button-->
     <?php $this->load->view("_partials/scrolltop.php") ?>

@@ -78,28 +78,33 @@
                         <div class="card-footer small text-muted">
                             * Wajib diisi
                         </div>
-
                     </div>
-                    <!-- End of Main Content -->
-
-                    <!-- Footer -->
-                    <?php $this->load->view("_partials/footer.php") ?>
-                    <!-- End of Footer -->
 
                 </div>
-                <!-- End of Content Wrapper -->
+                <!-- End of Page Content -->
 
             </div>
-            <!-- End of Page Wrapper -->
+            <!-- End of Main Content -->
 
-            <!-- Scroll to Top Button-->
-            <?php $this->load->view("_partials/scrolltop.php") ?>
+        </div>
+        <!-- End of Page Wrapper -->
 
-            <!-- Logout Modal-->
-            <?php $this->load->view("_partials/modal.php") ?>
+    </div>
+    <!-- End of Page Wrapper -->
 
-            <!-- Bootstrap core JavaScript-->
-            <?php $this->load->view("_partials/js.php") ?>
+    <!-- Footer -->
+    <?php $this->load->view("_partials/footer.php") ?>
+    <!-- End of Footer -->
+
+    <!-- Scroll to Top Button-->
+    <?php $this->load->view("_partials/scrolltop.php") ?>
+
+    <!-- Logout Modal-->
+    <?php $this->load->view("_partials/modal.php") ?>
+
+    <!-- Bootstrap core JavaScript-->
+    <?php $this->load->view("_partials/js.php") ?>
+
 
 </body>
 

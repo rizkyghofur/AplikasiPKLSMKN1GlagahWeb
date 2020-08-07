@@ -37,6 +37,7 @@ class JurnalPKL extends CI_Controller
         }
         $data['title'] = 'Tambah Data Jurnal PKL';
         $data['mapel'] = $this->jurnalpkl_model->getMapel();
+        $data['pengajuanpkl'] = $this->permohonanpkl_model->getAll();
         $this->load->view("siswa/jurnalpkl/tambahjurnalpkl", $data);
     }
 
@@ -61,6 +62,7 @@ class JurnalPKL extends CI_Controller
         }
         $data['title'] = 'Ubah Data Jurnal PKL';
         $data['mapel'] = $this->jurnalpkl_model->getMapel();
+        $data['pengajuanpkl'] = $this->permohonanpkl_model->getAll();
         $data["jurnalpkl"] = $jurnalpkl->getById($id);
         if (!$data["jurnalpkl"]) show_404();
         $this->load->view("siswa/jurnalpkl/ubahjurnalpkl", $data);

@@ -17,7 +17,7 @@ class AbsensiPKL extends CI_Controller
 
     public function index()
     {
-        $data['title'] = 'Absensi PKL';
+        $data['title'] = 'Presensi PKL';
         $data['absensi'] = $this->absensipkl_model->getAll();
         $data['pengajuanpkl'] = $this->permohonanpkl_model->getAll();
         $data['data_siswa'] = $this->absensipkl_model->getDataSiswa();

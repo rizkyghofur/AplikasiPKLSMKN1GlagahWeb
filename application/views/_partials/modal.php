@@ -114,16 +114,21 @@
 
                           <form action="<?= base_url('siswa/PermohonanPKL/tambahpermohonanpkl') ?>" method="post">
 
-                              <input type="hidden" name="id_siswa" value="<?php echo $this->session->userdata('id_siswa') ?>" />
-
                               <div class="form-group">
                                   <label for="id_dudi">Pilih Tujuan / Nama DUDI</label>
                                   <select class="form-control <?php echo form_error('id_dudi') ? 'is-invalid' : '' ?>" name="id_dudi">
-                                      <option value="">Pilih DUDI : </option>
                                       <?php foreach ($data_dudi as $row) { ?>
-                                          <option value="<?php echo $row->id_dudi; ?>"><?php echo $row->nama_dudi ?></option>
+                                          <?php if ($row->kuota > 0) { ?>
+                                              <option value="<?php echo $row->id_dudi; ?>"><?php echo $row->nama_dudi ?>, kuota : <?php echo $row->kuota ?> </option>
+                                          <?php } else { ?>
+                                              <option disabled selected value="<?php echo $row->id_dudi; ?>"><?php echo $row->nama_dudi ?> (Kuota penuh)</option>
+                                          <?php } ?>
                                       <?php } ?>
+                                      <option disabled selected value="">Pilih DUDI : </option>
                                   </select>
+
+                                  <input type="hidden" name="id_siswa" value="<?php echo $this->session->userdata('id') ?>" />
+
                                   <div class="invalid-feedback">
                                       <?php echo form_error('id_dudi') ?>
                                   </div>

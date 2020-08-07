@@ -102,40 +102,47 @@
                                 </table>
                             </div>
                         </div>
+
                     </div>
                     <!-- End of Main Content -->
 
-                    <!-- Footer -->
-                    <?php $this->load->view("_partials/footer.php") ?>
-                    <!-- End of Footer -->
-
                 </div>
-                <!-- End of Content Wrapper -->
+                <!-- End of Page Content -->
 
             </div>
-            <!-- End of Page Wrapper -->
+            <!-- End of Main Content -->
 
-            <!-- Scroll to Top Button-->
-            <?php $this->load->view("_partials/scrolltop.php") ?>
+        </div>
+        <!-- End of Page Wrapper -->
 
-            <!-- Logout Modal-->
-            <?php $this->load->view("_partials/modal.php") ?>
+    </div>
+    <!-- End of Page Wrapper -->
 
-            <!-- Custom Bootstrap Script-->
-            <?php $this->load->view("_partials/js.php") ?>
+    <!-- Footer -->
+    <?php $this->load->view("_partials/footer.php") ?>
+    <!-- End of Footer -->
 
-            <script type="text/javascript">
-                $(document).ready(function() {
-                    $('#table_id').DataTable();
-                });
-            </script>
+    <!-- Scroll to Top Button-->
+    <?php $this->load->view("_partials/scrolltop.php") ?>
 
-            <script>
-                function deleteConfirm(url) {
-                    $('#btn-delete').attr('href', url);
-                    $('#deleteModal').modal();
-                }
-            </script>
+    <!-- Logout Modal-->
+    <?php $this->load->view("_partials/modal.php") ?>
+
+    <!-- Custom Bootstrap Script-->
+    <?php $this->load->view("_partials/js.php") ?>
+
+    <script type="text/javascript">
+        $(document).ready(function() {
+            $('#table_id').DataTable();
+        });
+    </script>
+
+    <script>
+        function deleteConfirm(url) {
+            $('#btn-delete').attr('href', url);
+            $('#deleteModal').modal();
+        }
+    </script>
 
 </body>
 

@@ -62,10 +62,18 @@ class datadudi_model extends CI_Model
         return $query->result();
     }
 
+    public function getInfoDUDI()
+    {
+        $this->db->where('id_jurusan', $this->session->userdata('id_jurusan'));
+        $this->db->order_by('nama_dudi', 'asc');
+        $query = $this->db->get($this->_table);
+        return $query->result();
+    }
+
     public function getDataDUDI()
     {
         $this->db->where('id_jurusan', $this->session->userdata('id_jurusan'));
-        $this->db->order_by('nama_dudi', 'ASC');
+        $this->db->order_by('kuota', 'asc');
         $query = $this->db->get($this->_table);
         return $query->result();
     }

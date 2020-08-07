@@ -17,7 +17,7 @@ class InfoDUDI extends CI_Controller
     public function index()
     {
         $data['title'] = 'Informasi Tempat PKL / DUDI';
-        $data['data_dudi'] = $this->datadudi_model->getDataDUDI();
+        $data['data_dudi'] = $this->datadudi_model->getInfoDUDI();
         $this->load->view("siswa/dudi/infodudi", $data);
     }
 }

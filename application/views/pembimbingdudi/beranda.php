@@ -47,12 +47,9 @@
               <div class="span4"></div>
             </div>
           </div>
+
         </div>
         <!-- End of Main Content -->
-
-        <!-- Footer -->
-        <?php $this->load->view("_partials/footer.php") ?>
-        <!-- End of Footer -->
 
       </div>
       <!-- End of Content Wrapper -->
@@ -60,14 +57,19 @@
     </div>
     <!-- End of Page Wrapper -->
 
-    <!-- Scroll to Top Button-->
-    <?php $this->load->view("_partials/scrolltop.php") ?>
+  </div>
+  <!-- Footer -->
+  <?php $this->load->view("_partials/footer.php") ?>
+  <!-- End of Footer -->
 
-    <!-- Logout Modal-->
-    <?php $this->load->view("_partials/modal.php") ?>
+  <!-- Scroll to Top Button-->
+  <?php $this->load->view("_partials/scrolltop.php") ?>
 
-    <!-- Bootstrap core JavaScript-->
-    <?php $this->load->view("_partials/js.php") ?>
+  <!-- Logout Modal-->
+  <?php $this->load->view("_partials/modal.php") ?>
+
+  <!-- Bootstrap core JavaScript-->
+  <?php $this->load->view("_partials/js.php") ?>
 
 </body>
 
