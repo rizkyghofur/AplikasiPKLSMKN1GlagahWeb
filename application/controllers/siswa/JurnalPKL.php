@@ -63,7 +63,7 @@ class JurnalPKL extends CI_Controller
         $data['title'] = 'Ubah Data Jurnal PKL';
         $data['mapel'] = $this->jurnalpkl_model->getMapel();
         $data['pengajuanpkl'] = $this->permohonanpkl_model->getAll();
-        $data["jurnalpkl"] = $jurnalpkl->getById($id);
+        $data["jurnalpkl"] = $jurnalpkl->getId($id);
         if (!$data["jurnalpkl"]) show_404();
         $this->load->view("siswa/jurnalpkl/ubahjurnalpkl", $data);
     }
@@ -77,10 +77,11 @@ class JurnalPKL extends CI_Controller
         }
     }
 
-    public function cetak_jurnal_pkl()
+    public function cetak_jurnal_pkl($id_siswa = null)
     {
-        $this->load->library('fpdf');
-        $data['jurnal_pkl'] = $this->jurnalpkl_model->getAll();
+        $this->load->library('pdf');
+        $data['jurnal_pkl'] = $this->jurnalpkl_model->getData();
+        $data['data_jurnal_pkl'] = $this->jurnalpkl_model->getById($id_siswa);
         if (!$data["jurnal_pkl"]) show_error('Tidak ditemukan data', '404', 'Tidak dapat mencetak laporan jurnal PKL');
         $this->load->view('siswa/jurnalpkl/cetakjurnalpkl', $data);
     }

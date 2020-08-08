@@ -115,7 +115,7 @@
                 <img class="center mx-auto" width=50px src="<?= base_url('assets/img/login.png'); ?>" />
             </div>
         </a>
-        <p class="text-center text-white text-uppercase font-weight-bold">Halaman Pembimbing DUDI</p>
+        <p class="text-center text-white text-uppercase font-weight-bold">Halaman<br>Pembimbing DUDI</br></p>
 
         <!-- Divider -->
         <hr class="sidebar-divider my-0">
@@ -203,8 +203,8 @@
                 <span>Program PKL</span></a>
         </li>
 
-        <li class="nav-item <?php echo $this->uri->segment(2) == 'AbsensiPKL' ? 'active' : '' ?>">
-            <a class="nav-link" href=" <?= base_url('siswa/AbsensiPKL'); ?>">
+        <li class="nav-item <?php echo $this->uri->segment(2) == 'PresensiPKL' ? 'active' : '' ?>">
+            <a class="nav-link" href=" <?= base_url('siswa/PresensiPKL'); ?>">
                 <i class="fas fa-fw fa-calendar-check"></i>
                 <span>Presensi PKL</span></a>
         </li>

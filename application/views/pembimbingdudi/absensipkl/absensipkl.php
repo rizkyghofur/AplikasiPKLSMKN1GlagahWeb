@@ -29,11 +29,31 @@
 
                     <!-- Page Heading -->
                     <div class="d-sm-flex align-items-center justify-content-between mb-2">
-                        <h1 class="h2 mr-4 mb-0 text-gray-800">Absensi Ketidakhadiran Siswa PKL</h1>
+                        <h1 class="h2 mr-4 mb-0 text-gray-800">Absensi Siswa PKL</h1>
                     </div>
                     <?php $this->load->view("_partials/breadcrumb.php") ?>
 
                     <!-- Content Row -->
+                    <form action="<?php echo base_url(); ?>pembimbingdudi/AbsensiPKL/" enctype="multipart/form-data" method="post">
+                        <div class="form-group d-flex justify-content-start">
+                            <select class="form-control col-lg-2" name="sort">
+                                <option disabled selected value="">Pilih bulan absensi</option>
+                                <option value="1">Januari</option>
+                                <option value="2">Februari</option>
+                                <option value="3">Maret</option>
+                                <option value="4">April</option>
+                                <option value="5">Mei</option>
+                                <option value="6">Juni</option>
+                                <option value="7">Juli</option>
+                                <option value="8">Agustus</option>
+                                <option value="9">September</option>
+                                <option value="10">Oktober</option>
+                                <option value="11">November</option>
+                                <option value="12">Desember</option>
+                            </select>
+                            <button type="submit" class="btn btn-primary"><span class="fa fa-search"> Cari</span></button>
+                        </div>
+                    </form>
                     <div class="card mb-3">
                         <div class="card-body">
                             <div class="table-responsive">

@@ -44,7 +44,27 @@ class jurnalpkl_model extends CI_Model
         return $this->db->get($this->_table)->result();
     }
 
-    public function getById($id_jurnal_pkl)
+    public function getData()
+    {
+        $this->db->select('*');
+        $this->db->join('data_siswa', 'data_siswa.id_siswa = jurnal_pkl.id_siswa');
+        $this->db->join('kompetensi_dasar', 'kompetensi_dasar.id = jurnal_pkl.id_kompetensi_dasar');
+        $this->db->where('jurnal_pkl.id_siswa', $this->session->userdata('id'));
+        $this->db->order_by('id_jurnal_pkl', 'desc');
+        return $this->db->get($this->_table)->result_array();
+    }
+
+    public function getById($id_siswa)
+    {
+        $this->db->join('data_siswa', 'data_siswa.id_siswa = jurnal_pkl.id_siswa');
+        $this->db->join('jurusan', 'jurusan.id_jurusan = data_siswa.id_jurusan');
+        $this->db->join('kompetensi_dasar', 'kompetensi_dasar.id = jurnal_pkl.id_kompetensi_dasar');
+        $this->db->join('pengajuanpkl', 'pengajuanpkl.id_siswa = jurnal_pkl.id_siswa');
+        $this->db->join('data_dudi', 'data_dudi.id_dudi = pengajuanpkl.id_dudi');
+        return $this->db->get_where($this->_table, ["jurnal_pkl.id_siswa" => $id_siswa])->row();
+    }
+
+    public function getId($id_jurnal_pkl)
     {
         return $this->db->get_where($this->_table, ["id_jurnal_pkl" => $id_jurnal_pkl])->row();
     }

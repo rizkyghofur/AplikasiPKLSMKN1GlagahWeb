@@ -184,22 +184,6 @@
             </div>
 
           </div>
-
-          <!-- Content Row -->
-          <div class="card text-center">
-            <div class="container">
-              <div class="card-body">
-                <div class="row">
-                  <div class="span4"></div>
-                  <div class="span4"></div>
-                </div>
-              </div>
-              <h5 class="card-title">Selamat Datang di Aplikasi PKL SMKN 1 Glagah - Admin PKL</h5>
-              <p class="card-text">Hai, <?php echo $this->session->userdata('nama_staf_tu'); ?></p>
-              <div class="span4"></div>
-            </div>
-          </div>
-
         </div>
         <!-- End of Main Content -->
 

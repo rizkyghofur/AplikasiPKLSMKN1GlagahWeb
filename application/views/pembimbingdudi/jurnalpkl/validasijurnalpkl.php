@@ -51,6 +51,7 @@
                                             <th style="text-align:center">Kelas</th>
                                             <th style="text-align:center">Tgl Pelaksanaan</th>
                                             <th style="text-align:center">Topik Pekerjaan</th>
+                                            <th style="text-align:center">Dokumentasi</th>
                                             <th style="text-align:center">Validasi</th>
                                             <th style="text-align:center">Catatan</th>
                                             <th style="text-align:center">Opsi</th>
@@ -75,6 +76,9 @@
                                                 </td>
                                                 <td>
                                                     <?php echo $jurnal->topik_pekerjaan ?>
+                                                </td>
+                                                <td style="text-align:center">
+                                                    <img src="<?php echo base_url('dokumentasi/' . $jurnal->dokumentasi) ?>" width="250" height="250" />
                                                 </td>
                                                 <td style="text-align:center">
                                                     <?php

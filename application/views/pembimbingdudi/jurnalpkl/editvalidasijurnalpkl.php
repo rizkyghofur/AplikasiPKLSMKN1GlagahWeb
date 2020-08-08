@@ -102,6 +102,11 @@
                                     </div>
                                 </div>
 
+                                <label for="dokumentasi">Dokumentasi</label>
+                                <div class="form-group d-flex justify-content-center">
+                                    <img class="col-lg-6" src="<?php echo base_url('dokumentasi/' . $jurnal_pkl->dokumentasi) ?>" width="480" height="320" />
+                                </div>
+
                                 <input class="btn btn-primary" type="submit" name="btn" value="Simpan" />
                             </form>
 

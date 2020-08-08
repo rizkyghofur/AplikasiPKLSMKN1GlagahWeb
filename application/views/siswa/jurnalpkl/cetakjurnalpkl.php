@@ -1,65 +1,68 @@
-<?php if (!defined('BASEPATH')) exit('No direct script access allowed');
+<?php
 
-class PDF extends FPDF
-{
-    // Page header
-    function Header()
-    {
-        if ($this->PageNo() == 1) {
-            $this->setFont('Arial', 'B', 14);
-            $this->setFillColor(255, 255, 255);
-            $this->cell(0, 3, 'JURNAL KEGIATAN PRAKTIK KERJA LAPANGAN', 0, 1, 'C', 1);
-            // Line break
-            $this->Ln(8);
-            $this->setFont('Arial', 'B', 11);
-            $this->setFillColor(160, 160, 160);
-            $this->cell(35, 10, 'Tanggal Kegiatan', 1, 0, 'C', 1);
-            $this->cell(65, 10, 'Topik Pekerjaan', 1, 0, 'C', 1);
-            $this->cell(70, 10, 'Rujukan Kompetensi Dasar', 1, 1, 'C', 1);
-        } else {
-            // Line break
-            $this->setFont('Arial', 'B', 11);
-            $this->setFillColor(160, 160, 160);
-            $this->cell(35, 10, 'Tanggal Kegiatan', 1, 0, 'C', 1);
-            $this->cell(65, 10, 'Topik Pekerjaan', 1, 0, 'C', 1);
-            $this->cell(70, 10, 'Rujukan Kompetensi Dasar', 1, 1, 'C', 1);
-        }
-    }
-
-    function Content($jurnal_pkl)
-    {
-        function custom_echo($x, $length)
-        {
-            if (strlen($x) <= $length) {
-                return $x;
-            }
-            return substr($x, 0, $length) . '...';
-        }
-
-        foreach ($jurnal_pkl as $jurnal) {
-            $this->SetFont('Arial', '', 10);
-            $this->setFillColor(255, 255, 255);
-            $this->cell(35, 8, $jurnal->tanggal, 1, 0, 'C', 0);
-            $this->cell(65, 8, (custom_echo($jurnal->topik_pekerjaan, 35)), 1, 0, 'L', 1);
-            $this->cell(70, 8, (custom_echo($jurnal->kompetensi_dasar, 38)), 1, 1, 'L', 1);
-        }
-    }
-
-    // Page footer
-    function Footer()
-    {
-        $this->SetY(-15);
-        $this->SetFont('Arial', '', 9);
-        $this->Cell(0, 10, 'F-WK3-01', 0, 0, 'L');
-        $this->Cell(0, 10, 'Rev. 31.08.19 ', 0, 0, 'R');
-    }
-}
-
-// Instanciation of inherited class
-$pdf = new PDF();
-$pdf->SetMargins(20, 20, 20);
-$pdf->SetAutoPageBreak(true, 20);
-$pdf->AliasNbPages();
+$pdf = new Pdf('P', 'mm', 'A4', true, 'UTF-8', false);
+$pdf->SetTitle('Laporan Jurnal PKL');
+$pdf->SetPrintHeader(false);
+$pdf->SetPrintFooter(false);
+$pdf->SetHeaderMargin(0);
+$pdf->SetTopMargin(10);
+$pdf->setFooterMargin(10);
+$pdf->SetAutoPageBreak(true);
+$pdf->SetAuthor('Author');
+$pdf->SetDisplayMode('real', 'default');
+$pdf->SetFont('Arial', '', 11, '', 'false');
 $pdf->AddPage();
-$pdf->Content($jurnal_pkl);
-$pdf->Output();
+$i = 0;
+$html = '
+    <h1 style="text-align:center; font-weight: bold;">JURNAL PRAKTIK KERJA LAPANGAN (PKL)</h1>
+    <blockquote>
+    <table>
+  <tr>
+    <td width="30%">Nama Peserta PKL</td>
+    <td> : ' . $data_jurnal_pkl->nama_siswa . '</td>
+  </tr>
+  <tr>
+    <td width="30%">Kelas</td>
+    <td> : ' . $data_jurnal_pkl->kelas . '</td>
+  </tr>
+  <tr>
+    <td width="30%">Semester</td>
+    <td> : 4</td>
+  </tr>
+  <tr>
+    <td width="30%">Paket Keahlian</td>
+    <td> : ' . $data_jurnal_pkl->nama_jurusan . '</td>
+  </tr>
+  <tr>
+    <td width="30%">Nama DUDI</td>
+    <td> : ' . $data_jurnal_pkl->nama_dudi . '</td>
+  </tr>
+  <tr>
+    <td width="30%">Alamat</td>
+    <td> : ' . $data_jurnal_pkl->alamat_dudi . '</td>
+  </tr>
+  <tr>
+    <td width="30%">Waktu PKL</td>
+    <td> : ' . $data_jurnal_pkl->tanggal_masuk . ' - ' . $data_jurnal_pkl->tanggal_keluar . '</td>
+  </tr>
+    <tr>
+    <td></td>
+  </tr>
+</table>
+    </blockqoute>
+                    <table style="margin-top: 25px;" cellspacing="2" bgcolor="#666666" cellpadding="2">
+                        <tr bgcolor="#ffffff">
+                            <th width="15%" align="center">Tanggal Kegiatan</th>
+                            <th width="45%" align="center">Topik Pekerjaan</th>
+                            <th width="40%" align="center">Rujukan Kompetensi Dasar</th>
+                        </tr>';
+foreach ($jurnal_pkl as $row) {
+  $html .= '<tr bgcolor="#ffffff">
+                            <td align="center">' . $row['tanggal'] . '</td>
+                            <td style="text-align:justify;">' . $row['topik_pekerjaan'] . '</td>
+                            <td style="text-align:justify;">' . $row['kompetensi_dasar'] . '</td>
+                        </tr>';
+}
+$html .= '</table>';
+$pdf->writeHTML($html, true, false, true, false, '');
+$pdf->Output('Laporan.pdf', 'I');

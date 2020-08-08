@@ -32,6 +32,18 @@ class absensipkl_model extends CI_Model
         return $query->result();
     }
 
+    public function getAllByMonth($sort)
+    {
+        $this->db->select('*');
+        $this->db->from('absensi');
+        $this->db->join('pengajuanpkl', 'pengajuanpkl.id_siswa = absensi.id_siswa');
+        $this->db->join('data_siswa', 'data_siswa.id_siswa = absensi.id_siswa');
+        $this->db->where('pengajuanpkl.id_dudi', $this->session->userdata('id'));
+        $this->db->where('MONTH(absensi.tanggal_absensi)', $sort);
+        $query = $this->db->get();
+        return $query->result();
+    }
+
     public function getKetidakhadiran()
     {
         $this->db->select('*');

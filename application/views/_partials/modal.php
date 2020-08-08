@@ -119,9 +119,9 @@
                                   <select class="form-control <?php echo form_error('id_dudi') ? 'is-invalid' : '' ?>" name="id_dudi">
                                       <?php foreach ($data_dudi as $row) { ?>
                                           <?php if ($row->kuota > 0) { ?>
-                                              <option value="<?php echo $row->id_dudi; ?>"><?php echo $row->nama_dudi ?>, kuota : <?php echo $row->kuota ?> </option>
+                                              <option class="font-weight-bold" value="<?php echo $row->id_dudi; ?>"><?php echo $row->nama_dudi ?>, kuota : <?php echo $row->kuota ?> </option>
                                           <?php } else { ?>
-                                              <option disabled selected value="<?php echo $row->id_dudi; ?>"><?php echo $row->nama_dudi ?> (Kuota penuh)</option>
+                                              <option class="font-italic" disabled selected value="<?php echo $row->id_dudi; ?>"><?php echo $row->nama_dudi ?> (Kuota penuh)</option>
                                           <?php } ?>
                                       <?php } ?>
                                       <option disabled selected value="">Pilih DUDI : </option>
