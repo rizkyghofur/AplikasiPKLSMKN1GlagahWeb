@@ -72,7 +72,7 @@
                                     <div class="form-group">
                                         <label>Mata Pelajaran</label>
                                         <select class="form-control <?php echo form_error('mapel') ? 'is-invalid' : '' ?>" name="mapel" id="mapel">
-                                            <option value="0">Pilih Mata Pelajaran : </option>
+                                            <option disabled selected value="">Pilih Mata Pelajaran : </option>
                                             <?php foreach ($mapel as $row) { ?>
                                                 <option value="<?php echo $row->id; ?>"><?php echo $row->nama_mapel; ?></option>
                                             <?php } ?>
@@ -82,7 +82,7 @@
                                     <div class="form-group">
                                         <label for="id_kompetensi_dasar">Kompetensi Dasar</label>
                                         <select class="id_kompetensi_dasar form-control <?php echo form_error('id_kompetensi_dasar') ? 'is-invalid' : '' ?>" name="id_kompetensi_dasar" id="id_kompetensi_dasar">
-                                            <option value="">Pilih Kompetensi Dasar : </option>
+                                            <option disabled selected value="">Pilih Kompetensi Dasar : </option>
                                         </select>
                                         <div class="invalid-feedback">
                                             <?php echo form_error('id_kompetensi_dasar') ?>

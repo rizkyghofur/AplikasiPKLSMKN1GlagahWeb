@@ -41,7 +41,7 @@
 
             <li class="nav-item <?php echo $this->uri->segment(2) == 'DataGuru' ? 'active' : '' ?>">
                 <a class="nav-link" href="<?= base_url('admin/DataGuru/'); ?>">
-                    <i class="fas fa-chalkboard-teacher"></i>
+                    <i class="fas fa-fw fa-chalkboard-teacher"></i>
                     <span>Data Guru</span></a>
             </li>
 
@@ -55,7 +55,7 @@
 
             <li class="nav-item <?php echo $this->uri->segment(2) == 'Akun' ? 'active' : '' ?>">
                 <a class="nav-link" href="<?= base_url('admin/Akun/'); ?>">
-                    <i class="fas fa-user"></i>
+                    <i class="fas fa-fw fa-user"></i>
                     <span>Akun Pengguna</span></a>
             </li>
 
@@ -68,7 +68,7 @@
 
             <li class="nav-item <?php echo $this->uri->segment(2) == 'PengajuanPKL' ? 'active' : '' ?>">
                 <a class="nav-link" href="<?= base_url('admin/PengajuanPKL/'); ?>">
-                    <i class="far fa-calendar-check"></i>
+                    <i class="fas fa-fw fa-calendar-check"></i>
                     <span>Pengajuan PKL</span></a>
             </li>
 
@@ -84,10 +84,9 @@
                 Penilaian PKL
             </div>
 
-            <li class="nav-item <?php echo $this->uri->segment(2) == 'Cetak Nilai PKL' ? 'active' : '' ?>">
-            <li class="nav-item">
-                <a class="nav-link" href="<?= base_url('admin/cetaknilaipkl/'); ?>">
-                    <i class="fas fa-print"></i>
+            <li class="nav-item <?php echo $this->uri->segment(2) == 'PenilaianPKL' ? 'active' : '' ?>">
+                <a class="nav-link" href="<?= base_url('admin/PenilaianPKL/'); ?>">
+                    <i class="fas fa-fw fa-pen-square"></i>
                     <span>Penilaian PKL</span></a>
             </li>
 
@@ -119,7 +118,6 @@
 
         <!-- Divider -->
         <hr class="sidebar-divider my-0">
-
         <hr class="sidebar-divider">
 
         <div class="sidebar-heading" style="color: white;">
@@ -129,14 +127,14 @@
         <!-- Nav Item - Charts -->
         <li class="nav-item <?php echo $this->uri->segment(2) == 'ValidasiJurnalPKL' ? 'active' : '' ?>">
             <a class="nav-link" href="<?= base_url('pembimbingdudi/ValidasiJurnalPKL'); ?>">
-                <i class="fas fa-tasks"></i>
+                <i class="fas fa-fw fa-tasks"></i>
                 <span>Validasi Jurnal PKL</span></a>
         </li>
 
         <!-- Nav Item - Charts -->
         <li class="nav-item <?php echo $this->uri->segment(2) == 'AbsensiPKL' ? 'active' : '' ?>">
             <a class="nav-link" href="<?= base_url('pembimbingdudi/AbsensiPKL'); ?>">
-                <i class="fas fa-clipboard-check"></i>
+                <i class="fas fa-fw fa-clipboard-check"></i>
                 <span>Absensi Siswa PKL</span></a>
         </li>
 
@@ -193,7 +191,7 @@
 
         <li class="nav-item <?php echo $this->uri->segment(2) == 'JurnalPKL' ? 'active' : '' ?>">
             <a class="nav-link" href=" <?= base_url('siswa/JurnalPKL'); ?>">
-                <i class="far  fa-fw fa-clipboard"></i>
+                <i class="fas fa-fw fa-clipboard"></i>
                 <span>Jurnal PKL</span></a>
         </li>
 

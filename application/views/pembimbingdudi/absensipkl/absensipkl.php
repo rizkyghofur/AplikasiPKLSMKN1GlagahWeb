@@ -51,7 +51,7 @@
                                 <option value="11">November</option>
                                 <option value="12">Desember</option>
                             </select>
-                            <button type="submit" class="btn btn-primary"><span class="fa fa-search"> Cari</span></button>
+                            <button type="submit" class="btn btn-primary"><span class="fa fa-search"> </span></button>
                         </div>
                     </form>
                     <div class="card mb-3">

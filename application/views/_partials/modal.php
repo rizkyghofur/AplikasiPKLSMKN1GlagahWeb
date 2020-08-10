@@ -36,6 +36,62 @@
           </div>
       </div>
 
+      <div class="modal fade" id="tambahakun" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+          <div class="modal-dialog" role="document">
+              <div class="modal-content">
+                  <div class="modal-header">
+                      <h5 class="modal-title" id="exampleModalLabel">Tambah Akun</h5>
+                      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                          <span aria-hidden="true">&times;</span>
+                      </button>
+                  </div>
+                  <div class="modal-body">
+
+                      <form action="<?= base_url('admin/Akun/tambahakun') ?>" method="post">
+
+                          <div class="form-group">
+                              <label for="id">Nama DUDI</label>
+                              <select class="form-control <?php echo form_error('id_siswa') ? 'is-invalid' : '' ?>" name="id">
+                                  <option disabled selected value="">Pilih Nama DUDI : </option>
+                                  <?php foreach ($data_dudi as $row) { ?>
+                                      <option value="<?php echo $row->id_dudi; ?>"><?php echo $row->nama_dudi ?></option>
+                                  <?php } ?>
+                              </select>
+                              <div class="invalid-feedback">
+                                  <?php echo form_error('id') ?>
+                              </div>
+                          </div>
+
+                          <div class="form-group">
+                              <label for="username">Nama Pengguna</label>
+                              <input class="form-control <?php echo form_error('username') ? 'is-invalid' : '' ?>" type="text" name="username" placeholder=""></input>
+                              <div class="invalid-feedback">
+                                  <?php echo form_error('username') ?>
+                              </div>
+                          </div>
+
+                          <div class="form-group">
+                              <label for="password">Kata Sandi</label>
+                              <input class="form-control <?php echo form_error('password') ? 'is-invalid' : '' ?>" type="text" name="password" placeholder=""></input>
+                              <div class="invalid-feedback">
+                                  <?php echo form_error('password') ?>
+                              </div>
+                          </div>
+
+                          <input type="hidden" name="role" value="pembimbing_dudi" />
+
+                  </div>
+                  <div class="modal-footer">
+                      <button type="button" class="btn btn-secondary" data-dismiss="modal">Batal</button>
+                      <input class="btn btn-primary" type="submit" name="btn" value="Simpan" />
+                  </div>
+
+                  </form>
+
+              </div>
+          </div>
+      </div>
+
       <div class="modal fade" id="tambahabsensi" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
           <div class="modal-dialog modal-dialog-centered" role="document">
               <div class="modal-content">
@@ -60,7 +116,7 @@
                               <div class="form-group">
                                   <label for="id_siswa">Pilih Siswa</label>
                                   <select class="form-control <?php echo form_error('id_siswa') ? 'is-invalid' : '' ?>" name="id_siswa">
-                                      <option value="">Pilih Siswa : </option>
+                                      <option disabled selected value="">Pilih Siswa : </option>
                                       <?php foreach ($data_siswa as $row) { ?>
                                           <option value="<?php echo $row->id_siswa; ?>"><?php echo $row->nama_siswa ?></option>
                                       <?php } ?>
@@ -89,11 +145,6 @@
                               </div>
                           </form>
 
-                      <?php } else { ?>
-                          Maaf, Anda tidak diizinkan menambahkan absensi, silahkan hubungi Ketua Kelompok PKL Anda.
-                          <div class="modal-footer">
-                              <button type="button" class="btn btn-secondary" data-dismiss="modal">Tutup</button>
-                          </div>
                       <?php } ?>
                   </div>
               </div>

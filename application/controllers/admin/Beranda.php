@@ -21,8 +21,6 @@ class Beranda extends CI_Controller
         $data['total_siswa'] = $this->pengajuanpkl_model->getTotalSiswa();
         $data['siswa_belum_mengajukan'] = $this->pengajuanpkl_model->getTotalSiswaBelumMengajukan();
         $data['siswa_sudah_mengajukan'] = $this->pengajuanpkl_model->getTotalSiswaSudahMengajukan();
-        $data['pengajuanpkl'] = $this->pengajuanpkl_model->getAll();
-        $data['notif_belumtervalidasi'] = $this->pengajuanpkl_model->getNotifBelumTervalidasi();
         $data['belum_tervalidasi'] = $this->pengajuanpkl_model->getBelumTervalidasi();
         $data['proses_pengajuan'] = $this->pengajuanpkl_model->getProsesPengajuan();
         $data['diterima'] = $this->pengajuanpkl_model->getDiterima();

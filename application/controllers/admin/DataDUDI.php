@@ -8,7 +8,6 @@ class DataDUDI extends CI_Controller
     {
         parent::__construct();
         $this->load->model("datadudi_model");
-        $this->load->model("pengajuanpkl_model");
         $this->load->library('form_validation');
         $this->load->model('admin');
         if ($this->admin->is_role() != "admin_pkl") {
@@ -19,8 +18,6 @@ class DataDUDI extends CI_Controller
     public function index()
     {
         $data['title'] = 'Data DUDI';
-        $data['notif_belumtervalidasi'] = $this->pengajuanpkl_model->getNotifBelumTervalidasi();
-        $data['belum_tervalidasi'] = $this->pengajuanpkl_model->getBelumTervalidasi();
         $data['data_dudi'] = $this->datadudi_model->getAll();
         $this->load->view("admin/datadudi/listdudi", $data);
     }
@@ -55,8 +52,6 @@ class DataDUDI extends CI_Controller
         }
         $data['title'] = 'Ubah Data DUDI';
         $data["datadudi"] = $datadudi->getById($id);
-        $data['notif_belumtervalidasi'] = $this->pengajuanpkl_model->getNotifBelumTervalidasi();
-        $data['belum_tervalidasi'] = $this->pengajuanpkl_model->getBelumTervalidasi();
         if (!$data["datadudi"]) show_404();
         $this->load->view("admin/datadudi/editdatadudi", $data);
     }

@@ -9,7 +9,6 @@ class Akun extends CI_Controller
         parent::__construct();
         $this->load->model("akun_model");
         $this->load->model('admin');
-        $this->load->model('pengajuanpkl_model');
         $this->load->library('form_validation');
         if ($this->admin->is_role() != "admin_pkl") {
             redirect("login/");
@@ -20,8 +19,23 @@ class Akun extends CI_Controller
     {
         $data['title'] = 'Akun Pengguna';
         $data['pengguna'] = $this->akun_model->getAll();
-        $data['notif_belumtervalidasi'] = $this->pengajuanpkl_model->getNotifBelumTervalidasi();
-        $data['belum_tervalidasi'] = $this->pengajuanpkl_model->getBelumTervalidasi();
+        $data['data_dudi'] = $this->akun_model->getAkun();
         $this->load->view("admin/akun/listakun", $data);
+    }
+
+    public function tambahakun()
+    {
+        $tambahakun = $this->akun_model;
+        $validation = $this->form_validation;
+        $validation->set_rules($tambahakun->rules());
+
+        if ($validation->run()) {
+            $tambahakun->save();
+            $this->session->set_flashdata('success', 'Berhasil disimpan');
+            redirect('admin/Akun');
+        } else {
+            $this->session->set_flashdata('danger', 'Gagal tersimpan, cek kembali masukan yang Anda berikan');
+            redirect('admin/Akun');
+        }
     }
 }

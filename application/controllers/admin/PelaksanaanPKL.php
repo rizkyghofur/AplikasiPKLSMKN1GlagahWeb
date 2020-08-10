@@ -8,7 +8,6 @@ class PelaksanaanPKL extends CI_Controller
     {
         parent::__construct();
         $this->load->model("pelaksanaanpkl_model");
-        $this->load->model('pengajuanpkl_model');
         $this->load->library('form_validation');
         $this->load->model('admin');
         if ($this->admin->is_role() != "admin_pkl") {
@@ -20,8 +19,6 @@ class PelaksanaanPKL extends CI_Controller
     {
         $data['title'] = 'Pelaksanaan PKL';
         $data['pelaksanaanpkl'] = $this->pelaksanaanpkl_model->getAll();
-        $data['notif_belumtervalidasi'] = $this->pengajuanpkl_model->getNotifBelumTervalidasi();
-        $data['belum_tervalidasi'] = $this->pengajuanpkl_model->getBelumTervalidasi();
         $this->load->view("admin/pelaksanaanpkl/listpelaksanaanpkl", $data);
     }
 
@@ -40,9 +37,7 @@ class PelaksanaanPKL extends CI_Controller
         }
         $data['title'] = 'Ubah Pelaksanaan PKL';
         $data["pelaksanaanpkl"] = $pelaksanaanpkl->getById($id);
-        $data['notif_belumtervalidasi'] = $this->pengajuanpkl_model->getNotifBelumTervalidasi();
-        $data['belum_tervalidasi'] = $this->pengajuanpkl_model->getBelumTervalidasi();
         if (!$data["pelaksanaanpkl"]) show_404();
-        $this->load->view("admin/pelaksanaanpkl/ubahpelaksanaanpkl", $data);
+        $this->load->view("admin/pelaksanaanpkl/editpelaksanaanpkl", $data);
     }
 }

@@ -34,6 +34,7 @@
                     </div>
                     <?php if ($this->session->flashdata('success')) : ?>
                         <div class="alert alert-success" role="alert">
+                            <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
                             <?php echo $this->session->flashdata('success'); ?>
                         </div>
                     <?php endif; ?>
@@ -41,6 +42,9 @@
                     <!-- Content Row -->
 
                     <div class="card mb-3">
+                        <div class="card-header d-flex justify-content-between mb-2">
+                            <button type="button" class="btn btn-light" data-toggle="modal" data-target="#tambahakun"><i class="fas fa-plus"></i> Tambah Akun DUDI</button>
+                        </div>
                         <div class="card-body">
                             <div class="table-responsive">
                                 <table id="table_id" class="table table-striped table-bordered" cellspacing="0" width="100%">

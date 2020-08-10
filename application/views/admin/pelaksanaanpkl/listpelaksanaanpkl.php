@@ -34,6 +34,7 @@
                     </div>
                     <?php if ($this->session->flashdata('success')) : ?>
                         <div class="alert alert-success" role="alert">
+                            <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
                             <?php echo $this->session->flashdata('success'); ?>
                         </div>
                     <?php endif; ?>
@@ -50,8 +51,9 @@
                                             <th style="text-align:center">Nama DUDI</th>
                                             <th style="text-align:center">Tanggal Masuk</th>
                                             <th style="text-align:center">Tanggal Keluar</th>
+                                            <th style="text-align:center">Guru Pembimbing</th>
                                             <th style="text-align:center">Jumlah Siswa</th>
-                                            <th style="text-align:center">Opsi</th>
+                                            <th style="text-align:center">Kelompok</th>
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -72,11 +74,19 @@
                                                 <td style="text-align:center">
                                                     <?php echo $pelaksanaan->tanggal_keluar; ?>
                                                 </td>
+                                                <td>
+                                                    <?php
+                                                    if ($pelaksanaan->id_guru == 0) { ?>
+                                                        Belum ditunjuk
+                                                    <?php } else { ?>
+                                                        <?php echo $pelaksanaan->nama_guru; ?>
+                                                    <?php } ?>
+                                                </td>
                                                 <td width="100" style="text-align:center">
                                                     <?php echo $pelaksanaan->jumlah_siswa; ?>
                                                 </td>
-                                                <td width="100" style="text-align:center">
-                                                    <a href="<?= base_url('admin/PelaksanaanPKL/editpelaksanaanpkl/' . $pelaksanaan->id_dudi) ?>" class="btn btn-small"><i class="fas fa-user-cog"></i><br> Atur Akun Siswa</a>
+                                                <td width="175" style="text-align:center">
+                                                    <a href="<?= base_url('admin/PelaksanaanPKL/editpelaksanaanpkl/' . $pelaksanaan->id_dudi) ?>" class="btn btn-small"><i class="fas fa-user-cog"></i> Atur Kelompok</a>
                                                 </td>
                                                 <?php $i++ ?>
                                             </tr>

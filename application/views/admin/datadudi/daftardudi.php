@@ -44,7 +44,7 @@
                             <form action="<?= base_url('admin/DataDUDI/daftardudi') ?>" method="post">
                                 <div class="form-group">
                                     <label for="nama_dudi">Nama DUDI *</label>
-                                    <input class="form-control <?php echo form_error('name') ? 'is-invalid' : '' ?>" type="text" name="nama_dudi" placeholder="" />
+                                    <input class="form-control <?php echo form_error('nama_dudi') ? 'is-invalid' : '' ?>" type="text" name="nama_dudi" placeholder="" />
                                     <div class="invalid-feedback">
                                         <?php echo form_error('nama_dudi') ?>
                                     </div>
@@ -60,7 +60,7 @@
 
                                 <div class="form-group">
                                     <label for="no_telp_dudi">No Telpon DUDI *</label>
-                                    <input class="form-control <?php echo form_error('no_telp_dudi') ? 'is-invalid' : '' ?>" type="number" name="no_telp_dudi" min="0" placeholder=""></input>
+                                    <input class="form-control <?php echo form_error('no_telp_dudi') ? 'is-invalid' : '' ?>" type="tel" pattern="[0-9]{3}-[0-9]{2}-[0-9]{3}" name="no_telp_dudi" min="0" placeholder=""></input>
                                     <div class="invalid-feedback">
                                         <?php echo form_error('no_telp_dudi') ?>
                                     </div>
@@ -84,7 +84,7 @@
 
                                 <div class="form-group">
                                     <label for="no_telp_pimpinan">No Telp Pimpinan</label>
-                                    <input class="form-control <?php echo form_error('no_telp_pimpinan') ? 'is-invalid' : '' ?>" type="number" name="no_telp_pimpinan" placeholder=""></input>
+                                    <input class="form-control <?php echo form_error('no_telp_pimpinan') ? 'is-invalid' : '' ?>" type="tel" pattern="[0-9]{3}-[0-9]{2}-[0-9]{3}" name="no_telp_pimpinan" placeholder=""></input>
                                     <div class="invalid-feedback">
                                         <?php echo form_error('no_telp_pimpinan') ?>
                                     </div>

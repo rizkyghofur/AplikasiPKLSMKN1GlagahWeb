@@ -66,9 +66,11 @@
                                 </div>
                             </div>
                         <?php } else { ?>
-                            <div class="card-header d-flex justify-content-between mb-2">
-                                <button type="button" class="btn btn-light" data-toggle="modal" data-target="#tambahabsensi"><i class="fas fa-plus"></i> Tambah Presensi PKL</button>
-                            </div>
+                            <?php if ($pengajuanpkl->status_keanggotaan == 'Ketua Kelompok') { ?>
+                                <div class="card-header d-flex justify-content-between mb-2">
+                                    <button type="button" class="btn btn-light" data-toggle="modal" data-target="#tambahabsensi"><i class="fas fa-plus"></i> Tambah Presensi PKL</button>
+                                </div>
+                            <?php } ?>
                             <div class="card-body">
                                 <div class="table-responsive">
                                     <table id="table_id" class="table table-striped table-bordered" cellspacing="0" width="100%">
