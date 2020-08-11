@@ -29,14 +29,14 @@
 
                     <!-- Page Heading -->
                     <div class="d-sm-flex align-items-center justify-content-between mb-2">
-                        <h1 class="h2 mr-4 mb-0 text-gray-800">Absensi Siswa PKL</h1>
+                        <h1 class="h2 mr-4 mb-0 text-gray-800"><?php echo $title ?></h1>
                     </div>
                     <?php $this->load->view("_partials/breadcrumb.php") ?>
 
                     <!-- Content Row -->
                     <form action="<?php echo base_url(); ?>pembimbingdudi/AbsensiPKL/" enctype="multipart/form-data" method="post">
-                        <div class="form-group d-flex justify-content-start">
-                            <select class="form-control col-lg-2" name="sort">
+                        <div class="form-group d-flex justify-content-end">
+                            <select class="form-control col-lg-3" name="sort">
                                 <option disabled selected value="">Pilih bulan absensi</option>
                                 <option value="1">Januari</option>
                                 <option value="2">Februari</option>

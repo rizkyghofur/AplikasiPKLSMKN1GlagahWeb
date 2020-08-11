@@ -17,7 +17,7 @@ class AbsensiPKL extends CI_Controller
     public function index()
     {
         $sort = $this->input->post('sort');
-        $data['title'] = 'Absensi PKL Siswa';
+        $data['title'] = 'Absensi / Ketidakhadiran Siswa PKL';
         if (!isset($sort)) {
             $data["absensi"] = $this->absensipkl_model->getKetidakhadiran();
         } else {

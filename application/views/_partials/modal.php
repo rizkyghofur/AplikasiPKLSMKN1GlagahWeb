@@ -85,9 +85,7 @@
                       <button type="button" class="btn btn-secondary" data-dismiss="modal">Batal</button>
                       <input class="btn btn-primary" type="submit" name="btn" value="Simpan" />
                   </div>
-
                   </form>
-
               </div>
           </div>
       </div>
@@ -103,7 +101,7 @@
                   </div>
                   <div class="modal-body">
                       <?php if ($pengajuanpkl->status_keanggotaan == "Ketua Kelompok") { ?>
-                          <form action="<?= base_url('siswa/AbsensiPKL/tambahabsensipkl') ?>" method="post">
+                          <form action="<?= base_url('siswa/PresensiPKL/tambahpresensipkl') ?>" method="post">
 
                               <div class="form-group">
                                   <label for="tanggal_absensi">Tanggal Absensi</label>
@@ -201,12 +199,3 @@
               </div>
           </div>
       </div>
-
-      <script>
-          $(function() {
-              $("#datepicker").datepicker({
-                  changeMonth: true,
-                  changeYear: true
-              });
-          });
-      </script>

@@ -24,7 +24,7 @@ class PresensiPKL extends CI_Controller
         $this->load->view("siswa/absensipkl/listabsensipkl", $data);
     }
 
-    public function tambahabsensipkl()
+    public function tambahpresensipkl()
     {
         $absensipkl = $this->absensipkl_model;
         $validation = $this->form_validation;
@@ -33,19 +33,16 @@ class PresensiPKL extends CI_Controller
         if ($validation->run()) {
             $absensipkl->save();
             $this->session->set_flashdata('success', 'Berhasil disimpan');
-            redirect('siswa/AbsensiPKL');
-        } else {
-            $this->session->set_flashdata('danger', 'Gagal tersimpan, cek kembali masukan yang Anda berikan');
-            redirect('siswa/AbsensiPKL');
+            redirect('siswa/PresensiPKL');
         }
     }
 
-    public function hapusabsensipkl($id_absensi = null)
+    public function hapuspresensipkl($id_absensi = null)
     {
         if (!isset($id_absensi)) show_404();
         if ($this->absensipkl_model->delete($id_absensi)) {
             $this->session->set_flashdata('success', 'Berhasil dihapus');
-            redirect('siswa/AbsensiPKL');
+            redirect('siswa/PresensiPKL');
         }
     }
 }

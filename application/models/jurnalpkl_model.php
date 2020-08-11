@@ -127,11 +127,6 @@ class jurnalpkl_model extends CI_Model
         $config['file_name']            = $_FILES['dokumentasi']['name'];
         $config['overwrite']            = true;
         $config['max_size']             = 1024;
-        $config['quality']              = '50%';
-        $config['width']                = 600;
-        $config['height']               = 400;
-        $this->load->library('image_lib', $config);
-        $this->image_lib->resize();
 
         $this->load->library('upload', $config);
 
@@ -143,7 +138,7 @@ class jurnalpkl_model extends CI_Model
 
     private function _deleteImage($id_jurnal_pkl)
     {
-        $jurnal_pkl = $this->getById($id_jurnal_pkl);
+        $jurnal_pkl = $this->getId($id_jurnal_pkl);
         if ($jurnal_pkl->dokumentasi != "default.jpg") {
             $filename = explode(".", $jurnal_pkl->dokumentasi)[0];
             return array_map('unlink', glob(FCPATH . "dokumentasi/$filename.*"));

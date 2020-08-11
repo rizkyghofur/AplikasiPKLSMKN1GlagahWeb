@@ -29,7 +29,7 @@
 
                     <!-- Page Heading -->
                     <div class="d-sm-flex align-items-center justify-content-between mb-2">
-                        <h1 class="h2 mr-4 mb-0 text-gray-800">Validasi Jurnal PKL</h1>
+                        <h1 class="h2 mr-4 mb-0 text-gray-800"><?php echo $title ?></h1>
                     </div>
                     <?php $this->load->view("_partials/breadcrumb.php") ?>
 

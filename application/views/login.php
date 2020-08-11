@@ -12,7 +12,7 @@
                     echo $error;
                 }; ?>
                 <div class="account-wall">
-                    <img class="profile-img" src="https://i.ibb.co/NrMCnCd/login.png?sz=120" alt="">
+                    <img class="profile-img" src="<?= base_url('assets/'); ?>img/login.png" alt="">
                     <h1 class="text-center login-title">Aplikasi PKL SMKN 1 Glagah</h1>
                     <form class="form-signin" method="POST" action="<?php echo base_url() ?>login">
                         <div class="form-group">

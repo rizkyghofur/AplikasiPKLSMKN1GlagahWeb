@@ -35,7 +35,7 @@ class PelaksanaanPKL extends CI_Controller
             $this->session->set_flashdata('success', 'Berhasil diubah');
             redirect('admin/PelaksanaanPKL');
         }
-        $data['title'] = 'Ubah Pelaksanaan PKL';
+        $data['title'] = 'Kelompok Pelaksanaan PKL';
         $data["pelaksanaanpkl"] = $pelaksanaanpkl->getById($id);
         if (!$data["pelaksanaanpkl"]) show_404();
         $this->load->view("admin/pelaksanaanpkl/editpelaksanaanpkl", $data);

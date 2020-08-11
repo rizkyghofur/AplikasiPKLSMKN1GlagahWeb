@@ -172,15 +172,6 @@
     </script>
 
     <script>
-        $(function() {
-            $("#datepicker").datepicker({
-                changeMonth: true,
-                changeYear: true
-            });
-        });
-    </script>
-
-    <script>
         var uploadField = document.getElementById("dokumentasi");
         uploadField.onchange = function() {
             if (this.files[0].size > 1048576) {

@@ -3,20 +3,24 @@
 $pdf = new Pdf('P', 'mm', 'A4', true, 'UTF-8', false);
 $pdf->SetTitle('Laporan Program PKL');
 $pdf->SetPrintHeader(false);
-$pdf->SetPrintFooter(false);
+$pdf->SetPrintFooter(true);
 $pdf->SetHeaderMargin(0);
-$pdf->SetTopMargin(10);
-$pdf->setFooterMargin(10);
+$pdf->SetTopMargin(20);
+$pdf->SetRightMargin(20);
+$pdf->SetLeftMargin(30);
+$pdf->setFooterMargin(20);
 $pdf->SetAutoPageBreak(true);
-$pdf->SetAuthor('Author');
+$pdf->SetAuthor('SMKN 1 Glagah');
 $pdf->SetDisplayMode('real', 'default');
 $pdf->SetFont('Arial', '', 11, '', 'false');
 $pdf->AddPage();
 $i = 0;
 $html = '
-    <h1 style="text-align:center; font-weight: bold;">PROGRAM PRAKTIK KERJA LAPANGAN (PKL)</h1>
-    <blockquote>
+    <h2 style="text-align:center;">PROGRAM PRAKTIK KERJA LAPANGAN (PKL)</h2>
     <table>
+    <tr>
+    <td></td>
+  </tr>
   <tr>
     <td width="30%">Nama Peserta PKL</td>
     <td> : ' . $data_program_pkl->nama_siswa . '</td>
@@ -48,13 +52,15 @@ $html = '
     <tr>
     <td></td>
   </tr>
+  <tr>
+  <td></td>
+</tr>
 </table>
-    </blockqoute>
                     <table style="margin-top: 25px;" cellspacing="2" bgcolor="#666666" cellpadding="2">
                         <tr bgcolor="#ffffff">
                             <th width="30%" align="center">Kompetensi Dasar</th>
-                            <th width="35%" align="center">Topik Pekerjaan</th>
-                            <th width="15%" align="center">Urutan Waktu Pelaksanaan</th>
+                            <th width="30%" align="center">Topik Pekerjaan</th>
+                            <th width="20%" align="center">Urutan Waktu Pelaksanaaan</th>
                             <th width="20%" align="center">DUDI / Institusi Pasangan</th>
                         </tr>';
 foreach ($program_pkl as $row) {
