@@ -73,4 +73,4 @@ foreach ($program_pkl as $row) {
 }
 $html .= '</table>';
 $pdf->writeHTML($html, true, false, true, false, '');
-$pdf->Output('Laporan.pdf', 'I');
+$pdf->Output('Laporan Program PKL.pdf', 'I');
