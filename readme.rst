@@ -20,8 +20,7 @@ Menggunakan Versi PHP 7.2.3
 Lisensi
 *******
 
-Lisensi diberdayakan oleh Codeigniter, baca `license
-agreement <https://github.com/bcit-ci/CodeIgniter/blob/develop/user_guide_src/source/license.rst>`_.
+Lisensi diberdayakan oleh Codeigniter, baca `lisensi perjanjian <https://github.com/bcit-ci/CodeIgniter/blob/develop/user_guide_src/source/license.rst>`_.
 
 *********
 Sumber
@@ -38,4 +37,4 @@ Thanks to
 ***************
 
 The CodeIgniter team would like to thank EllisLab, all the
-contributors to the CodeIgniter project and you, the CodeIgniter user.
+contributors to the CodeIgniter project.
