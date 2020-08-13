@@ -143,7 +143,7 @@
         </div>
 
         <li class="nav-item <?php echo $this->uri->segment(2) == 'PenilaianPKL' ? 'active' : '' ?>">
-            <a class="nav-link" href="<?= base_url('admin/PenilaianPKL/'); ?>">
+            <a class="nav-link" href="<?= base_url('pembimbingdudi/PenilaianPKL/'); ?>">
                 <i class="fas fa-fw fa-pen-square"></i>
                 <span>Penilaian PKL</span></a>
         </li>

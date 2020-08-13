@@ -10,7 +10,7 @@ class PenilaianPKL extends CI_Controller
         $this->load->model("penilaianpkl_model");
         $this->load->library('form_validation');
         $this->load->model('admin');
-        if ($this->admin->is_role() != "admin_pkl") {
+        if ($this->admin->is_role() != "pembimbing_dudi") {
             redirect("login/");
         }
     }
@@ -18,16 +18,16 @@ class PenilaianPKL extends CI_Controller
     public function index()
     {
         $data['title'] = 'Penilaian PKL';
-        $data['data_siswa'] = $this->penilaianpkl_model->getAll();
-        $this->load->view("admin/penilaianpkl/listpenilaianpkl", $data);
+        $data['data_siswa'] = $this->penilaianpkl_model->getAllForDUDI();
+        $this->load->view("pembimbingdudi/penilaianpkl/listpenilaianpkl", $data);
     }
 
     public function tambahpenilaianpkl($nama_siswa = null)
     {
-        if (!isset($nama_siswa)) redirect('admin/PenilaianPKL');
+        if (!isset($nama_siswa)) redirect('pembimbingdudi/PenilaianPKL');
         $data['siswa'] = $this->penilaianpkl_model->getById($nama_siswa);
         $data['title'] = 'Tambah Data Penilaian PKL';
-        $this->load->view("admin/penilaianpkl/tambahpenilaianpkl", $data);
+        $this->load->view("pembimbingdudi/penilaianpkl/tambahpenilaianpkl", $data);
     }
 
     public function tambahnilaipkl()
@@ -35,16 +35,16 @@ class PenilaianPKL extends CI_Controller
         $datanilai = $this->penilaianpkl_model;
         $datanilai->save();
         $this->session->set_flashdata('success', 'Berhasil disimpan');
-        redirect('admin/PenilaianPKL');
+        redirect('pembimbingdudi/PenilaianPKL');
     }
 
     public function editpenilaianpkl($nama_siswa = null)
     {
-        if (!isset($nama_siswa)) redirect('admin/PenilaianPKL');
+        if (!isset($nama_siswa)) redirect('pembimbingdudi/PenilaianPKL');
         $data['title'] = 'Ubah Data Penilaian PKL';
         $data['data_siswa'] = $this->penilaianpkl_model->getById($nama_siswa);
         $data['siswa'] = $this->penilaianpkl_model->getNilaiSiswa($nama_siswa);
-        $this->load->view("admin/penilaianpkl/editpenilaianpkl", $data);
+        $this->load->view("pembimbingdudi/penilaianpkl/editpenilaianpkl", $data);
     }
 
     public function editnilaipkl()
@@ -52,7 +52,7 @@ class PenilaianPKL extends CI_Controller
         $datanilai = $this->penilaianpkl_model;
         $datanilai->update();
         $this->session->set_flashdata('success', 'Berhasil diubah');
-        redirect('admin/PenilaianPKL');
+        redirect('pembimbingdudi/PenilaianPKL');
     }
 
     public function lihatpenilaianpkl($nama_siswa)
@@ -60,6 +60,6 @@ class PenilaianPKL extends CI_Controller
         $data['data_siswa'] = $this->penilaianpkl_model->getById($nama_siswa);
         $data['siswa'] = $this->penilaianpkl_model->getNilaiSiswa($nama_siswa);
         $this->load->library('pdf');
-        $this->load->view('admin/penilaianpkl/lihatpenilaianpkl', $data);
+        $this->load->view('pembimbingdudi/penilaianpkl/lihatpenilaianpkl', $data);
     }
 }
