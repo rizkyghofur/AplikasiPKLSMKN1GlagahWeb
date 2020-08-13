@@ -33,6 +33,13 @@
                         <h1 class="h2 mr-4 mb-0 text-gray-800"><?php echo $title ?></h1>
                     </div>
 
+                    <?php if ($this->session->flashdata('success')) : ?>
+                        <div class="alert alert-success" role="alert">
+                            <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+                            <?php echo $this->session->flashdata('success'); ?>
+                        </div>
+                    <?php endif; ?>
+
                     <?php $this->load->view("_partials/breadcrumb.php") ?>
 
                     <!-- Content Row -->
@@ -80,13 +87,13 @@
                                                         <span class=" badge badge-success">Ternilai</span>
                                                     <?php } ?>
                                                 </td>
-                                                <td width="210" style="text-align:center">
+                                                <td width="170" style="text-align:center">
                                                     <?php
-                                                    if ($dtsiswa->id_penilaian_pkl == null) { ?>
-                                                        <a href="<?= base_url('admin/PenilaianPKL/tambahpenilaianpkl/' . $dtsiswa->id_penilaian_pkl) ?>" class="btn btn-small"><i class="fas fa-fw fa-edit"></i> Tambah</a>
+                                                    if (!isset($dtsiswa->id_penilaian_pkl)) { ?>
+                                                        <a href="<?= base_url('admin/PenilaianPKL/tambahpenilaianpkl/' . $dtsiswa->id_siswa) ?>" class="btn btn-small"><i class="fas fa-fw fa-plus-square"></i> Tambah</a>
                                                     <?php } else { ?>
-                                                        <a href="<?= base_url('admin/PenilaianPKL/editpenilaianpkl/' . $dtsiswa->id_penilaian_pkl) ?>" class="btn btn-small"><i class="fas fa-edit"></i> Ubah</a>
-                                                        <a href="<?= base_url('admin/PenilaianPKL/lihatpenilaianpkl/' . $dtsiswa->id_penilaian_pkl) ?>" class="btn btn-small"><i class="fas fa-edit"></i> Lihat</a>
+                                                        <a href="<?= base_url('admin/PenilaianPKL/editpenilaianpkl/' . $dtsiswa->id_siswa) ?>" class="btn btn-small"><i class="fas fa-edit"></i> Ubah</a>
+                                                        <a href="<?= base_url('admin/PenilaianPKL/lihatpenilaianpkl/' . $dtsiswa->id_siswa) ?>" class="btn btn-small"><i class="fas fa-clipboard"></i> Lihat</a>
                                                     <?php } ?>
                                                 </td>
                                                 <?php $i++ ?>

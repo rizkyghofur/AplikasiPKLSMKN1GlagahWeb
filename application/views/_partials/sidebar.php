@@ -80,7 +80,7 @@
 
             <hr class="sidebar-divider">
 
-            <div class="sidebar-heading">
+            <div class="sidebar-heading" style="color: white;">
                 Penilaian PKL
             </div>
 
@@ -124,18 +124,28 @@
             Catatan Kegiatan PKL Siswa
         </div>
 
-        <!-- Nav Item - Charts -->
         <li class="nav-item <?php echo $this->uri->segment(2) == 'ValidasiJurnalPKL' ? 'active' : '' ?>">
             <a class="nav-link" href="<?= base_url('pembimbingdudi/ValidasiJurnalPKL'); ?>">
                 <i class="fas fa-fw fa-tasks"></i>
                 <span>Validasi Jurnal PKL</span></a>
         </li>
 
-        <!-- Nav Item - Charts -->
         <li class="nav-item <?php echo $this->uri->segment(2) == 'AbsensiPKL' ? 'active' : '' ?>">
             <a class="nav-link" href="<?= base_url('pembimbingdudi/AbsensiPKL'); ?>">
                 <i class="fas fa-fw fa-clipboard-check"></i>
                 <span>Absensi Siswa PKL</span></a>
+        </li>
+
+        <hr class="sidebar-divider">
+
+        <div class="sidebar-heading" style="color: white;">
+            Penilaian PKL
+        </div>
+
+        <li class="nav-item <?php echo $this->uri->segment(2) == 'PenilaianPKL' ? 'active' : '' ?>">
+            <a class="nav-link" href="<?= base_url('admin/PenilaianPKL/'); ?>">
+                <i class="fas fa-fw fa-pen-square"></i>
+                <span>Penilaian PKL</span></a>
         </li>
 
         <!-- Divider -->
