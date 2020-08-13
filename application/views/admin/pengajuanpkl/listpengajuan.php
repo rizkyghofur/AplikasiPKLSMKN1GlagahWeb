@@ -78,13 +78,21 @@
                                                     <?php echo $pengajuan->nama_dudi; ?>
                                                 </td>
                                                 <td>
-                                                    <?php echo $pengajuan->tanggal_pengajuan; ?>
+                                                    <?php echo date("d-m-Y", strtotime($pengajuan->tanggal_pengajuan)); ?>
                                                 </td>
                                                 <td style="text-align:center">
-                                                    <?php echo $pengajuan->tanggal_masuk; ?>
+                                                    <?php if ($pengajuan->tanggal_masuk == "2020-01-01") {
+                                                        echo "Belum ditentukan";
+                                                    } else {
+                                                        echo date("d-m-Y", strtotime($pengajuan->tanggal_masuk));
+                                                    } ?>
                                                 </td>
                                                 <td style="text-align:center">
-                                                    <?php echo $pengajuan->tanggal_keluar; ?>
+                                                    <?php if ($pengajuan->tanggal_masuk == "2020-01-01") {
+                                                        echo "Belum ditentukan";
+                                                    } else {
+                                                        echo date("d-m-Y", strtotime($pengajuan->tanggal_keluar));
+                                                    } ?>
                                                 </td>
                                                 <td>
                                                     <?php

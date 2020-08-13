@@ -78,7 +78,7 @@
                                                         <?php echo $i ?>
                                                     </td>
                                                     <td width="250" style="text-align:center">
-                                                        <?php echo $catatankunjungan->tanggal_kunjungan ?>
+                                                        <?php echo date("d-m-Y", strtotime($catatankunjungan->tanggal_kunjungan)) ?>
                                                     </td>
                                                     <td>
                                                         <?php echo $catatankunjungan->catatan_pembimbing ?>

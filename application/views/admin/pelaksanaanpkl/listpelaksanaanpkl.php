@@ -69,10 +69,10 @@
                                                     <?php echo $pelaksanaan->nama_dudi; ?>
                                                 </td>
                                                 <td style="text-align:center">
-                                                    <?php echo $pelaksanaan->tanggal_masuk; ?>
+                                                    <?php echo date("d-m-Y", strtotime($pelaksanaan->tanggal_masuk)); ?>
                                                 </td>
                                                 <td style="text-align:center">
-                                                    <?php echo $pelaksanaan->tanggal_keluar; ?>
+                                                    <?php echo date("d-m-Y", strtotime($pelaksanaan->tanggal_keluar)); ?>
                                                 </td>
                                                 <td>
                                                     <?php

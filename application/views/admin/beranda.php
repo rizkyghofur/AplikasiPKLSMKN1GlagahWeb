@@ -33,9 +33,9 @@
           </div>
 
           <!-- Total Pengajuan Content -->
-          <div class="row">
+          <div class="row mt-4">
 
-            <div class="col-xl-3 col-md-3 mb-2">
+            <div class="col-xl-6 col-md-3 mb-2">
               <div class="card border-left-secondary shadow h-100 py-2">
                 <div class="card-body">
                   <div class="row no-gutters align-items-center">
@@ -51,7 +51,7 @@
               </div>
             </div>
 
-            <div class="col-xl-3 col-md-3 mb-2">
+            <div class="col-xl-6 col-md-3 mb-2">
               <div class="card border-left-primary shadow h-100 py-2">
                 <div class="card-body">
                   <div class="row no-gutters align-items-center">
@@ -67,7 +67,7 @@
               </div>
             </div>
 
-            <div class="col-xl-3 col-md-3 mb-2">
+            <div class="col-xl-6 col-md-3 mb-2">
               <div class="card border-left-success shadow h-100 py-2">
                 <div class="card-body">
                   <div class="row no-gutters align-items-center">
@@ -87,7 +87,7 @@
               </div>
             </div>
 
-            <div class="col-xl-3 col-md-3 mb-2">
+            <div class="col-xl-6 col-md-3 mb-2">
               <div class="card border-left-danger shadow h-100 py-2">
                 <div class="card-body">
                   <div class="row no-gutters align-items-center">
@@ -103,7 +103,7 @@
               </div>
             </div>
 
-            <div class="col-xl-3 col-md-3 mb-2">
+            <div class="col-xl-6 col-md-3 mb-2">
               <div class="card border-left-info shadow h-100 py-2">
                 <div class="card-body">
                   <div class="row no-gutters align-items-center">
@@ -123,7 +123,7 @@
               </div>
             </div>
 
-            <div class="col-xl-3 col-md-3 mb-2">
+            <div class="col-xl-6 col-md-3 mb-2">
               <div class="card border-left-secondary shadow h-100 py-2">
                 <div class="card-body">
                   <div class="row no-gutters align-items-center">
@@ -143,12 +143,12 @@
               </div>
             </div>
 
-            <div class="col-xl-3 col-md-3 mb-2">
-              <div class="card border-left-danger shadow h-100 py-2">
+            <div class="col-xl-6 col-md-3 mb-2">
+              <div class="card border-left-warning shadow h-100 py-2">
                 <div class="card-body">
                   <div class="row no-gutters align-items-center">
                     <div class="col mr-2">
-                      <div class="text-xs font-weight-bold text-danger text-uppercase mb-1">Jumlah Siswa Yang Belum Mengajukan Permohonan PKL</div>
+                      <div class="text-xs font-weight-bold text-secondary text-uppercase mb-1">Jumlah Siswa Yang Belum Mengajukan Permohonan PKL</div>
                       <div class="row no-gutters align-items-center">
                         <div class="col-auto">
                           <div class="h5 mb-0 mr-3 font-weight-bold text-gray-800"><?php echo $siswa_belum_mengajukan; ?></div>
@@ -163,7 +163,7 @@
               </div>
             </div>
 
-            <div class="col-xl-3 col-md-3 mb-2">
+            <div class="col-xl-6 col-md-3 mb-2">
               <div class="card border-left-success shadow h-100 py-2">
                 <div class="card-body">
                   <div class="row no-gutters align-items-center">
@@ -176,7 +176,7 @@
                       </div>
                     </div>
                     <div class="col-auto">
-                      <i class="fas fa-check fa-2x text-gray-300"></i>
+                      <i class="fas fa-tasks fa-2x text-gray-300"></i>
                     </div>
                   </div>
                 </div>

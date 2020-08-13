@@ -68,7 +68,7 @@
 
                                 <div class="form-group">
                                     <label for="tanggal">Tanggal Pelaksanaan</label>
-                                    <input class="form-control <?php echo form_error('tanggal') ? 'is-invalid' : '' ?>" name="tanggal" readonly value="<?php echo $jurnal_pkl->tanggal ?>" />
+                                    <input class="form-control <?php echo form_error('tanggal') ? 'is-invalid' : '' ?>" name="tanggal" readonly value="<?php echo date("d-m-Y", strtotime($jurnal_pkl->tanggal)) ?>" />
                                     <div class="invalid-feedback">
                                         <?php echo form_error('tanggal') ?>
                                     </div>

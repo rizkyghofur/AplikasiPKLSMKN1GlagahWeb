@@ -44,12 +44,12 @@
                                     <thead>
                                         <tr>
                                             <th style="text-align:center">No.</th>
-                                            <th style="text-align:center">NIS</th>
-                                            <th style="text-align:center">NISN</th>
                                             <th style="text-align:center">Nama Siswa</th>
                                             <th style="text-align:center">Kelas</th>
                                             <th style="text-align:center">Jurusan</th>
-                                            <th style="text-align:center">Jenis Kelamin</th>
+                                            <th style="text-align:center">Nama DUDI</th>
+                                            <th style="text-align:center">Status Penilaian</th>
+                                            <th style="text-align:center">Opsi</th>
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -60,23 +60,34 @@
                                                 <td width="25" style="text-align:center">
                                                     <?php echo $i ?>
                                                 </td>
-                                                <td style="text-align:center">
-                                                    <?php echo $dtsiswa->nis ?>
-                                                </td>
-                                                <td style="text-align:center">
-                                                    <?php echo $dtsiswa->nisn ?>
-                                                </td>
                                                 <td>
                                                     <?php echo $dtsiswa->nama_siswa ?>
                                                 </td>
                                                 <td style="text-align:center">
                                                     <?php echo $dtsiswa->kelas ?>
                                                 </td>
-                                                <td style="text-align:center">
+                                                <td>
                                                     <?php echo $dtsiswa->nama_jurusan ?>
                                                 </td>
                                                 <td style="text-align:center">
-                                                    <?php echo $dtsiswa->jenis_kelamin ?>
+                                                    <?php echo $dtsiswa->nama_dudi ?>
+                                                </td>
+                                                <td style="text-align:center">
+                                                    <?php
+                                                    if ($dtsiswa->id_penilaian_pkl == null) { ?>
+                                                        <span class="badge badge-danger">Belum dinilai</span>
+                                                    <?php } else { ?>
+                                                        <span class=" badge badge-success">Ternilai</span>
+                                                    <?php } ?>
+                                                </td>
+                                                <td width="210" style="text-align:center">
+                                                    <?php
+                                                    if ($dtsiswa->id_penilaian_pkl == null) { ?>
+                                                        <a href="<?= base_url('admin/PenilaianPKL/tambahpenilaianpkl/' . $dtsiswa->id_penilaian_pkl) ?>" class="btn btn-small"><i class="fas fa-fw fa-edit"></i> Tambah</a>
+                                                    <?php } else { ?>
+                                                        <a href="<?= base_url('admin/PenilaianPKL/editpenilaianpkl/' . $dtsiswa->id_penilaian_pkl) ?>" class="btn btn-small"><i class="fas fa-edit"></i> Ubah</a>
+                                                        <a href="<?= base_url('admin/PenilaianPKL/lihatpenilaianpkl/' . $dtsiswa->id_penilaian_pkl) ?>" class="btn btn-small"><i class="fas fa-edit"></i> Lihat</a>
+                                                    <?php } ?>
                                                 </td>
                                                 <?php $i++ ?>
                                             </tr>

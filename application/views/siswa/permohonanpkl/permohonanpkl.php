@@ -78,8 +78,8 @@
                                 <div class="alert alert-success" role="alert">
                                     <h4 class="alert-heading">Selamat, Permohonan PKL Anda diterima!</h4>
                                     <p>Selamat, permohonan PKL Anda telah diterima oleh pihak perusahaan <strong><?php echo $permohonanpkl->nama_dudi ?></strong>, berikut adalah keterangan terkait pelaksanaan PKL : </p>
-                                    <p><strong>Tanggal Masuk Pelaksanaan PKL : <?php echo $permohonanpkl->tanggal_masuk ?></strong></p>
-                                    <p><strong>Tanggal Usai Pelaksanaan PKL : <?php echo $permohonanpkl->tanggal_keluar ?></strong></p>
+                                    <p><strong>Tanggal Masuk Pelaksanaan PKL : <?php echo date("d-m-Y", strtotime($permohonanpkl->tanggal_masuk)) ?></strong></p>
+                                    <p><strong>Tanggal Usai Pelaksanaan PKL : <?php echo date("d-m-Y", strtotime($permohonanpkl->tanggal_keluar)) ?></strong></p>
                                     <p><strong>Status Keanggotan Kelompok PKL : <?php echo $permohonanpkl->status_keanggotaan ?></strong></p>
                                     <hr>
                                     <p>Silahkan mempersiapkan diri untuk memulai pelaksanaan PKL, semoga sukses!</p>
@@ -147,20 +147,20 @@
                                                     <?php echo $pengajuan->nama_dudi; ?>
                                                 </td>
                                                 <td style="text-align:center">
-                                                    <?php echo $pengajuan->tanggal_pengajuan; ?>
+                                                    <?php echo date("d-m-Y", strtotime($pengajuan->tanggal_pengajuan)) ?>
                                                 </td>
                                                 <td style="text-align:center">
                                                     <?php if ($pengajuan->tanggal_masuk == "2020-01-01") {
                                                         echo "Belum ditentukan";
                                                     } else {
-                                                        echo $pengajuan->tanggal_masuk;
+                                                        echo date("d-m-Y", strtotime($pengajuan->tanggal_masuk));
                                                     } ?>
                                                 </td>
                                                 <td style="text-align:center">
                                                     <?php if ($pengajuan->tanggal_keluar == "2020-01-01") {
                                                         echo "Belum ditentukan";
                                                     } else {
-                                                        echo $pengajuan->tanggal_keluar;
+                                                        echo date("d-m-Y", strtotime($pengajuan->tanggal_keluar));
                                                     } ?>
                                                 </td>
                                                 <td>

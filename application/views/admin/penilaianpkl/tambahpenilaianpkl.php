@@ -37,13 +37,13 @@
 
                     <div class="card mb-3">
                         <div class="card-header">
-                            <a href="<?= base_url('admin/DataDUDI/') ?>"><i class="fas fa-arrow-left"></i> Kembali</a>
+                            <a href="<?= base_url('admin/PenilaianPKL/') ?>"><i class="fas fa-arrow-left"></i> Kembali</a>
                         </div>
                         <div class="card-body">
 
-                            <form action="<?= base_url('admin/DataDUDI/daftardudi') ?>" method="post">
+                            <form action="<?= base_url('admin/PenilaianPKL/tambahpenilaianpkl') ?>" method="post">
                                 <div class="form-group">
-                                    <label for="id_siswa">Nama Siswa *</label>
+                                    <label for="id_siswa">-</label>
                                     <input class="form-control <?php echo form_error('id_siswa') ? 'is-invalid' : '' ?>" type="text" name="id_siswa" placeholder="" />
                                     <div class="invalid-feedback">
                                         <?php echo form_error('id_siswa') ?>

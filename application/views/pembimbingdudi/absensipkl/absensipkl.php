@@ -82,7 +82,7 @@
                                                     <?php echo $absen->kelas ?>
                                                 </td>
                                                 <td style="text-align:center">
-                                                    <?php echo $absen->tanggal_absensi ?>
+                                                    <?php echo date("d-m-Y", strtotime($absen->tanggal_absensi)) ?>
                                                 </td>
                                                 <td style="text-align:center">
                                                     <?php echo $absen->keterangan ?>

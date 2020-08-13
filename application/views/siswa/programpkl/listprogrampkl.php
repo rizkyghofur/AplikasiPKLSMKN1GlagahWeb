@@ -82,7 +82,7 @@
                                                         <?php echo $i ?>
                                                     </td>
                                                     <td style="text-align:center">
-                                                        <?php echo $program->tanggal ?>
+                                                        <?php echo date("d-m-Y", strtotime($program->tanggal)) ?>
                                                     </td>
                                                     <td>
                                                         <?php echo $program->topik_pekerjaan ?>

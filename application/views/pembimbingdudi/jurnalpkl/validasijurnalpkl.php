@@ -72,7 +72,7 @@
                                                     <?php echo $jurnal->kelas ?>
                                                 </td>
                                                 <td style="text-align:center">
-                                                    <?php echo $jurnal->tanggal ?>
+                                                    <?php echo date("d-m-Y", strtotime($jurnal->tanggal)) ?>
                                                 </td>
                                                 <td>
                                                     <?php echo $jurnal->topik_pekerjaan ?>
