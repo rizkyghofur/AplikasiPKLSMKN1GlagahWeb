@@ -99,6 +99,11 @@
                                         </div>
                                     </div>
 
+                                    <label for="dokumentasi">Dokumentasi</label>
+                                    <div class="form-group d-flex justify-content-center">
+                                        <img class="col-lg-6" src="<?php echo base_url('dokumentasi/' . $jurnalpkl->dokumentasi) ?>" width="480" height="320" />
+                                    </div>
+
                                     <div class="form-group">
                                         <label for="dokumentasi">Dokumentasi <strong>(Maks. ukuran file 1MB)</strong>
                                             <p>*abaikan jika foto dokumentasi yang telah diunggah sebelumnya benar</p>
