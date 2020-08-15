@@ -73,7 +73,7 @@ class JurnalPKL extends CI_Controller
         if (!isset($id)) show_404();
         if ($this->jurnalpkl_model->delete($id)) {
             $this->session->set_flashdata('success', 'Berhasil dihapus');
-            redirect('siswa/jurnalpkl');
+            redirect('siswa/JurnalPKL');
         }
     }
 
