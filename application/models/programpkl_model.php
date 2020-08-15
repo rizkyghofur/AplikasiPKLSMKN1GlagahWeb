@@ -51,7 +51,7 @@ class programpkl_model extends CI_Model
         $this->db->join('jurusan', 'jurusan.id_jurusan = data_siswa.id_jurusan');
         $this->db->join('kompetensi_dasar', 'kompetensi_dasar.id = program_pkl.id_kompetensi_dasar');
         $this->db->where('program_pkl.id_siswa', $this->session->userdata('id'));
-        $this->db->order_by('id_program_pkl', 'desc');
+        $this->db->order_by('tanggal', 'asc');
         return $this->db->get($this->_table)->result_array();
     }
 

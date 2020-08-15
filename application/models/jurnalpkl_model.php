@@ -50,7 +50,7 @@ class jurnalpkl_model extends CI_Model
         $this->db->join('data_siswa', 'data_siswa.id_siswa = jurnal_pkl.id_siswa');
         $this->db->join('kompetensi_dasar', 'kompetensi_dasar.id = jurnal_pkl.id_kompetensi_dasar');
         $this->db->where('jurnal_pkl.id_siswa', $this->session->userdata('id'));
-        $this->db->order_by('id_jurnal_pkl', 'desc');
+        $this->db->order_by('tanggal', 'asc');
         return $this->db->get($this->_table)->result_array();
     }
 
