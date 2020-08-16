@@ -19,10 +19,10 @@ $html = '
     <h2 style="text-align:center;">PENILAIAN HASIL KEGIATAN PRAKTIK KERJA LAPANGAN</h2>
     <table>
         <tr>
-            <td style="width: 25%">Nama DUDI</td>
+            <td>Nama DUDI</td>
             <td>: ' . $data_siswa->nama_dudi . ' </td>
             <td>Nama Siswa</td>
-            <td style="width: 75%">: ' . $data_siswa->nama_siswa . '</td>
+            <td>: ' . $data_siswa->nama_siswa . '</td>
         </tr>
         <tr>
             <td>Bidang Usaha</td>
