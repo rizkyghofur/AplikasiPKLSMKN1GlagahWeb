@@ -19,10 +19,10 @@ $html = '
     <h2 style="text-align:center;">PENILAIAN HASIL KEGIATAN PRAKTIK KERJA LAPANGAN</h2>
     <table>
         <tr>
-            <td style="width: 25%">Nama DUDI</td>
+            <td>Nama DUDI</td>
             <td>: ' . $data_siswa->nama_dudi . ' </td>
             <td>Nama Siswa</td>
-            <td style="width: 75%">: ' . $data_siswa->nama_siswa . '</td>
+            <td>: ' . $data_siswa->nama_siswa . '</td>
         </tr>
         <tr>
             <td>Bidang Usaha</td>
@@ -149,6 +149,69 @@ $html = '
 <td style="width: 20%; text-align:center;">' . $siswa->nilai_nontek_kebersihan_kerapian . '</td>
 </tr>
 </tbody>
-</table>';
+</table>
+
+<table>
+        <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td></td>
+            <td>Diberikan di</td>
+            <td>: ..................................</td>
+        </tr>
+        <tr>
+            <td></td>
+            <td></td>
+            <td>Tanggal</td>
+            <td>: ..................................</td>
+        </tr>
+        <tr>
+            <td></td>
+            <td></td>
+            <td>Penilai,</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td></td>
+            <td>....................................</td>
+            <td></td>
+        </tr>
+    </table>';
 $pdf->writeHTML($html, true, false, true, false, '');
 $pdf->Output('Penilaian PKL.pdf', 'I');
