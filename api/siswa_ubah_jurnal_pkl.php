@@ -10,7 +10,6 @@ $dokumentasi = $_POST['dokumentasi'];
 
 if ($_POST['dokumentasi'] == "default.jpg") {
     $nama_gambar = "default.jpg";
-    $path = "../dokumentasi/no-image.jpg";
 } else {
     $random = random_word(20);
     $nama_gambar = $random . ".png";
@@ -32,7 +31,7 @@ if (mysqli_query($con, $Sql_Query)) {
 } else {
     $status_pesan = new emp();
     $status_pesan->status_kode = 0;
-    $status_pesan->status_pesan = "Error simpan Data";
+    $status_pesan->status_pesan = "Terjadi kesalahan ubah data";
     die(json_encode($status_pesan));
 }
 

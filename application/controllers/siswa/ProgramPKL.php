@@ -83,7 +83,7 @@ class ProgramPKL extends CI_Controller
         $data['program_pkl'] = $this->programpkl_model->getData();
         $data['data_program_pkl'] = $this->programpkl_model->getById($id_siswa);
         if (!isset($id_siswa)) redirect('siswa/ProgramPKL');
-        if (!$data["program_pkl"]) show_error('Tidak ditemukan data', '404', 'Tidak dapat mencetak laporan program PKL');
+        if (!$data["program_pkl"]) show_error('Data tidak ditemukan', '404', 'Tidak dapat mencetak laporan program PKL');
         $this->load->view('siswa/programpkl/cetakprogrampkl', $data);
     }
 }

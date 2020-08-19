@@ -24,7 +24,7 @@ if (!empty($json)) {
 } else {
     $status_pesan = new emp();
     $status_pesan->status_kode = 0;
-    $status_pesan->status_pesan = "Data kosong.";
+    $status_pesan->status_pesan = "Data kosong";
     die(json_encode($status_pesan));
 }
 

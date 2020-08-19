@@ -17,7 +17,7 @@ if (!empty($row)) {
 } else {
     $status_pesan = new emp();
     $status_pesan->status_kode = 0;
-    $status_pesan->status_pesan = "Error hapus gambar";
+    $status_pesan->status_pesan = "Terjadi kesalahan hapus gambar";
     die(json_encode($status_pesan));
 }
 
@@ -31,7 +31,7 @@ if (mysqli_query($con, $Sql_Query)) {
 } else {
     $status_pesan = new emp();
     $status_pesan->status_kode = 0;
-    $status_pesan->status_pesan = "Error simpan Data";
+    $status_pesan->status_pesan = "Terjadi kesalahan hapus data";
     die(json_encode($status_pesan));
 }
 

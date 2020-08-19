@@ -70,10 +70,18 @@
                                 <?php break; ?>
                             <?php endforeach; ?>
                             <div class="card mb-3">
-                                <div class="card-header d-flex justify-content-between mb-2">
-                                    <a class="btn btn-light" href="<?= base_url("siswa/JurnalPKL/tambahjurnalpkl") ?>"><i class="fas fa-plus"></i> Tambah Data Jurnal PKL</a>
-                                    <a class="btn btn-primary" href="<?= base_url("siswa/JurnalPKL/cetak_jurnal_pkl/" . $this->session->userdata('id_siswa')) ?>"><i class="fas fa-print"></i> Cetak</a>
+                                <div class="card-header d-flex bd-highlight">
+                                    <div class="mr-auto p-2 bd-highlight">
+                                        <a class="btn btn-light" href="<?= base_url("siswa/JurnalPKL/tambahjurnalpkl") ?>"><i class="fas fa-plus"></i> Tambah Data Jurnal PKL</a>
+                                    </div>
+                                    <div class="p-2 bd-highlight">
+                                        <a class="btn btn-light" href="<?= base_url("siswa/JurnalPKL/cetak_jurnal_pkl/" . $this->session->userdata('id_siswa')) ?>"><i class="fas fa-print"></i> Cetak Data Jurnal PKL </a>
+                                    </div>
+                                    <div class="p-2 bd-highlight">
+                                        <a class="btn btn-light" href="<?= base_url("siswa/JurnalPKL/cetak_dokumentasi_jurnal/" . $this->session->userdata('id_siswa')) ?>"><i class="fas fa-print"></i> Cetak Lampiran Dokumentasi</a>
+                                    </div>
                                 </div>
+
                                 <div class="card-body">
                                     <div class="table-responsive">
                                         <table id="table_id" class="table table-striped table-bordered" cellspacing="0" width="100%">

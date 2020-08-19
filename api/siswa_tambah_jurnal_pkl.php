@@ -7,16 +7,16 @@ $id_kompetensi_dasar = $_POST['id_kompetensi_dasar'];
 $topik_pekerjaan = $_POST['topik_pekerjaan'];
 $dokumentasi = $_POST['dokumentasi'];
 
-class emp
-{
-}
-
 if ($_POST['dokumentasi'] == "default.jpg") {
     $nama_gambar = "default.jpg";
 } else {
     $random = random_word(20);
     $nama_gambar = $random . ".png";
     $path = "../dokumentasi/" . $random . ".png";
+}
+
+class emp
+{
 }
 
 $Sql_Query = "INSERT INTO jurnal_pkl (id_siswa, id_kompetensi_dasar, tanggal, topik_pekerjaan, dokumentasi) values ('$id_siswa','$id_kompetensi_dasar','$tanggal','$topik_pekerjaan', '$nama_gambar')";
@@ -30,7 +30,7 @@ if (mysqli_query($con, $Sql_Query)) {
 } else {
     $status_pesan = new emp();
     $status_pesan->status_kode = 0;
-    $status_pesan->status_pesan = "Error simpan Data";
+    $status_pesan->status_pesan = "Terjadi kesalahan simpan data";
     die(json_encode($status_pesan));
 }
 

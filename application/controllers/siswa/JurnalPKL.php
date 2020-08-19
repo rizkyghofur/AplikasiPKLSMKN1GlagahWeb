@@ -85,4 +85,13 @@ class JurnalPKL extends CI_Controller
         if (!$data["jurnal_pkl"]) show_error('Tidak ditemukan data', '404', 'Tidak dapat mencetak laporan jurnal PKL');
         $this->load->view('siswa/jurnalpkl/cetakjurnalpkl', $data);
     }
+
+    public function cetak_dokumentasi_jurnal($id_siswa = null)
+    {
+        $this->load->library('pdf');
+        $data['jurnal_pkl'] = $this->jurnalpkl_model->getData();
+        $data['data_jurnal_pkl'] = $this->jurnalpkl_model->getById($id_siswa);
+        if (!$data["jurnal_pkl"]) show_error('Data tidak ditemukan', '404', 'Tidak dapat mencetak laporan jurnal PKL');
+        $this->load->view('siswa/jurnalpkl/cetakdokumentasi', $data);
+    }
 }
