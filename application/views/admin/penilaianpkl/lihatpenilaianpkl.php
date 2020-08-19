@@ -1,7 +1,7 @@
 <?php
 
 $pdf = new Pdf('P', 'mm', 'A4', true, 'UTF-8', false);
-$pdf->SetTitle('Penilaian PKL');
+$pdf->SetTitle('Penilaian PKL - ' . $data_siswa->nama_siswa);
 $pdf->SetPrintHeader(false);
 $pdf->SetPrintFooter(false);
 $pdf->SetHeaderMargin(0);
@@ -151,4 +151,4 @@ $html = '
 </tbody>
 </table>';
 $pdf->writeHTML($html, true, false, true, false, '');
-$pdf->Output('Penilaian PKL.pdf', 'I');
+$pdf->Output('Penilaian PKL '  . $data_siswa->nama_siswa . ' .pdf', 'I');

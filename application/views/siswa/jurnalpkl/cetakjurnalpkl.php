@@ -69,4 +69,4 @@ foreach ($jurnal_pkl as $row) {
 }
 $html .= '</table>';
 $pdf->writeHTML($html, true, false, true, false, '');
-$pdf->Output('Laporan Jurnal PKL.pdf' . $data_jurnal_pkl->nama_siswa, 'I');
+$pdf->Output('Laporan Jurnal PKL '  . $data_jurnal_pkl->nama_siswa . '.pdf', 'I');

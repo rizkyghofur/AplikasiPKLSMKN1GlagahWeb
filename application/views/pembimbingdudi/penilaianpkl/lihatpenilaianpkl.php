@@ -214,4 +214,4 @@ $html = '
         </tr>
     </table>';
 $pdf->writeHTML($html, true, false, true, false, '');
-$pdf->Output('Penilaian PKL.pdf', 'I');
+$pdf->Output('Penilaian PKL '  . $data_siswa->nama_siswa . '.pdf', 'I');
