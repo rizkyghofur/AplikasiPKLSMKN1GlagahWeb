@@ -13,7 +13,6 @@ class emp
 
 if ($_POST['dokumentasi'] == "default.jpg") {
     $nama_gambar = "default.jpg";
-    $path = "../dokumentasi/no-image.jpg";
 } else {
     $random = random_word(20);
     $nama_gambar = $random . ".png";
