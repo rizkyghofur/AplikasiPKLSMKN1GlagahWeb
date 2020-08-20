@@ -60,6 +60,7 @@
                                             <th style="text-align:center">Nama Pimpinan</th>
                                             <th style="text-align:center">No Telp Pimpinan</th>
                                             <th style="text-align:center">Kuota</th>
+                                            <th style="text-align:center">Rujukan Jurusan</th>
                                             <th style="text-align:center">Opsi</th>
                                         </tr>
                                     </thead>
@@ -96,6 +97,9 @@
                                                     <?php } else { ?>
                                                         <?php echo $dtdudi->kuota; ?>
                                                     <?php } ?>
+                                                </td>
+                                                <td style="text-align:center">
+                                                    <?php echo $dtdudi->nama_jurusan ?>
                                                 </td>
                                                 <td style="text-align:center">
                                                     <a href="<?= base_url('admin/DataDUDI/editdatadudi/' . $dtdudi->id_dudi) ?>" class="btn btn-small"><i class="fas fa-edit"></i> Ubah</a>

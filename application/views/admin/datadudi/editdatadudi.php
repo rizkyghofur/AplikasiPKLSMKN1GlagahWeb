@@ -63,7 +63,7 @@
 
                                 <div class="form-group">
                                     <label for="no_telp_dudi">No Telpon DUDI *</label>
-                                    <input class="form-control <?php echo form_error('no_telp_dudi') ? 'is-invalid' : '' ?>" type="tel" pattern="[0-9]{3}-[0-9]{2}-[0-9]{3}" name="no_telp_dudi" min="0" placeholder="No Telp DUDI" value="<?php echo $datadudi->no_telp_dudi ?>"></input>
+                                    <input class="form-control <?php echo form_error('no_telp_dudi') ? 'is-invalid' : '' ?>" type="number" pattern="[0-9]{3}-[0-9]{2}-[0-9]{3}" name="no_telp_dudi" min="0" placeholder="No Telp DUDI" value="<?php echo $datadudi->no_telp_dudi ?>"></input>
                                     <div class="invalid-feedback">
                                         <?php echo form_error('no_telp_dudi') ?>
                                     </div>
@@ -87,7 +87,7 @@
 
                                 <div class="form-group">
                                     <label for="no_telp_pimpinan">No Telpon Pimpinan </label>
-                                    <input class="form-control <?php echo form_error('no_telp_pimpinan') ? 'is-invalid' : '' ?>" type="tel" pattern="[0-9]{3}-[0-9]{2}-[0-9]{3}" name="no_telp_pimpinan" min="0" placeholder="No Telp. Pembimbing DUDI" value="<?php echo $datadudi->no_telp_pimpinan ?>" />
+                                    <input class="form-control <?php echo form_error('no_telp_pimpinan') ? 'is-invalid' : '' ?>" type="number" pattern="[0-9]{3}-[0-9]{2}-[0-9]{3}" name="no_telp_pimpinan" min="0" placeholder="No Telp. Pembimbing DUDI" value="<?php echo $datadudi->no_telp_pimpinan ?>" />
                                     <div class="invalid-feedback">
                                         <?php echo form_error('no_telp_pimpinan') ?>
                                     </div>
@@ -98,6 +98,17 @@
                                     <input class="form-control <?php echo form_error('kuota') ? 'is-invalid' : '' ?>" type="text" name="kuota" placeholder="Nama Pembimbing DUDI*" value="<?php echo $datadudi->kuota ?>"></input>
                                     <div class="invalid-feedback">
                                         <?php echo form_error('kuota') ?>
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="id_jurusan">Rujukan Jurusan</label>
+                                    <select class="form-control <?php echo form_error('id_jurusan') ? 'is-invalid' : '' ?>" name="id_jurusan">
+                                        <option value="<?php echo $datadudi->id_jurusan; ?>">---Pilih Jurusan-- : <?php echo $datadudi->nama_jurusan; ?></option>
+                                        <option value="1">Teknik Komputer dan Jaringan</option>
+                                    </select>
+                                    <div class="invalid-feedback">
+                                        <?php echo form_error('id_jurusan') ?>
                                     </div>
                                 </div>
 

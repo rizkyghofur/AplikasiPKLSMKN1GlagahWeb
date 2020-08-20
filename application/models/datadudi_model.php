@@ -41,15 +41,21 @@ class datadudi_model extends CI_Model
             ],
 
             [
+                'field' => 'no_telp_pimpinan',
+                'label' => 'No Telp Pimpinan',
+                'rules' => 'numeric'
+            ],
+
+            [
                 'field' => 'kuota',
                 'label' => 'Kuota DUDI',
                 'rules' => 'required'
             ],
 
             [
-                'field' => 'no_telp_pimpinan',
-                'label' => 'No Telp Pimpinan',
-                'rules' => 'numeric'
+                'field' => 'id_jurusan',
+                'label' => 'Rujukan Jurusan',
+                'rules' => 'required'
             ]
 
         ];
@@ -57,6 +63,7 @@ class datadudi_model extends CI_Model
 
     public function getAll()
     {
+        $this->db->join('jurusan', 'jurusan.id_jurusan = data_dudi.id_jurusan');
         $this->db->order_by('nama_dudi', 'ASC');
         $query = $this->db->get($this->_table);
         return $query->result();
@@ -80,6 +87,7 @@ class datadudi_model extends CI_Model
 
     public function getById($id_dudi)
     {
+        $this->db->join('jurusan', 'jurusan.id_jurusan = data_dudi.id_jurusan');
         return $this->db->get_where($this->_table, ["id_dudi" => $id_dudi])->row();
     }
 
@@ -93,6 +101,7 @@ class datadudi_model extends CI_Model
         $this->nama_pimpinan = $post["nama_pimpinan"];
         $this->no_telp_pimpinan = $post["no_telp_pimpinan"];
         $this->kuota = $post["kuota"];
+        $this->id_jurusan = $post["id_jurusan"];
         return $this->db->insert($this->_table, $this);
     }
 
@@ -107,6 +116,7 @@ class datadudi_model extends CI_Model
         $this->nama_pimpinan = $post["nama_pimpinan"];
         $this->no_telp_pimpinan = $post["no_telp_pimpinan"];
         $this->kuota = $post["kuota"];
+        $this->id_jurusan = $post["id_jurusan"];
         return $this->db->update($this->_table, $this, array("id_dudi" => $post["id_dudi"]));
     }
 
