@@ -4,6 +4,7 @@ class catatankunjunganpkl_model extends CI_Model
 {
 
     private $_table = "catatan_kunjungan_pkl";
+    private $_table1 = "pengajuanpkl";
 
     public function getAll()
     {
@@ -17,9 +18,8 @@ class catatankunjunganpkl_model extends CI_Model
 
     public function getGuruPembimbing()
     {
-        $this->db->select('nama_guru');
-        $this->db->join('data_guru', 'data_guru.id_guru = catatan_kunjungan_pkl.id_guru');
-        $this->db->join('pengajuanpkl', 'pengajuanpkl.id_guru = data_guru.id_guru');
-        return $this->db->get_where($this->_table, ["pengajuanpkl.id_siswa" => $this->session->userdata('id')])->row();
+        $this->db->select('data_guru.nama_guru');
+        $this->db->join('data_guru', 'data_guru.id_guru = pengajuanpkl.id_guru');
+        return $this->db->get_where($this->_table1, ["pengajuanpkl.id_siswa" => $this->session->userdata('id')])->row();
     }
 }
