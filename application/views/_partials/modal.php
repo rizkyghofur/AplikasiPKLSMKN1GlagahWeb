@@ -94,7 +94,7 @@
           <div class="modal-dialog modal-dialog-centered" role="document">
               <div class="modal-content">
                   <div class="modal-header">
-                      <h5 class="modal-title" id="exampleModalLabel">Tambah Absensi PKL</h5>
+                      <h5 class="modal-title" id="exampleModalLabel">Tambah Presensi PKL</h5>
                       <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                           <span aria-hidden="true">&times;</span>
                       </button>
@@ -104,7 +104,7 @@
                           <form action="<?= base_url('siswa/PresensiPKL/tambahpresensipkl') ?>" method="post">
 
                               <div class="form-group">
-                                  <label for="tanggal_absensi">Tanggal Absensi</label>
+                                  <label for="tanggal_absensi">Tanggal Presensi</label>
                                   <input class="form-control <?php echo form_error('tanggal_absensi') ? 'is-invalid' : '' ?>" id="datepicker" type="date" name="tanggal_absensi" placeholder="" value="<?php echo date('Y-m-d'); ?>"></input>
                                   <div class="invalid-feedback">
                                       <?php echo form_error('tanggal_absensi') ?>
