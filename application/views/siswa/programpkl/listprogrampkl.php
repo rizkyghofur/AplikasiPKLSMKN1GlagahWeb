@@ -59,7 +59,7 @@
                         <?php } else { ?>
                             <div class="card-header d-flex justify-content-between">
                                 <a class="btn btn-light" href="<?= base_url("siswa/ProgramPKL/tambahprogrampkl") ?>"><i class="fas fa-plus"></i> Tambah Data Program PKL</a>
-                                <a class="btn btn-primary" href="<?= base_url("siswa/ProgramPKL/cetak_program_pkl/" . $this->session->userdata('id_siswa')) ?>"><i class="fas fa-print"></i> Cetak</a>
+                                <a class="btn btn-light" href="<?= base_url("siswa/ProgramPKL/cetak_program_pkl/" . $this->session->userdata('id_siswa')) ?>"><i class="fas fa-print"></i> Cetak Data Program PKL</a>
                             </div>
                             <div class="card-body">
                                 <div class="table-responsive">
