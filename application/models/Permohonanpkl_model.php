@@ -26,7 +26,7 @@ class permohonanpkl_model extends CI_Model
         $this->db->join('data_guru', 'data_guru.id_guru = pengajuanpkl.id_guru', 'left');
         $this->db->join('data_dudi', 'data_dudi.id_dudi = pengajuanpkl.id_dudi');
         $this->db->order_by('pengajuanpkl.id_pengajuanpkl', 'desc');
-        return $this->db->get_where($this->_table, ["pengajuanpkl.id_siswa" => $this->session->userdata('id_siswa')])->row();
+        return $this->db->get_where($this->_table, ["pengajuanpkl.id_siswa" => $this->session->userdata('id')])->row();
     }
 
     public function getHistory()
