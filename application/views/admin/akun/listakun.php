@@ -51,9 +51,9 @@
                                     <thead>
                                         <tr>
                                             <th style="text-align:center">No.</th>
+                                            <th style="text-align:center">Pengguna</th>
                                             <th style="text-align:center">Nama Pengguna</th>
-                                            <th style="text-align:center">Username</th>
-                                            <th style="text-align:center">Password</th>
+                                            <th style="text-align:center">Kata Sandi</th>
                                             <th style="text-align:center">Role</th>
                                         </tr>
                                     </thead>
