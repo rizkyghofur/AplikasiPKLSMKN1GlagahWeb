@@ -50,6 +50,9 @@
                                             <th style="text-align:center">Kelas</th>
                                             <th style="text-align:center">Jurusan</th>
                                             <th style="text-align:center">Jenis Kelamin</th>
+                                            <th style="text-align:center">No. HP Siswa</th>
+                                            <th style="text-align:center">Nama Orang Tua</th>
+                                            <th style="text-align:center">No. HP Orang Tua</th>
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -77,6 +80,15 @@
                                                 </td>
                                                 <td style="text-align:center">
                                                     <?php echo $dtsiswa->jenis_kelamin ?>
+                                                </td>
+                                                <td style="text-align:center">
+                                                    <?php echo $dtsiswa->hp_siswa ?>
+                                                </td>
+                                                <td style="text-align:center">
+                                                    <?php echo $dtsiswa->ayah ?>
+                                                </td>
+                                                <td style="text-align:center">
+                                                    <?php echo $dtsiswa->no_hp_orang_tua ?>
                                                 </td>
                                                 <?php $i++ ?>
                                             </tr>
