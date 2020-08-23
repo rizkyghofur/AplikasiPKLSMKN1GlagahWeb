@@ -77,7 +77,7 @@
                                                 <td>
                                                     <?php echo $pengajuan->nama_dudi; ?>
                                                 </td>
-                                                <td>
+                                                <td style="text-align:center">
                                                     <?php echo date("d-m-Y", strtotime($pengajuan->tanggal_pengajuan)); ?>
                                                 </td>
                                                 <td style="text-align:center">
