@@ -1,7 +1,7 @@
 <?php
 
 $pdf = new Pdf('P', 'mm', 'A4', true, 'UTF-8', false);
-$pdf->SetTitle('Laporan Program PKL - '  . $data_jurnal_pkl->nama_siswa);
+$pdf->SetTitle('Laporan Program PKL - '  . $data_program_pkl->nama_siswa);
 $pdf->SetPrintHeader(false);
 $pdf->SetPrintFooter(true);
 $pdf->SetHeaderMargin(0);
@@ -71,4 +71,4 @@ foreach ($program_pkl as $row) {
 }
 $html .= '</table>';
 $pdf->writeHTML($html, true, false, true, false, '');
-$pdf->Output('Laporan Program PKL ' . $data_jurnal_pkl->nama_siswa . '.pdf', 'I');
+$pdf->Output('Laporan Program PKL ' . $data_program_pkl->nama_siswa . '.pdf', 'I');
