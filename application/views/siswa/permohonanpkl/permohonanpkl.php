@@ -81,7 +81,12 @@
                                     <p><strong>Tanggal Masuk Pelaksanaan PKL : <?php echo date("d-m-Y", strtotime($permohonanpkl->tanggal_masuk)) ?></strong></p>
                                     <p><strong>Tanggal Usai Pelaksanaan PKL : <?php echo date("d-m-Y", strtotime($permohonanpkl->tanggal_keluar)) ?></strong></p>
                                     <p><strong>Status Keanggotan Kelompok PKL : <?php echo $permohonanpkl->status_keanggotaan ?></strong></p>
-                                    <hr>
+                                    <?php if ($permohonanpkl->id_guru == 0) { ?>
+                                        <p><strong>Nama Guru Pembimbing : Belum Ditentukan</strong></p>
+                                        <hr>
+                                    <?php } else { ?>
+                                        <p><strong>Nama Guru Pembimbing : <?php echo $permohonanpkl->nama_guru ?></strong></p>
+                                    <?php } ?>
                                     <p>Silahkan mempersiapkan diri untuk memulai pelaksanaan PKL, semoga sukses!</p>
                                     <p class="mb-0">Jika terdapat pernyataan terkait PKL, silahkan hubungi Koordinator PKL, Bapak/Ibu Guru, atau Koordinator Jurusan di Program Studi Anda</p>
                                 </div>
