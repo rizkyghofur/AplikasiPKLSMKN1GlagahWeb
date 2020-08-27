@@ -114,7 +114,6 @@
                               <div class="form-group">
                                   <label for="id_siswa">Pilih Siswa</label>
                                   <select class="form-control <?php echo form_error('id_siswa') ? 'is-invalid' : '' ?>" name="id_siswa">
-                                      <option disabled selected value="">Pilih Siswa : </option>
                                       <?php foreach ($data_siswa as $row) { ?>
                                           <option value="<?php echo $row->id_siswa; ?>"><?php echo $row->nama_siswa ?></option>
                                       <?php } ?>
