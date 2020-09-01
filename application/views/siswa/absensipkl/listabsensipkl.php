@@ -94,7 +94,9 @@
                                                     <th style="text-align:center">Kelas</th>
                                                     <th style="text-align:center">Tanggal Presensi</th>
                                                     <th style="text-align:center">Keterangan</th>
-                                                    <th style="text-align:center">Opsi</th>
+                                                    <?php if ($pengajuanpkl->status_keanggotaan == 'Ketua Kelompok') { ?>
+                                                        <th style="text-align:center">Opsi</th>
+                                                    <?php } ?>
                                                 </tr>
                                             </thead>
                                             <tbody>
@@ -117,9 +119,11 @@
                                                         <td style="text-align:center">
                                                             <?php echo $absen->keterangan ?>
                                                         </td>
-                                                        <td style="text-align:center">
-                                                            <a onclick="deleteConfirm('<?= base_url('siswa/PresensiPKL/hapuspresensipkl/' . $absen->id_absensi) ?>')" href="#!" class="btn btn-small text-danger"><i class="fas fa-trash"></i> Hapus</a>
-                                                        </td>
+                                                        <?php if ($pengajuanpkl->status_keanggotaan == 'Ketua Kelompok') { ?>
+                                                            <td style="text-align:center">
+                                                                <a onclick="deleteConfirm('<?= base_url('siswa/PresensiPKL/hapuspresensipkl/' . $absen->id_absensi) ?>')" href="#!" class="btn btn-small text-danger"><i class="fas fa-trash"></i> Hapus</a>
+                                                            </td>
+                                                        <?php } ?>
                                                         <?php $i++ ?>
                                                     <?php endforeach; ?>
                                             </tbody>

@@ -51,7 +51,7 @@
 
                           <div class="form-group">
                               <label for="id">Nama DUDI</label>
-                              <select class="form-control <?php echo form_error('id_siswa') ? 'is-invalid' : '' ?>" name="id">
+                              <select class="form-control <?php echo form_error('id_siswa') ? 'is-invalid' : '' ?>" required="required" name="id">
                                   <option disabled selected value="">Pilih Nama DUDI : </option>
                                   <?php foreach ($data_dudi as $row) { ?>
                                       <option value="<?php echo $row->id_dudi; ?>"><?php echo $row->nama_dudi ?></option>
@@ -64,7 +64,7 @@
 
                           <div class="form-group">
                               <label for="username">Nama Pengguna</label>
-                              <input class="form-control <?php echo form_error('username') ? 'is-invalid' : '' ?>" type="text" name="username" placeholder=""></input>
+                              <input class="form-control <?php echo form_error('username') ? 'is-invalid' : '' ?>" required="required" type="text" name="username" placeholder=""></input>
                               <div class="invalid-feedback">
                                   <?php echo form_error('username') ?>
                               </div>
@@ -72,7 +72,7 @@
 
                           <div class="form-group">
                               <label for="password">Kata Sandi</label>
-                              <input class="form-control <?php echo form_error('password') ? 'is-invalid' : '' ?>" type="text" name="password" placeholder=""></input>
+                              <input class="form-control <?php echo form_error('password') ? 'is-invalid' : '' ?>" required="required" type="text" name="password" placeholder=""></input>
                               <div class="invalid-feedback">
                                   <?php echo form_error('password') ?>
                               </div>
@@ -113,7 +113,8 @@
 
                               <div class="form-group">
                                   <label for="id_siswa">Pilih Siswa</label>
-                                  <select class="form-control <?php echo form_error('id_siswa') ? 'is-invalid' : '' ?>" name="id_siswa">
+                                  <select class="form-control <?php echo form_error('id_siswa') ? 'is-invalid' : '' ?>" required="required" name="id_siswa">
+                                      <option disabled selected value="">Pilih Siswa : </option>
                                       <?php foreach ($data_siswa as $row) { ?>
                                           <option value="<?php echo $row->id_siswa; ?>"><?php echo $row->nama_siswa ?></option>
                                       <?php } ?>
@@ -164,7 +165,7 @@
 
                               <div class="form-group">
                                   <label for="id_dudi">Pilih Tujuan / Nama DUDI</label>
-                                  <select class="form-control <?php echo form_error('id_dudi') ? 'is-invalid' : '' ?>" name="id_dudi">
+                                  <select class="form-control <?php echo form_error('id_dudi') ? 'is-invalid' : '' ?>" required="required" name="id_dudi">
                                       <?php foreach ($data_dudi as $row) { ?>
                                           <?php if ($row->kuota > 0) { ?>
                                               <option class="font-weight-bold" value="<?php echo $row->id_dudi; ?>"><?php echo $row->nama_dudi ?>, kuota : <?php echo $row->kuota ?> </option>
